@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e53052b8-92ee-466e-a132-dca702300b9d" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/../.vscode/settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/633bc408-06f2-459a-b134-a0c3032fbaec.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/633bc408-06f2-459a-b134-a0c3032fbaec/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/633bc408-06f2-459a-b134-a0c3032fbaec/storage_v2/_src_/schema/mysql.osA4Bg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/633bc408-06f2-459a-b134-a0c3032fbaec/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/633bc408-06f2-459a-b134-a0c3032fbaec/storage_v2/_src_/schema/smart_party_building.I3nv0A.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/633bc408-06f2-459a-b134-a0c3032fbaec/storage_v2/_src_/schema/sys.zb4BAA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/API使用说明.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/openapi.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/result/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/utils/JwtUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/utils/PasswordUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/test/java/com/example/CommonApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/add_points_column.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/check_database_integrity.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/check_points_status.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/debug_points.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/debug_points_complete.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/debug_points_database.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/debug_points_insertion.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/init.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/news_table.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/test_task_points.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/verify_points_database.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/smart-party-building.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/smart-party-building.log.2025-10-11.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/dto/AdminLoginDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/dto/RefreshTokenDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/dto/UserLoginDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/Activity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/ActivityParticipant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/Announcement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/ApplicationProcess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/DemocraticEvaluation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/MemberUpdateRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/PartyApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/PartyBranch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/Point.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/Points.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/PositiveMemberApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/PrepareMemberApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/StudyRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/StudyResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/SystemSetting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/TaskAssignment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/TaskEvaluation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/VideoWatchProgress.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/enums/AdminType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/enums/ApplicationStage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/enums/CommonStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/enums/ParticipationStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/enums/PoliticalStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/enums/ResourceType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/entity/enums/TaskStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/java/com/example/pojo/vo/LoginVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/src/test/java/com/example/pojo/PojoApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pojo/实体类说明.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/logs/smart-party-building.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/ServerApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/AdminMemberReviewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/AnnouncementController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/ApplicationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/BranchController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/MemberController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/MemberProfileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/PointsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/SettingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/StatsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/StudyRecordController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/StudyResourceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/TaskController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/TestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/UploadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/controller/admin/AccountController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/handler/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/interceptor/JwtInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/mapper/AdminMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/mapper/AnnouncementMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/mapper/ApplicationProcessMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/mapper/MemberMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/mapper/MemberUpdateRequestMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/mapper/PartyApplicationMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/mapper/PartyBranchMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/mapper/PointsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/mapper/PositiveMemberApplicationMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/mapper/PrepareMemberApplicationMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/mapper/StatsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/mapper/StudyRecordMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/mapper/StudyResourceMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/mapper/SystemSettingMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/mapper/TaskAssignmentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/mapper/TaskEvaluationMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/mapper/TaskMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/mapper/VideoWatchProgressMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/AdminAccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/OssService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/impl/AdminAccountServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/impl/AuthServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/example/server/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/application-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/application-prod.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/mapper/AdminMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/mapper/AnnouncementMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/mapper/ApplicationProcessMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/mapper/MemberMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/mapper/MemberUpdateRequestMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/mapper/PartyApplicationMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/mapper/PartyBranchMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/mapper/PointsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/mapper/PositiveMemberApplicationMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/mapper/PrepareMemberApplicationMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/mapper/StatsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/mapper/StudyRecordMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/mapper/StudyResourceMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/mapper/SystemSettingMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/mapper/TaskAssignmentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/mapper/TaskEvaluationMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/mapper/TaskMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/mapper/VideoWatchProgressMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/test/java/com/example/server/ServerApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/任务状态变更积分功能实现方案.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/home/addActivity.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/home/addMem.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/home/announcement-detail.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/home/announcements.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/home/articles/article1.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/home/articles/article2.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/home/articles/article3.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/home/articles/article4.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/home/branchInfo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/home/draft.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/home/home.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/home/memStudy.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/home/memberInfo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/home/monitor.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/home/myinfo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/home/party.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/home/party/history.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/home/party/partyApplication.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/my/changePassword.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/my/login.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/my/login/login.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/my/memberInfo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/my/my.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/my/myActivity.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/my/pointsRank.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/my/pointsRecord.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/my/record.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/task/task.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pages/test/test.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/static/home/个人信息.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/static/home/党员信息.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/static/home/党员学习.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/static/home/党员学习背景.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/static/home/党员监督.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/static/home/入党.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/static/home/活动草稿.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/static/home/添加党员.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/static/home/添加活动.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/static/my/danghui.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/static/my/头像.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/static/my/学习记录.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/static/my/我的活动.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/static/party/入党申请.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/static/party/积极分子.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/static/party/预备党员.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/static/party/预备转正.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/static/tabBar/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/static/tabBar/home_selected.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/static/tabBar/my.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/static/tabBar/my_selected.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/static/tabBar/task.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/static/tabBar/task_selected.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/uni.promisify.adaptor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/uni.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/cache/.vite/deps/_metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/cache/.vite/deps/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin-devtools/pages/addActivity/addActivity.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin-devtools/pages/addMem/addMem.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin-devtools/pages/draft/draft.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin-devtools/pages/memberInfo/memberInfo.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin-devtools/pages/my/myActivity.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin-devtools/pages/task/task.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/activist/activist.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/app.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/common/assets.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/common/vendor.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/activist/activist.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/activist/detail/detail1.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/activist/detail/detail2.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/activist/detail1/detail1.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/addActivity/addActivity.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/addMem/addMem.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/draft/draft.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/formal/formal.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/addActivity.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/addMem.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/announcement-detail.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/announcements.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/articles/article1.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/articles/article2.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/articles/article3.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/articles/article4.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/branchInfo.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/draft.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/home.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/memStudy.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/memberInfo.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/monitor.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/myinfo.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/news-detail.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/news.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/party.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/party/activist.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/party/detail/detail1.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/party/detail/detail2.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/party/formal.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/party/history.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/party/party.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/party/partyApplication.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/party/prepare.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/memStudy/articles/article1.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/memStudy/articles/article1/article1.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/memStudy/articles/article2.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/memStudy/articles/article3.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/memStudy/articles/article4.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/memStudy/memStudy.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/memberInfo/memberInfo.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/menberInfo/menberInfo.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/monitor/monitor.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/my/changePassword.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/my/login.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/my/login/login.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/my/login/login1.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/my/login/login2.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/my/memberInfo.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/my/my.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/my/myActivity.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/my/pointsRank.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/my/pointsRecord.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/my/record.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/myActivity/myActivity.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/myinfo/myinfo.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/party/activist.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/party/detail/detail1.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/party/detail/detail2.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/party/formal.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/party/party.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/party/partyApplication.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/party/prepare.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/partyApplication/partyApplication.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/prepare/prepare.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/probationaryMember/probationaryMember.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/score/score.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/studyRecord/studyRecord.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/task/task.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/pages/test/test.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/studyRecord/studyRecord.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/utils/api.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/utils/auth.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/utils/eventBus.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/.sourcemap/mp-weixin/utils/globalState.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/app.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/common/assets.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/common/vendor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/addActivity.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/addActivity.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/addActivity.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/addActivity.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/addMem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/addMem.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/addMem.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/addMem.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/announcement-detail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/announcement-detail.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/announcement-detail.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/announcement-detail.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/announcements.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/announcements.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/announcements.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/announcements.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/articles/article1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/articles/article1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/articles/article1.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/articles/article1.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/articles/article2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/articles/article2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/articles/article2.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/articles/article2.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/articles/article3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/articles/article3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/articles/article3.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/articles/article3.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/articles/article4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/articles/article4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/articles/article4.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/articles/article4.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/branchInfo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/branchInfo.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/branchInfo.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/branchInfo.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/draft.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/draft.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/draft.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/draft.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/home.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/home.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/home.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/memStudy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/memStudy.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/memStudy.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/memStudy.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/monitor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/monitor.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/monitor.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/monitor.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/myinfo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/myinfo.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/myinfo.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/myinfo.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/party.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/party.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/party.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/party.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/party/history.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/party/history.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/party/history.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/party/history.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/party/partyApplication.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/party/partyApplication.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/party/partyApplication.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/home/party/partyApplication.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/changePassword.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/changePassword.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/changePassword.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/changePassword.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/login/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/login/login.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/login/login.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/login/login.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/my.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/my.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/my.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/my.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/myActivity.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/myActivity.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/myActivity.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/myActivity.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/pointsRank.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/pointsRank.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/pointsRank.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/pointsRank.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/pointsRecord.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/pointsRecord.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/pointsRecord.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/pointsRecord.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/record.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/record.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/record.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/my/record.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/task/task.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/task/task.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/task/task.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/task/task.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/test/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/test/test.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/test/test.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/pages/test/test.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/project.config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/project.private.config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/static/home/个人信息.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/static/home/党员信息.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/static/home/党员学习.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/static/home/党员学习背景.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/static/home/党员监督.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/static/home/入党.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/static/home/活动草稿.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/static/home/添加党员.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/static/home/添加活动.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/static/my/danghui.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/static/my/头像.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/static/my/学习记录.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/static/my/我的活动.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/static/party/入党申请.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/static/party/积极分子.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/static/party/预备党员.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/static/party/预备转正.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/static/tabBar/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/static/tabBar/home_selected.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/static/tabBar/my.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/static/tabBar/my_selected.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/static/tabBar/task.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/static/tabBar/task_selected.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/utils/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/utils/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/unpackage/dist/dev/mp-weixin/utils/eventBus.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/utils/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/utils/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../微信小程序/大创/utils/eventBus.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../数据库代码/init2.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../智慧党建系统项目总结文档.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/deploy.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/deploy.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/src/api/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/src/api/task.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/src/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/src/stores/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/src/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/src/utils/request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/src/views/AccountManagement.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/src/views/AnnouncementManagement.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/src/views/ApplicationReview.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/src/views/Dashboard.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/src/views/Layout.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/src/views/LoginPage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/src/views/MemberManagement.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/src/views/StudyProgressManagement.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/src/views/StudyResourceManagement.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/src/views/TaskManagement.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/start.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/test-login.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../管理端-vue3/vite.config.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\maven-repository" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="corretto-18" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="31XncxipTOcwBMqkaWgfy7DyYgI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.common [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.common [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.pojo [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.server [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.server [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.smart-party-building [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.smart-party-building [compile].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.CommonApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.PartyApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.PojoApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/小备份/小备份/smart_party_building/后端代码&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="PartyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jdk-17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <module name="server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.server.ServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-84258761d1cc-intellij.indexing.shared.core-IU-243.28141.18" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.28141.18" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="e53052b8-92ee-466e-a132-dca702300b9d" name="更改" comment="" />
+      <created>1755679368194</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1755679368194</updated>
+      <workItem from="1755679369315" duration="4026000" />
+      <workItem from="1755711989162" duration="33078000" />
+      <workItem from="1756882621619" duration="624000" />
+      <workItem from="1756885230497" duration="7379000" />
+      <workItem from="1756950252602" duration="8063000" />
+      <workItem from="1757057676489" duration="5660000" />
+      <workItem from="1757121651349" duration="12550000" />
+      <workItem from="1757211049039" duration="16170000" />
+      <workItem from="1757419637583" duration="5483000" />
+      <workItem from="1757578268608" duration="4709000" />
+      <workItem from="1758798522895" duration="5412000" />
+      <workItem from="1760066661015" duration="16099000" />
+      <workItem from="1760140555910" duration="10555000" />
+      <workItem from="1761357782993" duration="668000" />
+      <workItem from="1777255024972" duration="164000" />
+      <workItem from="1777255195379" duration="1752000" />
+      <workItem from="1777256963605" duration="262000" />
+      <workItem from="1777257234951" duration="1314000" />
+      <workItem from="1778026293054" duration="1724000" />
+      <workItem from="1778029153332" duration="441000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

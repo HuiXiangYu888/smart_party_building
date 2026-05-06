@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.server.mapper.ApplicationProcessMapper">
+
+	<resultMap id="BaseResultMap" type="com.example.pojo.entity.ApplicationProcess">
+		<id column="id" property="id" jdbcType="BIGINT"/>
+		<result column="user_id" property="userId" jdbcType="BIGINT"/>
+		<result column="current_stage" property="currentStage" jdbcType="VARCHAR"/>
+		<result column="status" property="status" jdbcType="VARCHAR"/>
+		<result column="reviewer_id" property="reviewerId" jdbcType="BIGINT"/>
+		<result column="submitted_at" property="submittedAt" jdbcType="TIMESTAMP"/>
+		<result column="reviewed_at" property="reviewedAt" jdbcType="TIMESTAMP"/>
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		id, user_id, current_stage, status, reviewer_id, submitted_at, reviewed_at
+	</sql>
+
+	<select id="selectById" parameterType="long" resultMap="BaseResultMap">
+		SELECT <include refid="Base_Column_List"/> FROM application_process WHERE id = #{id}
+	</select>
+
+	<select id="selectByUserAndStage" resultMap="BaseResultMap">
+		SELECT <include refid="Base_Column_List"/> FROM application_process WHERE user_id = #{userId} AND current_stage = #{stage} ORDER BY id DESC LIMIT 1
+	</select>
+
+	<insert id="insert" parameterType="com.example.pojo.entity.ApplicationProcess" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO application_process (user_id, current_stage, status, reviewer_id, submitted_at, reviewed_at)
+		VALUES (#{userId}, #{currentStage}, #{status}, #{reviewerId}, #{submittedAt}, #{reviewedAt})
+	</insert>
+
+	<update id="update" parameterType="com.example.pojo.entity.ApplicationProcess">
+		UPDATE application_process
+		SET current_stage = #{currentStage},
+			status = #{status},
+			reviewer_id = #{reviewerId},
+			reviewed_at = #{reviewedAt}
+		WHERE id = #{id}
+	</update>
+
+</mapper>
+
+

@@ -1,0 +1,1 @@
+{"version":3,"file":"score.js","sources":["../HBuilderX/plugins/uniapp-cli-vite/uniPage:/cGFnZXMvc2NvcmUvc2NvcmUudnVl"],"sourcesContent":["import MiniProgramPage from 'E:/大创/pages/score/score.vue'\nwx.createPage(MiniProgramPage)"],"names":[],"mappings":";;;;;;;AACA,GAAG,WAAW,eAAe;"}

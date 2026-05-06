@@ -1,0 +1,40 @@
+# 生产环境配置
+spring:
+  profiles:
+    active: prod
+  
+  # 数据源配置
+  datasource:
+    url: jdbc:mysql://prod-mysql:3306/smart_party_building?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    username: ${DB_USERNAME:smart_party}
+    password: ${DB_PASSWORD:smart_party_2024}
+  
+  # Redis配置
+  redis:
+    host: ${REDIS_HOST:prod-redis}
+    port: ${REDIS_PORT:6379}
+    password: ${REDIS_PASSWORD:}
+    database: 0
+  
+  # 日志配置
+  logging:
+    level:
+      com.example: info
+      org.springframework.web: warn
+      org.mybatis: warn
+    file:
+      name: /var/logs/smart-party-building/smart-party-building.log
+
+# 微信小程序配置（生产环境）
+wechat:
+  miniapp:
+    appid: ${WECHAT_APPID:}
+    secret: ${WECHAT_SECRET:}
+
+# 阿里云OSS配置（生产环境）
+aliyun:
+  oss:
+    endpoint: ${OSS_ENDPOINT:}
+    access-key-id: ${OSS_ACCESS_KEY_ID:}
+    access-key-secret: ${OSS_ACCESS_KEY_SECRET:}
+    bucket-name: ${OSS_BUCKET_NAME:}

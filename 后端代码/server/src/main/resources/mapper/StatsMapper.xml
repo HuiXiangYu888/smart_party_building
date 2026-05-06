@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.server.mapper.StatsMapper">
+
+    <select id="countMembers" resultType="int">
+        <![CDATA[
+        SELECT COUNT(1) FROM members
+        ]]>
+    </select>
+
+    <select id="countPendingApplications" resultType="int">
+        <![CDATA[
+        SELECT COUNT(1) FROM member_update_requests WHERE status = 'PENDING'
+        ]]>
+    </select>
+
+    <select id="countOngoingActivities" resultType="int">
+        <![CDATA[
+        -- 发布中任务数量
+        SELECT COUNT(1) FROM tasks WHERE status = 'PUBLISHING'
+        ]]>
+    </select>
+
+    <select id="countPendingAssignments" resultType="int">
+        <![CDATA[
+        -- 待完结任务数量
+        SELECT COUNT(1) FROM tasks WHERE status = 'PENDING_END'
+        ]]>
+    </select>
+
+    <!-- 各支部学习总时长（单位：分钟） -->
+    <select id="selectBranchStudyDurations" resultType="map">
+        <![CDATA[
+        SELECT 
+            pb.id   AS branchId,
+            pb.name AS branchName,
+            COALESCE(SUM(sr.duration), 0) AS totalDuration
+        FROM party_branches pb
+        LEFT JOIN members m ON m.branch_id = pb.id
+        LEFT JOIN study_records sr ON sr.user_id = m.id
+        GROUP BY pb.id, pb.name
+        ORDER BY totalDuration DESC
+        ]]>
+    </select>
+
+    <!-- 按支部ID统计成员数量 -->
+    <select id="countMembersByBranchId" resultType="int">
+        <![CDATA[
+        SELECT COUNT(1) FROM members WHERE branch_id = #{branchId} AND branch_id IS NOT NULL
+        ]]>
+    </select>
+
+    <!-- 按支部ID统计待审核申请数量 -->
+    <select id="countPendingApplicationsByBranchId" resultType="int">
+        <![CDATA[
+        SELECT COUNT(1) FROM member_update_requests mur
+        INNER JOIN members m ON m.id = mur.member_id
+        WHERE mur.status = 'PENDING' AND m.branch_id = #{branchId}
+        ]]>
+    </select>
+
+    <!-- 按支部ID统计进行中活动数量 -->
+    <select id="countOngoingActivitiesByBranchId" resultType="int">
+        <![CDATA[
+        SELECT COUNT(1) FROM tasks t
+        WHERE t.status = 'PUBLISHING' AND t.branch_id = #{branchId}
+        ]]>
+    </select>
+
+    <!-- 按支部ID统计待完结任务数量 -->
+    <select id="countPendingAssignmentsByBranchId" resultType="int">
+        <![CDATA[
+        SELECT COUNT(1) FROM tasks t
+        WHERE t.status = 'PENDING_END' AND t.branch_id = #{branchId}
+        ]]>
+    </select>
+
+</mapper>
+
+

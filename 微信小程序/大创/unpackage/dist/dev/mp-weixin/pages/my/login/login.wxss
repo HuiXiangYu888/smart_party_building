@@ -1,0 +1,160 @@
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.container.data-v-dd394eb5 {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.brand-section.data-v-dd394eb5 {
+  height: 38vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20rpx;
+}
+.brand-section .logo.data-v-dd394eb5 {
+  width: 140rpx;
+  height: 140rpx;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 10rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.1);
+  margin-bottom: 24rpx;
+}
+.brand-section .brand-text.data-v-dd394eb5 {
+  text-align: center;
+}
+.brand-section .brand-text .app-title.data-v-dd394eb5 {
+  display: block;
+  font-size: 44rpx;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 4rpx;
+  margin-bottom: 8rpx;
+}
+.brand-section .brand-text .app-subtitle.data-v-dd394eb5 {
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 2rpx;
+}
+.login-card.data-v-dd394eb5 {
+  flex: 1;
+  background-color: #ffffff;
+  border-radius: 48rpx 48rpx 0 0;
+  padding: 60rpx 50rpx;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 -10rpx 30rpx rgba(0, 0, 0, 0.05);
+}
+.login-card .welcome-header.data-v-dd394eb5 {
+  margin-bottom: 60rpx;
+}
+.login-card .welcome-header .welcome-title.data-v-dd394eb5 {
+  display: block;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 12rpx;
+}
+.login-card .welcome-header .welcome-desc.data-v-dd394eb5 {
+  font-size: 26rpx;
+  color: #999999;
+}
+.login-card .form-container.data-v-dd394eb5 {
+  flex: 1;
+}
+.login-card .form-container .input-item.data-v-dd394eb5 {
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fa;
+  border-radius: 24rpx;
+  height: 100rpx;
+  padding: 0 32rpx;
+  margin-bottom: 40rpx;
+  border: 2rpx solid transparent;
+  transition: all 0.3s;
+}
+.login-card .form-container .input-item.data-v-dd394eb5:focus-within {
+  border-color: rgba(231, 76, 60, 0.3);
+  background-color: #ffffff;
+}
+.login-card .form-container .input-item .input-field.data-v-dd394eb5 {
+  flex: 1;
+  height: 100%;
+  font-size: 30rpx;
+  color: #333333;
+}
+.login-card .form-container .input-item .input-placeholder.data-v-dd394eb5 {
+  color: #bbbbbb;
+}
+.login-card .form-container .login-btn.data-v-dd394eb5 {
+  background: linear-gradient(90deg, #e74c3c, #c0392b);
+  color: #ffffff;
+  border-radius: 50rpx;
+  height: 96rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-top: 60rpx;
+  box-shadow: 0 10rpx 20rpx rgba(231, 76, 60, 0.3);
+  border: none;
+}
+.login-card .form-container .login-btn.data-v-dd394eb5::after {
+  border: none;
+}
+.login-card .form-container .login-btn[disabled].data-v-dd394eb5 {
+  background: #cccccc;
+  box-shadow: none;
+  color: #ffffff;
+}
+.login-card .form-container .login-btn-hover.data-v-dd394eb5 {
+  opacity: 0.9;
+  transform: translateY(2rpx);
+}
+.login-card .form-container .action-links.data-v-dd394eb5 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40rpx;
+  padding: 0 20rpx;
+}
+.login-card .form-container .action-links .link-text.data-v-dd394eb5 {
+  font-size: 26rpx;
+  color: #666666;
+}
+.login-card .footer.data-v-dd394eb5 {
+  text-align: center;
+  padding-top: 40rpx;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.login-card .footer .footer-text.data-v-dd394eb5 {
+  font-size: 22rpx;
+  color: #cccccc;
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"formal.js","sources":["../HBuilderX/plugins/uniapp-cli-vite/uniPage:/cGFnZXMvcGFydHkvZm9ybWFsLnZ1ZQ"],"sourcesContent":["import MiniProgramPage from 'E:/大创/pages/party/formal.vue'\nwx.createPage(MiniProgramPage)"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;AACA,GAAG,WAAW,eAAe;"}

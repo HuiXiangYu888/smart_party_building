@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.server.mapper.PointsMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.pojo.entity.Points">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="user_id" property="userId" jdbcType="BIGINT"/>
+        <result column="branch_id" property="branchId" jdbcType="BIGINT"/>
+        <result column="points" property="points" jdbcType="INTEGER"/>
+        <result column="description" property="description" jdbcType="VARCHAR"/>
+        <result column="created_at" property="createdAt" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <select id="selectByUserId" parameterType="long" resultMap="BaseResultMap">
+        SELECT id,user_id,branch_id,points,description,created_at
+        FROM points
+        WHERE user_id = #{userId}
+        ORDER BY created_at DESC
+    </select>
+
+    <select id="sumByUserId" parameterType="long" resultType="int">
+        SELECT COALESCE(SUM(points),0) FROM points WHERE user_id = #{userId}
+    </select>
+
+    <select id="selectAllMemberPointsRank" resultType="map">
+        SELECT 
+            m.id           AS userId,
+            m.username     AS username,
+            pb.name        AS branchName,
+            COALESCE(SUM(p.points), 0) AS totalPoints
+        FROM members m
+        LEFT JOIN points p ON p.user_id = m.id
+        LEFT JOIN party_branches pb ON pb.id = m.branch_id
+        GROUP BY m.id, m.username, pb.name
+        ORDER BY totalPoints DESC
+    </select>
+
+    <insert id="insert" parameterType="com.example.pojo.entity.Points" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO points(user_id, branch_id, points, description, created_at)
+        VALUES(#{userId}, #{branchId}, #{points}, #{description}, #{createdAt})
+    </insert>
+
+    <!-- 根据任务标题删除积分记录 -->
+    <delete id="deleteByTaskTitle" parameterType="string">
+        DELETE FROM points 
+        WHERE description LIKE CONCAT('完成任务：', #{taskTitle})
+    </delete>
+
+    <!-- 根据用户ID和任务标题删除积分记录 -->
+    <delete id="deleteByUserIdAndTaskTitle">
+        DELETE FROM points 
+        WHERE user_id = #{userId} 
+        AND description LIKE CONCAT('完成任务：', #{taskTitle})
+    </delete>
+
+    <!-- 根据描述删除积分记录 -->
+    <delete id="deleteByDescription" parameterType="string">
+        DELETE FROM points 
+        WHERE description = #{description}
+    </delete>
+
+</mapper>
+
+

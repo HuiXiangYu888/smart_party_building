@@ -1,0 +1,56 @@
+package com.example.server.controller;
+
+import com.example.common.result.Result;
+import com.example.server.service.OssService;
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+/**
+ * 文件上传控制器
+ */
+@RestController
+@RequestMapping("/upload")
+public class UploadController {
+
+    @Autowired
+    private OssService ossService;
+
+    /**
+     * 上传图片
+     */
+    @PostMapping(value = "/image", consumes = {"multipart/form-data"})
+    public Result<String> uploadImage(@RequestParam("file") MultipartFile file,
+                                      HttpServletRequest request) throws Exception {
+        Object userIdAttr = request.getAttribute("userId");
+        if (userIdAttr == null) {
+            return Result.error(401, "未登录");
+        }
+        
+        // 检查文件类型（兼容部分浏览器未设置 contentType 的场景）
+        String ct = file.getContentType();
+        boolean isImage = (ct != null && ct.startsWith("image/"));
+        if (!isImage) {
+            String original = file.getOriginalFilename();
+            String lower = original == null ? "" : original.toLowerCase();
+            isImage = lower.endsWith(".png") || lower.endsWith(".jpg") || lower.endsWith(".jpeg") || lower.endsWith(".gif") || lower.endsWith(".webp");
+        }
+        if (!isImage) {
+            return Result.error(400, "只能上传图片文件");
+        }
+
+        // 检查文件大小 (5MB)
+        if (file.getSize() > 5L * 1024 * 1024) {
+            return Result.error(400, "图片大小不能超过5MB");
+        }
+        
+        try {
+            String objectKey = "news/images/" + System.currentTimeMillis() + "_" + file.getOriginalFilename();
+            String url = ossService.upload(objectKey, file.getInputStream());
+            return Result.success(url);
+        } catch (Exception e) {
+            return Result.error(500, "上传失败: " + e.getMessage());
+        }
+    }
+}

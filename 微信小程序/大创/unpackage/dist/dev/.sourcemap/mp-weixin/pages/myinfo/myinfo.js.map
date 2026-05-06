@@ -1,0 +1,1 @@
+{"version":3,"file":"myinfo.js","sources":["../HBuilderX/plugins/uniapp-cli-vite/uniPage:/cGFnZXMvbXlpbmZvL215aW5mby52dWU"],"sourcesContent":["import MiniProgramPage from 'E:/大创/pages/myinfo/myinfo.vue'\nwx.createPage(MiniProgramPage)"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AACA,GAAG,WAAW,eAAe;"}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.server.mapper.PrepareMemberApplicationMapper">
+
+	<resultMap id="BaseResultMap" type="com.example.pojo.entity.PrepareMemberApplication">
+		<id column="id" property="id" jdbcType="BIGINT"/>
+		<result column="user_id" property="userId" jdbcType="BIGINT"/>
+		<result column="evaluation_report" property="evaluationReport" jdbcType="LONGVARCHAR"/>
+		<result column="probation_period_start" property="probationPeriodStart" jdbcType="TIMESTAMP"/>
+		<result column="probation_period_end" property="probationPeriodEnd" jdbcType="TIMESTAMP"/>
+		<result column="status" property="status" jdbcType="VARCHAR"/>
+		<result column="reviewer_id" property="reviewerId" jdbcType="BIGINT"/>
+		<result column="reviewed_at" property="reviewedAt" jdbcType="TIMESTAMP"/>
+		<result column="comments" property="comments" jdbcType="LONGVARCHAR"/>
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		id, user_id, evaluation_report, probation_period_start, probation_period_end, status, reviewer_id, reviewed_at, comments
+	</sql>
+
+	<select id="selectById" parameterType="long" resultMap="BaseResultMap">
+		SELECT <include refid="Base_Column_List"/> FROM prepare_member_application WHERE id = #{id}
+	</select>
+
+	<select id="selectByUserId" parameterType="long" resultMap="BaseResultMap">
+		SELECT <include refid="Base_Column_List"/> FROM prepare_member_application WHERE user_id = #{userId} ORDER BY id DESC
+	</select>
+
+	<select id="selectAll" resultMap="BaseResultMap">
+		SELECT <include refid="Base_Column_List"/> FROM prepare_member_application ORDER BY id DESC
+	</select>
+
+	<insert id="insert" parameterType="com.example.pojo.entity.PrepareMemberApplication" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO prepare_member_application (user_id, evaluation_report, probation_period_start, probation_period_end, status, reviewer_id, reviewed_at, comments)
+		VALUES (#{userId}, #{evaluationReport}, #{probationPeriodStart}, #{probationPeriodEnd}, #{status}, #{reviewerId}, #{reviewedAt}, #{comments})
+	</insert>
+
+	<update id="update" parameterType="com.example.pojo.entity.PrepareMemberApplication">
+		UPDATE prepare_member_application
+		SET evaluation_report = #{evaluationReport},
+			probation_period_start = #{probationPeriodStart},
+			probation_period_end = #{probationPeriodEnd},
+			status = #{status},
+			reviewer_id = #{reviewerId},
+			reviewed_at = #{reviewedAt},
+			comments = #{comments}
+		WHERE id = #{id}
+	</update>
+
+</mapper>
+
+

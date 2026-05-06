@@ -1,0 +1,158 @@
+/* 全局样式 */
+:root {
+  --primary-color: #409eff;
+  --success-color: #67c23a;
+  --warning-color: #e6a23c;
+  --danger-color: #f56c6c;
+  --info-color: #909399;
+  --text-color: #303133;
+  --text-color-regular: #606266;
+  --text-color-secondary: #909399;
+  --border-color: #dcdfe6;
+  --border-color-light: #e4e7ed;
+  --background-color: #f5f7fa;
+}
+
+/* 布局样式 */
+.admin-layout {
+  height: 100vh;
+  display: flex;
+}
+
+.admin-sidebar {
+  width: 200px;
+  background-color: #304156;
+  color: white;
+  overflow-y: auto;
+}
+
+.admin-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-header {
+  height: 60px;
+  background-color: white;
+  border-bottom: 1px solid var(--border-color-light);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 1px 4px rgba(0,21,41,.08);
+}
+
+.admin-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: var(--background-color);
+}
+
+/* 卡片样式 */
+.admin-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* 表格样式 */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color-light);
+}
+
+.admin-table th {
+  background-color: #fafafa;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* 按钮样式 */
+.admin-btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.admin-btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.admin-btn-primary:hover {
+  background-color: #66b1ff;
+}
+
+.admin-btn-success {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.admin-btn-warning {
+  background-color: var(--warning-color);
+  color: white;
+}
+
+.admin-btn-danger {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+/* 表单样式 */
+.admin-form {
+  max-width: 600px;
+}
+
+.admin-form-item {
+  margin-bottom: 20px;
+}
+
+.admin-form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.admin-form-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.admin-form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .admin-sidebar {
+    width: 100%;
+    height: auto;
+  }
+  
+  .admin-layout {
+    flex-direction: column;
+  }
+  
+  .admin-content {
+    padding: 10px;
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"activist.js","sources":["../HBuilderX/plugins/uniapp-cli-vite/uniPage:/cGFnZXMvcGFydHkvYWN0aXZpc3QudnVl"],"sourcesContent":["import MiniProgramPage from 'E:/大创/pages/party/activist.vue'\nwx.createPage(MiniProgramPage)"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;AACA,GAAG,WAAW,eAAe;"}

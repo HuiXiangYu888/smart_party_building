@@ -1,0 +1,1 @@
+{"version":3,"file":"monitor.js","sources":["../HBuilderX/plugins/uniapp-cli-vite/uniPage:/cGFnZXMvbW9uaXRvci9tb25pdG9yLnZ1ZQ"],"sourcesContent":["import MiniProgramPage from 'E:/大创/pages/monitor/monitor.vue'\nwx.createPage(MiniProgramPage)"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AACA,GAAG,WAAW,eAAe;"}

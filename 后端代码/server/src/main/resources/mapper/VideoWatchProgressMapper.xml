@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.server.mapper.VideoWatchProgressMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.pojo.entity.VideoWatchProgress">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="user_id" property="userId" jdbcType="BIGINT"/>
+        <result column="resource_id" property="resourceId" jdbcType="BIGINT"/>
+        <result column="current_time" property="currentTime" jdbcType="INTEGER"/>
+        <result column="total_duration" property="totalDuration" jdbcType="INTEGER"/>
+        <result column="watch_percentage" property="watchPercentage" jdbcType="DECIMAL"/>
+        <result column="last_watch_time" property="lastWatchTime" jdbcType="TIMESTAMP"/>
+        <result column="created_at" property="createdAt" jdbcType="TIMESTAMP"/>
+        <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Columns">id,user_id,resource_id,`current_time`,total_duration,watch_percentage,last_watch_time,created_at,updated_at</sql>
+
+    <insert id="insertOrUpdate" parameterType="com.example.pojo.entity.VideoWatchProgress">
+        INSERT INTO video_watch_progress(user_id,resource_id,`current_time`,total_duration,watch_percentage,last_watch_time)
+        VALUES(#{userId},#{resourceId},#{currentTime},#{totalDuration},#{watchPercentage},#{lastWatchTime})
+        ON DUPLICATE KEY UPDATE
+        `current_time` = VALUES(`current_time`),
+        total_duration = VALUES(total_duration),
+        watch_percentage = VALUES(watch_percentage),
+        last_watch_time = VALUES(last_watch_time),
+        updated_at = CURRENT_TIMESTAMP
+    </insert>
+
+    <select id="selectByUserIdAndResourceId" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Columns"/>
+        FROM video_watch_progress 
+        WHERE user_id = #{userId} AND resource_id = #{resourceId}
+    </select>
+
+    <update id="updateProgress" parameterType="com.example.pojo.entity.VideoWatchProgress">
+        UPDATE video_watch_progress 
+        SET `current_time` = #{currentTime},
+            total_duration = #{totalDuration},
+            watch_percentage = #{watchPercentage},
+            last_watch_time = #{lastWatchTime},
+            updated_at = CURRENT_TIMESTAMP
+        WHERE user_id = #{userId} AND resource_id = #{resourceId}
+    </update>
+
+    <delete id="deleteByUserIdAndResourceId">
+        DELETE FROM video_watch_progress 
+        WHERE user_id = #{userId} AND resource_id = #{resourceId}
+    </delete>
+
+</mapper>

@@ -1,0 +1,1 @@
+{"version":3,"file":"studyRecord.js","sources":["../HBuilderX/plugins/uniapp-cli-vite/uniPage:/c3R1ZHlSZWNvcmQvc3R1ZHlSZWNvcmQudnVl"],"sourcesContent":["import MiniProgramPage from 'E:/大创/studyRecord/studyRecord.vue'\nwx.createPage(MiniProgramPage)"],"names":[],"mappings":";;;;;;;AACA,GAAG,WAAW,eAAe;"}

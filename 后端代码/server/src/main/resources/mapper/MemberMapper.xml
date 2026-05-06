@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.server.mapper.MemberMapper">
+
+    <!-- 结果映射 -->
+    <resultMap id="BaseResultMap" type="com.example.pojo.entity.Member">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="student_id" property="studentId" jdbcType="VARCHAR"/>
+        <result column="id_number" property="idNumber" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="mobile" property="mobile" jdbcType="VARCHAR"/>
+        <result column="branch_id" property="branchId" jdbcType="BIGINT"/>
+        <result column="political_status" property="politicalStatus" jdbcType="VARCHAR"/>
+        <result column="join_date" property="joinDate" jdbcType="TIMESTAMP"/>
+        <result column="review_status" property="reviewStatus" jdbcType="VARCHAR"/>
+        <result column="created_at" property="createdAt" jdbcType="TIMESTAMP"/>
+        <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!-- 基础字段 -->
+    <sql id="Base_Column_List">
+        id, student_id, id_number, password, username, mobile, branch_id, political_status, join_date, review_status, created_at, updated_at
+    </sql>
+
+    <!-- 根据学号查询用户 -->
+    <select id="selectByStudentId" parameterType="string" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM members
+        WHERE student_id = #{studentId}
+    </select>
+
+    <!-- 根据ID查询用户 -->
+    <select id="selectById" parameterType="long" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM members
+        WHERE id = #{id}
+    </select>
+
+    <!-- 根据手机号查询用户 -->
+    <select id="selectByMobile" parameterType="string" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM members
+        WHERE mobile = #{mobile}
+    </select>
+
+    <!-- 根据身份证号查询用户 -->
+    <select id="selectByIdNumber" parameterType="string" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM members
+        WHERE id_number = #{idNumber}
+    </select>
+
+    <!-- 新增用户 -->
+    <insert id="insert" parameterType="com.example.pojo.entity.Member" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO members (
+            student_id, id_number, password, username, mobile, political_status, join_date, review_status, created_at, updated_at
+        ) VALUES (
+            #{studentId}, #{idNumber}, #{password}, #{username}, #{mobile}, #{politicalStatus}, #{joinDate}, #{reviewStatus},
+            NOW(), NOW()
+        )
+    </insert>
+
+    <!-- 更新用户信息 -->
+    <update id="update" parameterType="com.example.pojo.entity.Member">
+        UPDATE members
+        SET student_id = #{studentId},
+            id_number = #{idNumber},
+            password = #{password},
+            username = #{username},
+            mobile = #{mobile},
+            branch_id = #{branchId},
+            political_status = #{politicalStatus},
+            join_date = #{joinDate},
+            review_status = #{reviewStatus},
+            updated_at = NOW()
+        WHERE id = #{id}
+    </update>
+
+    <!-- 根据ID删除用户 -->
+    <delete id="deleteById" parameterType="long">
+        DELETE FROM members WHERE id = #{id}
+    </delete>
+
+    <!-- 统计支部成员人数 -->
+    <select id="countByBranchId" parameterType="long" resultType="int">
+        SELECT COUNT(1) FROM members WHERE branch_id = #{branchId}
+    </select>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM members
+        ORDER BY id DESC
+    </select>
+
+</mapper>

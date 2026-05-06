@@ -1,0 +1,215 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path" : "pages/home/home",
+			"style": {
+				"navigationBarTitleText": "中共南京工业大学计算机科学与"
+			}
+		},
+		{
+			"path" : "pages/task/task",
+			"style": {
+				"navigationBarTitleText": "活动任务"
+			}
+		},
+		{
+			"path" : "pages/my/my",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path" : "pages/home/myinfo",
+			"style" : 
+			{
+				"navigationBarTitleText" : "个人信息"
+			}
+		},
+		{
+			"path" : "pages/home/addMem",
+			"style" : 
+			{
+				"navigationBarTitleText" : "添加党员"
+			}
+		},
+		{
+			"path" : "pages/home/addActivity",
+			"style" : 
+			{
+				"navigationBarTitleText" : "添加活动"
+			}
+		},
+        {
+            "path" : "pages/home/branchInfo",
+            "style" : 
+            {
+                "navigationBarTitleText" : "支部信息"
+            }
+        },
+		{
+			"path" : "pages/home/draft",
+			"style" : 
+			{
+				"navigationBarTitleText" : "活动草稿"
+			}
+		},
+		{
+			"path" : "pages/home/party/partyApplication",
+			"style" : 
+			{
+				"navigationBarTitleText" : "入党申请"
+			}
+		},
+		{
+			"path" : "pages/home/party/history",
+			"style" : 
+			{
+				"navigationBarTitleText" : "申请记录"
+			}
+		},
+		{
+			"path" : "pages/my/myActivity",
+			"style" : 
+			{
+				"navigationBarTitleText" : "我的活动"
+			}
+		},
+		{
+			"path" : "pages/home/party",
+			"style" : 
+			{
+				"navigationBarTitleText" : "入党"
+			}
+		},
+		{
+			"path" : "pages/home/memStudy",
+			"style" : 
+			{
+				"navigationBarTitleText" : "党员学习"
+			}
+		},
+		{
+			"path" : "pages/home/announcements",
+			"style" : 
+			{
+				"navigationBarTitleText" : "党建公告",
+				"enablePullDownRefresh" : true
+			}
+		},
+		{
+			"path" : "pages/home/announcement-detail",
+			"style" : 
+			{
+				"navigationBarTitleText" : "公告详情"
+			}
+		},
+		{
+			"path" : "pages/home/articles/article1",
+			"style" : 
+			{
+				"navigationBarTitleText" : "党史资料"
+			}
+		},
+		{
+			"path" : "pages/home/articles/article2",
+			"style" : 
+			{
+				"navigationBarTitleText" : "要闻要论"
+			}
+		},
+		{
+			"path" : "pages/home/articles/article3",
+			"style" : 
+			{
+				"navigationBarTitleText" : "为民办事"
+			}
+		},
+		{
+			"path" : "pages/home/articles/article4",
+			"style" : 
+			{
+				"navigationBarTitleText" : "重要论述"
+			}
+		},
+		{
+			"path" : "pages/home/monitor",
+			"style" : 
+			{
+				"navigationBarTitleText" : "党员监督"
+			}
+		},
+		{
+			"path" : "pages/my/login/login",
+			"style" : 
+			{
+				"navigationBarTitleText" : "登录",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path" : "pages/my/record",
+			"style" : 
+			{
+				"navigationBarTitleText" : "学习记录"
+			}
+		},
+		{
+			"path" : "pages/my/pointsRank",
+			"style" : 
+			{
+				"navigationBarTitleText" : "积分排行"
+			}
+		},
+		{
+			"path" : "pages/my/changePassword",
+			"style" : 
+			{
+				"navigationBarTitleText" : "修改密码"
+			}
+		},
+		{
+			"path" : "pages/my/pointsRecord",
+			"style" : 
+			{
+				"navigationBarTitleText" : "积分明细"
+			}
+		},
+		{
+			"path" : "pages/test/test",
+			"style" : 
+			{
+				"navigationBarTitleText" : "功能测试"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",   
+		"navigationBarBackgroundColor": "#E74C3C",  
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#",
+		"selectedColor": "#E74C3C",
+		"list": [
+			{
+				"pagePath":"pages/home/home",
+				"text": "首页",
+				"iconPath": "/static/tabBar/home.png",
+				"selectedIconPath": "/static/tabBar/home_selected.png"
+			},
+			{
+				"pagePath":"pages/task/task",
+				"text": "活动任务",
+				"iconPath": "/static/tabBar/task.png",
+				"selectedIconPath": "/static/tabBar/task_selected.png"				
+			},
+			{
+				"pagePath":"pages/my/my",
+				"text": "我的",
+				"iconPath": "/static/tabBar/my.png",
+				"selectedIconPath": "/static/tabBar/my_selected.png"
+			}
+		]
+	},
+	"uniIdRouter": {}
+}

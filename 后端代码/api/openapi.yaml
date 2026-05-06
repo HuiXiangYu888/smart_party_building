@@ -1,0 +1,1174 @@
+openapi: 3.0.3
+info:
+  title: 智慧党建系统 API
+  description: |
+    智慧党建系统后端API接口文档
+    
+    ## 认证方式
+    本系统使用JWT（JSON Web Token）进行身份认证，支持两种登录方式：
+    - **用户端**：微信小程序登录（通过OpenID）
+    - **管理端**：用户名密码登录
+    
+    ## 请求头
+    除登录接口外，所有需要认证的接口都需要在请求头中添加：
+    ```
+    Authorization: Bearer {JWT_TOKEN}
+    ```
+    
+    ## 响应格式
+    所有接口都返回统一的响应格式：
+    ```json
+    {
+      "code": 200,
+      "message": "操作成功",
+      "data": {}
+    }
+    ```
+    
+  version: 1.0.0
+  contact:
+    name: 智慧党建系统开发团队
+    email: dev@smart-party.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: http://localhost:8080
+    description: 开发环境
+  - url: https://api.smart-party.com
+    description: 生产环境
+
+tags:
+  - name: 认证管理
+    description: 用户登录、登出、令牌管理等认证相关接口
+  - name: 用户管理
+    description: 用户信息管理相关接口
+  - name: 管理员管理
+    description: 管理员信息管理相关接口
+  - name: 系统管理
+    description: 系统配置、健康检查等接口
+
+paths:
+  # ==================== 认证管理 ====================
+  /auth/user/login:
+    post:
+      tags:
+        - 认证管理
+      summary: 用户端登录
+      description: 微信小程序用户通过OpenID登录
+      operationId: userLogin
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserLoginDTO'
+            example:
+              openId: "wx_openid_123456"
+              username: "张三"
+      responses:
+        '200':
+          description: 登录成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+                properties:
+                  data:
+                    $ref: '#/components/schemas/LoginVO'
+              example:
+                code: 200
+                message: "登录成功"
+                data:
+                  userId: 1
+                  username: "张三"
+                  userType: "MEMBER"
+                  accessToken: "eyJhbGciOiJIUzI1NiJ9..."
+                  refreshToken: "eyJhbGciOiJIUzI1NiJ9..."
+                  expiresIn: 7200
+        '400':
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+              example:
+                code: 400
+                message: "OpenID不能为空"
+                data: null
+        '401':
+          description: 认证失败
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+              example:
+                code: 401
+                message: "用户不存在"
+                data: null
+
+  /auth/admin/login:
+    post:
+      tags:
+        - 认证管理
+      summary: 管理端登录
+      description: 管理员通过用户名和密码登录
+      operationId: adminLogin
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminLoginDTO'
+            example:
+              username: "admin"
+              password: "123456"
+              captcha: "1234"
+              captchaId: "captcha_123"
+      responses:
+        '200':
+          description: 登录成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+                properties:
+                  data:
+                    $ref: '#/components/schemas/LoginVO'
+              example:
+                code: 200
+                message: "登录成功"
+                data:
+                  userId: 1
+                  username: "管理员"
+                  userType: "ADMIN"
+                  accessToken: "eyJhbGciOiJIUzI1NiJ9..."
+                  refreshToken: "eyJhbGciOiJIUzI1NiJ9..."
+                  expiresIn: 7200
+        '400':
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+              example:
+                code: 400
+                message: "用户名不能为空"
+                data: null
+        '401':
+          description: 认证失败
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+              example:
+                code: 401
+                message: "用户名或密码错误"
+                data: null
+
+  /auth/refresh:
+    post:
+      tags:
+        - 认证管理
+      summary: 刷新访问令牌
+      description: 使用刷新令牌获取新的访问令牌
+      operationId: refreshToken
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RefreshTokenDTO'
+            example:
+              refreshToken: "eyJhbGciOiJIUzI1NiJ9..."
+      responses:
+        '200':
+          description: 令牌刷新成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+              example:
+                code: 200
+                message: "令牌刷新成功"
+                data: "eyJhbGciOiJIUzI1NiJ9..."
+        '401':
+          description: 刷新令牌无效
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+              example:
+                code: 401
+                message: "刷新令牌已过期"
+                data: null
+
+  /auth/logout:
+    post:
+      tags:
+        - 认证管理
+      summary: 用户登出
+      description: 用户登出，将当前令牌加入黑名单
+      operationId: logout
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: 登出成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+              example:
+                code: 200
+                message: "登出成功"
+                data: "登出成功"
+        '401':
+          description: 未授权
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+              example:
+                code: 401
+                message: "缺少认证令牌"
+                data: null
+
+  /auth/profile:
+    get:
+      tags:
+        - 认证管理
+      summary: 获取当前用户信息
+      description: 获取当前登录用户的详细信息
+      operationId: getProfile
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: 获取成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+                properties:
+                  data:
+                    $ref: '#/components/schemas/UserProfile'
+              example:
+                code: 200
+                message: "获取成功"
+                data:
+                  id: 1
+                  name: "张三"
+                  type: "MEMBER"
+                  auth: "USER"
+        '401':
+          description: 未授权
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+              example:
+                code: 401
+                message: "令牌已过期"
+                data: null
+
+  # ==================== 用户管理 ====================
+  /members:
+    get:
+      tags:
+        - 用户管理
+      summary: 获取用户列表
+      description: 分页获取用户列表，支持条件查询
+      operationId: getMemberList
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: page
+          in: query
+          description: 页码，从1开始
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+        - name: size
+          in: query
+          description: 每页大小
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 20
+        - name: username
+          in: query
+          description: 用户名（模糊查询）
+          required: false
+          schema:
+            type: string
+        - name: mobile
+          in: query
+          description: 手机号（精确查询）
+          required: false
+          schema:
+            type: string
+        - name: politicalStatus
+          in: query
+          description: 政治面貌
+          required: false
+          schema:
+            type: string
+            enum: [NON_PARTY_MEMBER, POSITIVE_MEMBER, PREPARE_MEMBER, PARTY_MEMBER]
+      responses:
+        '200':
+          description: 获取成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+                properties:
+                  data:
+                    $ref: '#/components/schemas/PageResult'
+                    properties:
+                      records:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Member'
+        '401':
+          description: 未授权
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+
+    post:
+      tags:
+        - 用户管理
+      summary: 创建用户
+      description: 创建新用户
+      operationId: createMember
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MemberCreateDTO'
+      responses:
+        '201':
+          description: 创建成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+                properties:
+                  data:
+                    $ref: '#/components/schemas/Member'
+        '400':
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+
+  /members/{id}:
+    get:
+      tags:
+        - 用户管理
+      summary: 获取用户详情
+      description: 根据用户ID获取用户详细信息
+      operationId: getMemberById
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          description: 用户ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: 获取成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+                properties:
+                  data:
+                    $ref: '#/components/schemas/Member'
+        '404':
+          description: 用户不存在
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+
+    put:
+      tags:
+        - 用户管理
+      summary: 更新用户信息
+      description: 根据用户ID更新用户信息
+      operationId: updateMember
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          description: 用户ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MemberUpdateDTO'
+      responses:
+        '200':
+          description: 更新成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+                properties:
+                  data:
+                    $ref: '#/components/schemas/Member'
+        '404':
+          description: 用户不存在
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+
+    delete:
+      tags:
+        - 用户管理
+      summary: 删除用户
+      description: 根据用户ID删除用户
+      operationId: deleteMember
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          description: 用户ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: 删除成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+              example:
+                code: 200
+                message: "删除成功"
+                data: null
+        '404':
+          description: 用户不存在
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+
+  /members/openid/{openId}:
+    get:
+      tags:
+        - 用户管理
+      summary: 根据OpenID获取用户
+      description: 根据微信OpenID获取用户信息
+      operationId: getMemberByOpenId
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: openId
+          in: path
+          description: 微信OpenID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 获取成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+                properties:
+                  data:
+                    $ref: '#/components/schemas/Member'
+        '404':
+          description: 用户不存在
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+
+  # ==================== 管理员管理 ====================
+  /admins:
+    get:
+      tags:
+        - 管理员管理
+      summary: 获取管理员列表
+      description: 分页获取管理员列表，支持条件查询
+      operationId: getAdminList
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: page
+          in: query
+          description: 页码，从1开始
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+        - name: size
+          in: query
+          description: 每页大小
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 20
+        - name: username
+          in: query
+          description: 用户名（模糊查询）
+          required: false
+          schema:
+            type: string
+        - name: adminType
+          in: query
+          description: 管理员类型
+          required: false
+          schema:
+            type: string
+            enum: [BRANCH_ADMIN, SYSTEM_ADMIN]
+        - name: branchId
+          in: query
+          description: 支部ID
+          required: false
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: 获取成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+                properties:
+                  data:
+                    $ref: '#/components/schemas/PageResult'
+                    properties:
+                      records:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Admin'
+
+    post:
+      tags:
+        - 管理员管理
+      summary: 创建管理员
+      description: 创建新管理员
+      operationId: createAdmin
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminCreateDTO'
+      responses:
+        '201':
+          description: 创建成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+                properties:
+                  data:
+                    $ref: '#/components/schemas/Admin'
+
+  /admins/{id}:
+    get:
+      tags:
+        - 管理员管理
+      summary: 获取管理员详情
+      description: 根据管理员ID获取管理员详细信息
+      operationId: getAdminById
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          description: 管理员ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: 获取成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+                properties:
+                  data:
+                    $ref: '#/components/schemas/Admin'
+
+    put:
+      tags:
+        - 管理员管理
+      summary: 更新管理员信息
+      description: 根据管理员ID更新管理员信息
+      operationId: updateAdmin
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          description: 管理员ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminUpdateDTO'
+      responses:
+        '200':
+          description: 更新成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+                properties:
+                  data:
+                    $ref: '#/components/schemas/Admin'
+
+    delete:
+      tags:
+        - 管理员管理
+      summary: 删除管理员
+      description: 根据管理员ID删除管理员
+      operationId: deleteAdmin
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          description: 管理员ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: 删除成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+
+  /admins/{id}/password:
+    put:
+      tags:
+        - 管理员管理
+      summary: 修改管理员密码
+      description: 修改指定管理员的密码
+      operationId: updateAdminPassword
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          description: 管理员ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PasswordUpdateDTO'
+      responses:
+        '200':
+          description: 密码修改成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+
+  # ==================== 系统管理 ====================
+  /health:
+    get:
+      tags:
+        - 系统管理
+      summary: 健康检查
+      description: 系统健康状态检查
+      operationId: healthCheck
+      responses:
+        '200':
+          description: 系统正常
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "UP"
+                  timestamp:
+                    type: string
+                    format: date-time
+                    example: "2024-01-01T00:00:00Z"
+                  uptime:
+                    type: string
+                    example: "2 days, 3 hours, 45 minutes"
+
+  /info:
+    get:
+      tags:
+        - 系统管理
+      summary: 系统信息
+      description: 获取系统基本信息
+      operationId: getSystemInfo
+      responses:
+        '200':
+          description: 获取成功
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    example: "智慧党建系统"
+                  version:
+                    type: string
+                    example: "1.0.0"
+                  description:
+                    type: string
+                    example: "智慧党建系统后端服务"
+                  buildTime:
+                    type: string
+                    format: date-time
+
+# ==================== 安全定义 ====================
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: |
+        在请求头中添加JWT令牌：
+        ```
+        Authorization: Bearer {JWT_TOKEN}
+        ```
+
+# ==================== 数据模型 ====================
+  schemas:
+    # 基础响应模型
+    Result:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: 响应状态码
+          example: 200
+        message:
+          type: string
+          description: 响应消息
+          example: "操作成功"
+        data:
+          description: 响应数据
+      required:
+        - code
+        - message
+
+    # 分页结果模型
+    PageResult:
+      type: object
+      properties:
+        records:
+          description: 数据记录列表
+        total:
+          type: integer
+          description: 总记录数
+          example: 100
+        size:
+          type: integer
+          description: 每页大小
+          example: 20
+        current:
+          type: integer
+          description: 当前页码
+          example: 1
+        pages:
+          type: integer
+          description: 总页数
+          example: 5
+
+    # 认证相关模型
+    UserLoginDTO:
+      type: object
+      properties:
+        openId:
+          type: string
+          description: 微信OpenID
+          example: "wx_openid_123456"
+        username:
+          type: string
+          description: 用户名
+          example: "张三"
+      required:
+        - openId
+
+    AdminLoginDTO:
+      type: object
+      properties:
+        username:
+          type: string
+          description: 用户名
+          example: "admin"
+        password:
+          type: string
+          description: 密码
+          example: "123456"
+        captcha:
+          type: string
+          description: 验证码
+          example: "1234"
+        captchaId:
+          type: string
+          description: 验证码ID
+          example: "captcha_123"
+      required:
+        - username
+        - password
+
+    RefreshTokenDTO:
+      type: object
+      properties:
+        refreshToken:
+          type: string
+          description: 刷新令牌
+          example: "eyJhbGciOiJIUzI1NiJ9..."
+      required:
+        - refreshToken
+
+    LoginVO:
+      type: object
+      properties:
+        userId:
+          type: integer
+          format: int64
+          description: 用户ID
+          example: 1
+        username:
+          type: string
+          description: 用户名
+          example: "张三"
+        userType:
+          type: string
+          description: 用户类型
+          enum: [MEMBER, ADMIN]
+          example: "MEMBER"
+        accessToken:
+          type: string
+          description: 访问令牌
+          example: "eyJhbGciOiJIUzI1NiJ9..."
+        refreshToken:
+          type: string
+          description: 刷新令牌
+          example: "eyJhbGciOiJIUzI1NiJ9..."
+        expiresIn:
+          type: integer
+          description: 令牌过期时间（秒）
+          example: 7200
+
+    UserProfile:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: 用户ID
+          example: 1
+        name:
+          type: string
+          description: 用户名
+          example: "张三"
+        type:
+          type: string
+          description: 用户类型
+          example: "MEMBER"
+        auth:
+          type: string
+          description: 认证类型
+          example: "USER"
+
+    # 用户相关模型
+    Member:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: 用户ID
+          example: 1
+        openId:
+          type: string
+          description: 微信OpenID
+          example: "wx_openid_123456"
+        username:
+          type: string
+          description: 姓名
+          example: "张三"
+        mobile:
+          type: string
+          description: 手机号
+          example: "13800138000"
+        idNumber:
+          type: string
+          description: 身份证号
+          example: "110101199001011234"
+        politicalStatus:
+          type: string
+          description: 政治面貌
+          enum: [NON_PARTY_MEMBER, POSITIVE_MEMBER, PREPARE_MEMBER, PARTY_MEMBER]
+          example: "PARTY_MEMBER"
+        createdAt:
+          type: string
+          format: date-time
+          description: 创建时间
+        updatedAt:
+          type: string
+          format: date-time
+          description: 更新时间
+
+    MemberCreateDTO:
+      type: object
+      properties:
+        openId:
+          type: string
+          description: 微信OpenID
+          example: "wx_openid_123456"
+        username:
+          type: string
+          description: 姓名
+          example: "张三"
+        mobile:
+          type: string
+          description: 手机号
+          example: "13800138000"
+        idNumber:
+          type: string
+          description: 身份证号
+          example: "110101199001011234"
+        politicalStatus:
+          type: string
+          description: 政治面貌
+          enum: [NON_PARTY_MEMBER, POSITIVE_MEMBER, PREPARE_MEMBER, PARTY_MEMBER]
+          example: "NON_PARTY_MEMBER"
+      required:
+        - openId
+        - username
+        - mobile
+        - idNumber
+
+    MemberUpdateDTO:
+      type: object
+      properties:
+        username:
+          type: string
+          description: 姓名
+          example: "张三"
+        mobile:
+          type: string
+          description: 手机号
+          example: "13800138000"
+        idNumber:
+          type: string
+          description: 身份证号
+          example: "110101199001011234"
+        politicalStatus:
+          type: string
+          description: 政治面貌
+          enum: [NON_PARTY_MEMBER, POSITIVE_MEMBER, PREPARE_MEMBER, PARTY_MEMBER]
+          example: "POSITIVE_MEMBER"
+
+    # 管理员相关模型
+    Admin:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: 管理员ID
+          example: 1
+        username:
+          type: string
+          description: 姓名
+          example: "管理员"
+        mobile:
+          type: string
+          description: 手机号
+          example: "13800138001"
+        password:
+          type: string
+          description: 密码（加密存储）
+          example: "$2a$10$..."
+        adminType:
+          type: string
+          description: 管理员类型
+          enum: [BRANCH_ADMIN, SYSTEM_ADMIN]
+          example: "BRANCH_ADMIN"
+        branchId:
+          type: integer
+          format: int64
+          description: 所属支部ID
+          example: 1
+        createdAt:
+          type: string
+          format: date-time
+          description: 创建时间
+        updatedAt:
+          type: string
+          format: date-time
+          description: 更新时间
+
+    AdminCreateDTO:
+      type: object
+      properties:
+        username:
+          type: string
+          description: 姓名
+          example: "管理员"
+        mobile:
+          type: string
+          description: 手机号
+          example: "13800138001"
+        password:
+          type: string
+          description: 密码
+          example: "123456"
+        adminType:
+          type: string
+          description: 管理员类型
+          enum: [BRANCH_ADMIN, SYSTEM_ADMIN]
+          example: "BRANCH_ADMIN"
+        branchId:
+          type: integer
+          format: int64
+          description: 所属支部ID
+          example: 1
+      required:
+        - username
+        - mobile
+        - password
+        - adminType
+
+    AdminUpdateDTO:
+      type: object
+      properties:
+        username:
+          type: string
+          description: 姓名
+          example: "管理员"
+        mobile:
+          type: string
+          description: 手机号
+          example: "13800138001"
+        adminType:
+          type: string
+          description: 管理员类型
+          enum: [BRANCH_ADMIN, SYSTEM_ADMIN]
+          example: "BRANCH_ADMIN"
+        branchId:
+          type: integer
+          format: int64
+          description: 所属支部ID
+          example: 1
+
+    PasswordUpdateDTO:
+      type: object
+      properties:
+        oldPassword:
+          type: string
+          description: 旧密码
+          example: "123456"
+        newPassword:
+          type: string
+          description: 新密码
+          example: "654321"
+      required:
+        - oldPassword
+        - newPassword
+
+# ==================== 全局参数 ====================
+  parameters:
+    PageParam:
+      name: page
+      in: query
+      description: 页码，从1开始
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        default: 1
+    SizeParam:
+      name: size
+      in: query
+      description: 每页大小
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 20
+
+# ==================== 响应示例 ====================
+  examples:
+    SuccessResponse:
+      summary: 成功响应示例
+      value:
+        code: 200
+        message: "操作成功"
+        data: {}
+    
+    ErrorResponse:
+      summary: 错误响应示例
+      value:
+        code: 400
+        message: "请求参数错误"
+        data: null
+    
+    UnauthorizedResponse:
+      summary: 未授权响应示例
+      value:
+        code: 401
+        message: "未授权访问"
+        data: null

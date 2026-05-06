@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.server.mapper.AdminMapper">
+
+    <!-- 结果映射 -->
+    <resultMap id="BaseResultMap" type="com.example.pojo.entity.Admin">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="real_name" property="realName" jdbcType="VARCHAR"/>
+        <result column="mobile" property="mobile" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="admin_type" property="adminType" jdbcType="VARCHAR"/>
+        <result column="branch_id" property="branchId" jdbcType="BIGINT"/>
+        <result column="status" property="status" jdbcType="VARCHAR"/>
+        <result column="last_modified_by" property="lastModifiedBy" jdbcType="BIGINT"/>
+        <result column="last_modified_at" property="lastModifiedAt" jdbcType="TIMESTAMP"/>
+        <result column="created_at" property="createdAt" jdbcType="TIMESTAMP"/>
+        <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!-- 基础字段 -->
+    <sql id="Base_Column_List">
+        id, username, real_name, mobile, password, admin_type, branch_id, status, last_modified_by, last_modified_at, created_at, updated_at
+    </sql>
+
+    <!-- 根据用户名查询管理员 -->
+    <select id="selectByUsername" parameterType="string" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM admins
+        WHERE username = #{username}
+    </select>
+
+    <!-- 根据ID查询管理员 -->
+    <select id="selectById" parameterType="long" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM admins
+        WHERE id = #{id}
+    </select>
+
+    <!-- 根据手机号查询管理员 -->
+    <select id="selectByMobile" parameterType="string" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM admins
+        WHERE mobile = #{mobile}
+    </select>
+
+    <!-- 根据支部ID查询管理员列表 -->
+    <select id="selectByBranchId" parameterType="long" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM admins
+        WHERE branch_id = #{branchId}
+        ORDER BY created_at DESC
+    </select>
+
+    <!-- 根据管理员类型查询管理员列表 -->
+    <select id="selectByAdminType" parameterType="string" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM admins
+        WHERE admin_type = #{adminType}
+        ORDER BY created_at DESC
+    </select>
+
+    <!-- 新增管理员 -->
+    <insert id="insert" parameterType="com.example.pojo.entity.Admin" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO admins (
+            username, real_name, mobile, password, admin_type, branch_id, status, last_modified_by, last_modified_at, created_at, updated_at
+        ) VALUES (
+            #{username}, #{realName}, #{mobile}, #{password}, #{adminType}, #{branchId}, #{status}, #{lastModifiedBy}, NOW(), NOW(), NOW()
+        )
+    </insert>
+
+    <!-- 更新管理员信息 -->
+    <update id="update" parameterType="com.example.pojo.entity.Admin">
+        UPDATE admins
+        <set>
+            <if test="username != null">username = #{username},</if>
+            <if test="realName != null">real_name = #{realName},</if>
+            <if test="mobile != null">mobile = #{mobile},</if>
+            <if test="adminType != null">admin_type = #{adminType},</if>
+            <if test="branchId != null">branch_id = #{branchId},</if>
+            <if test="status != null">status = #{status},</if>
+            last_modified_by = #{lastModifiedBy},
+            last_modified_at = NOW(),
+            updated_at = NOW()
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <!-- 根据ID删除管理员 -->
+    <delete id="deleteById" parameterType="long">
+        DELETE FROM admins WHERE id = #{id}
+    </delete>
+
+    <!-- 更新管理员密码 -->
+    <update id="updatePassword">
+        UPDATE admins
+        SET password = #{password},
+            updated_at = NOW()
+        WHERE id = #{id}
+    </update>
+
+    <!-- 根据ID集合查询管理员 -->
+    <select id="selectByIds" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM admins
+        WHERE id IN
+        <foreach collection="ids" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
+
+</mapper>

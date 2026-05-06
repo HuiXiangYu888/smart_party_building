@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.server.mapper.TaskMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.pojo.entity.Task">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="description" property="description" jdbcType="LONGVARCHAR"/>
+        <result column="due_date" property="dueDate" jdbcType="TIMESTAMP"/>
+        <result column="status" property="status" jdbcType="VARCHAR"/>
+        <result column="points" property="points" jdbcType="INTEGER"/>
+        <result column="capacity" property="capacity" jdbcType="INTEGER"/>
+        <result column="branch_id" property="branchId" jdbcType="BIGINT"/>
+        <result column="created_by" property="createdBy" jdbcType="BIGINT"/>
+        <result column="created_at" property="createdAt" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Columns">id,title,description,due_date,status,points,capacity,branch_id,created_by,created_at</sql>
+
+    <insert id="insert" parameterType="com.example.pojo.entity.Task" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO tasks(title,description,due_date,status,points,capacity,branch_id,created_by)
+        VALUES(#{title},#{description},#{dueDate},#{status},#{points},#{capacity},#{branchId},#{createdBy})
+    </insert>
+
+    <update id="update" parameterType="com.example.pojo.entity.Task">
+        UPDATE tasks
+        <set>
+            <if test="title != null">title = #{title},</if>
+            <if test="description != null">description = #{description},</if>
+            <if test="dueDate != null">due_date = #{dueDate},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="points != null">points = #{points},</if>
+            <if test="capacity != null">capacity = #{capacity},</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <select id="selectById" parameterType="long" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Columns"/> FROM tasks WHERE id = #{id}
+    </select>
+
+    <delete id="deleteById" parameterType="long">
+        DELETE FROM tasks WHERE id = #{id}
+    </delete>
+
+    <select id="selectWithPagination" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Columns"/> FROM tasks ORDER BY created_at DESC LIMIT #{offset}, #{limit}
+    </select>
+
+    <select id="selectCount" resultType="int">
+        SELECT COUNT(*) FROM tasks
+    </select>
+
+</mapper>
+
+

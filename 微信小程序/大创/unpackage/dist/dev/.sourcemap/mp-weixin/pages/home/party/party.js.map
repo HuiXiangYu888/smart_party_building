@@ -1,0 +1,1 @@
+{"version":3,"file":"party.js","sources":["../HBuilderX/plugins/uniapp-cli-vite/uniPage:/cGFnZXMvaG9tZS9wYXJ0eS9wYXJ0eS52dWU"],"sourcesContent":["import MiniProgramPage from 'E:/大创/pages/home/party/party.vue'\nwx.createPage(MiniProgramPage)"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AACA,GAAG,WAAW,eAAe;"}

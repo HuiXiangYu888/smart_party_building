@@ -1,0 +1,1 @@
+{"version":3,"file":"article4.js","sources":["../../../../../HbuilderX/HBuilderX/plugins/uniapp-cli-vite/uniPage:/cGFnZXMvaG9tZS9hcnRpY2xlcy9hcnRpY2xlNC52dWU"],"sourcesContent":["import MiniProgramPage from 'D:/小备份/小备份/smart_party_building/微信小程序/大创/pages/home/articles/article4.vue'\nwx.createPage(MiniProgramPage)"],"names":[],"mappings":";;;;;;;AACA,GAAG,WAAW,eAAe;"}

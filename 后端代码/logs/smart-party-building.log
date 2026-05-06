@@ -1,0 +1,951 @@
+2026-05-06 08:25:03 [main] INFO  com.example.server.ServerApplication - Starting ServerApplication using Java 17.0.12 with PID 65812 (D:\小备份\小备份\smart_party_building\后端代码\server\target\classes started by huixiangyu in D:\小备份\小备份\smart_party_building\后端代码)
+2026-05-06 08:25:03 [main] DEBUG com.example.server.ServerApplication - Running with Spring Boot v3.5.4, Spring v6.2.9
+2026-05-06 08:25:03 [main] INFO  com.example.server.ServerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-06 08:25:04 [main] DEBUG o.m.s.boot.autoconfigure.MybatisAutoConfiguration - Searching for mappers annotated with @Mapper
+2026-05-06 08:25:04 [main] DEBUG o.m.s.boot.autoconfigure.MybatisAutoConfiguration - Using auto-configuration base package 'com.example.server'
+2026-05-06 08:25:04 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-05-06 08:25:04 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-05-06 08:25:04 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\AdminMapper.class]
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\AnnouncementMapper.class]
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\ApplicationProcessMapper.class]
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\MemberMapper.class]
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\MemberUpdateRequestMapper.class]
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\NewsMapper.class]
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PartyApplicationMapper.class]
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PartyBranchMapper.class]
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PointsMapper.class]
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PositiveMemberApplicationMapper.class]
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PrepareMemberApplicationMapper.class]
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\StatsMapper.class]
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\StudyRecordMapper.class]
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\StudyResourceMapper.class]
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\SystemSettingMapper.class]
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\TaskAssignmentMapper.class]
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\TaskEvaluationMapper.class]
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\TaskMapper.class]
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\VideoWatchProgressMapper.class]
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'adminMapper' and 'com.example.server.mapper.AdminMapper' mapperInterface
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'announcementMapper' and 'com.example.server.mapper.AnnouncementMapper' mapperInterface
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'applicationProcessMapper' and 'com.example.server.mapper.ApplicationProcessMapper' mapperInterface
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'memberMapper' and 'com.example.server.mapper.MemberMapper' mapperInterface
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'memberUpdateRequestMapper' and 'com.example.server.mapper.MemberUpdateRequestMapper' mapperInterface
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'newsMapper' and 'com.example.server.mapper.NewsMapper' mapperInterface
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'partyApplicationMapper' and 'com.example.server.mapper.PartyApplicationMapper' mapperInterface
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'partyBranchMapper' and 'com.example.server.mapper.PartyBranchMapper' mapperInterface
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'pointsMapper' and 'com.example.server.mapper.PointsMapper' mapperInterface
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'positiveMemberApplicationMapper' and 'com.example.server.mapper.PositiveMemberApplicationMapper' mapperInterface
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'prepareMemberApplicationMapper' and 'com.example.server.mapper.PrepareMemberApplicationMapper' mapperInterface
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'statsMapper' and 'com.example.server.mapper.StatsMapper' mapperInterface
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'studyRecordMapper' and 'com.example.server.mapper.StudyRecordMapper' mapperInterface
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'studyResourceMapper' and 'com.example.server.mapper.StudyResourceMapper' mapperInterface
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'systemSettingMapper' and 'com.example.server.mapper.SystemSettingMapper' mapperInterface
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'taskAssignmentMapper' and 'com.example.server.mapper.TaskAssignmentMapper' mapperInterface
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'taskEvaluationMapper' and 'com.example.server.mapper.TaskEvaluationMapper' mapperInterface
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'taskMapper' and 'com.example.server.mapper.TaskMapper' mapperInterface
+2026-05-06 08:25:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'videoWatchProgressMapper' and 'com.example.server.mapper.VideoWatchProgressMapper' mapperInterface
+2026-05-06 08:25:05 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8000 (http)
+2026-05-06 08:25:05 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-06 08:25:05 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-05-06 08:25:05 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-06 08:25:05 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1699 ms
+2026-05-06 08:25:05 [main] DEBUG org.springframework.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2026-05-06 08:25:05 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-05-06 08:25:05 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-05-06 08:25:06 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\AdminMapper.xml]'
+2026-05-06 08:25:06 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\AnnouncementMapper.xml]'
+2026-05-06 08:25:06 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\ApplicationProcessMapper.xml]'
+2026-05-06 08:25:06 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\MemberMapper.xml]'
+2026-05-06 08:25:06 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\MemberUpdateRequestMapper.xml]'
+2026-05-06 08:25:06 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\NewsMapper.xml]'
+2026-05-06 08:25:06 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PartyApplicationMapper.xml]'
+2026-05-06 08:25:06 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PartyBranchMapper.xml]'
+2026-05-06 08:25:06 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PointsMapper.xml]'
+2026-05-06 08:25:06 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PositiveMemberApplicationMapper.xml]'
+2026-05-06 08:25:06 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PrepareMemberApplicationMapper.xml]'
+2026-05-06 08:25:06 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\StatsMapper.xml]'
+2026-05-06 08:25:06 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\StudyRecordMapper.xml]'
+2026-05-06 08:25:06 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\StudyResourceMapper.xml]'
+2026-05-06 08:25:06 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\SystemSettingMapper.xml]'
+2026-05-06 08:25:06 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\TaskAssignmentMapper.xml]'
+2026-05-06 08:25:06 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\TaskEvaluationMapper.xml]'
+2026-05-06 08:25:06 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\TaskMapper.xml]'
+2026-05-06 08:25:06 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\VideoWatchProgressMapper.xml]'
+2026-05-06 08:25:06 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 104 mappings in 'requestMappingHandlerMapping'
+2026-05-06 08:25:06 [main] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2026-05-06 08:25:06 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-06 08:25:07 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-06 08:25:07 [main] DEBUG o.m.s.boot.autoconfigure.MybatisAutoConfiguration - Not found configuration for registering mapper bean using @MapperScan, MapperFactoryBean and MapperScannerConfigurer.
+2026-05-06 08:25:07 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2026-05-06 08:25:07 [main] INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-05-06 08:25:07 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.0 created.
+2026-05-06 08:25:07 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2026-05-06 08:25:07 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-05-06 08:25:07 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-05-06 08:25:07 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.5.0
+2026-05-06 08:25:07 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@41433530
+2026-05-06 08:25:07 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8000 (http) with context path '/'
+2026-05-06 08:25:07 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2026-05-06 08:25:07 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-05-06 08:25:07 [main] INFO  com.example.server.ServerApplication - Started ServerApplication in 4.573 seconds (process running for 10.987)
+2026-05-06 08:28:01 [http-nio-8000-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-06 08:28:01 [http-nio-8000-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-05-06 08:28:01 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2026-05-06 08:28:01 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2026-05-06 08:28:01 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2026-05-06 08:28:01 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6e1dd6ce
+2026-05-06 08:28:01 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@5ad420a0
+2026-05-06 08:28:01 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-05-06 08:28:01 [http-nio-8000-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-05-06 08:28:01 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/overview", parameters={}
+2026-05-06 08:28:01 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#overview(HttpServletRequest)
+2026-05-06 08:28:01 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 401 UNAUTHORIZED
+2026-05-06 08:28:01 [http-nio-8000-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/branch-study-durations", parameters={}
+2026-05-06 08:28:01 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#branchStudyDurations(HttpServletRequest)
+2026-05-06 08:28:01 [http-nio-8000-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 401 UNAUTHORIZED
+2026-05-06 08:28:35 [http-nio-8000-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/auth/admin/login", parameters={}
+2026-05-06 08:28:35 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.AuthController#adminLogin(AdminLoginDTO)
+2026-05-06 08:28:35 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [AdminLoginDTO(username=super_admin, password=123456, captcha=null, captchaId=null)]
+2026-05-06 08:28:35 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:28:35 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=LoginVO(accessToken=eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzc4MDI (truncated)...]
+2026-05-06 08:28:35 [http-nio-8000-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:28:35 [http-nio-8000-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/overview", parameters={}
+2026-05-06 08:28:35 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#overview(HttpServletRequest)
+2026-05-06 08:28:35 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:28:35 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={pendingApplications=0, ongoingActivities=0, memberCount=2, pend (truncated)...]
+2026-05-06 08:28:35 [http-nio-8000-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:28:35 [http-nio-8000-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/branch-study-durations", parameters={}
+2026-05-06 08:28:35 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#branchStudyDurations(HttpServletRequest)
+2026-05-06 08:28:36 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:28:36 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{totalDuration=0, branchId=1, branchName=测试支部}, {totalDuration= (truncated)...]
+2026-05-06 08:28:36 [http-nio-8000-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:28:45 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/settings/open-application", parameters={}
+2026-05-06 08:28:45 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/admin/members", parameters={}
+2026-05-06 08:28:45 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.SettingController#getOpenApplication()
+2026-05-06 08:28:45 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.AdminMemberReviewController#list(String, String, HttpServletRequest)
+2026-05-06 08:28:45 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:28:45 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={open=false}, timestamp=1778027325739)]
+2026-05-06 08:28:45 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:28:45 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:28:45 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{studentId=2, phone=13800138002, politicalStatus=群众, name=测试积极分 (truncated)...]
+2026-05-06 08:28:45 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:28:47 [http-nio-8000-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/tasks/page?page=1&size=10", parameters={masked}
+2026-05-06 08:28:47 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.TaskController#page(int, int)
+2026-05-06 08:28:47 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:28:47 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0, records=[]}, timestamp=1778027327915)]
+2026-05-06 08:28:47 [http-nio-8000-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:28:49 [http-nio-8000-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/announcements/branches", parameters={}
+2026-05-06 08:28:49 [http-nio-8000-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/announcements?page=1&size=10", parameters={masked}
+2026-05-06 08:28:49 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.AnnouncementController#getBranches()
+2026-05-06 08:28:49 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.AnnouncementController#getAllAnnouncements(String)
+2026-05-06 08:28:49 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:28:49 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[PartyBranch(id=1, name=测试支部, leaderId=1, createdAt=2026-04-27T1 (truncated)...]
+2026-05-06 08:28:49 [http-nio-8000-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:28:49 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:28:49 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[], timestamp=1778027329273)]
+2026-05-06 08:28:49 [http-nio-8000-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:28:49 [http-nio-8000-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/announcements/branches", parameters={}
+2026-05-06 08:28:49 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.AnnouncementController#getBranches()
+2026-05-06 08:28:49 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/news/page?page=1&size=10", parameters={masked}
+2026-05-06 08:28:49 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.NewsController#getNewsWithPagination(int, int)
+2026-05-06 08:28:49 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:28:49 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[PartyBranch(id=1, name=测试支部, leaderId=1, createdAt=2026-04-27T1 (truncated)...]
+2026-05-06 08:28:49 [http-nio-8000-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:28:49 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:28:49 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[News(id=1, title=深入学习贯彻党的二十大精神, content=null, viewCount=null, b (truncated)...]
+2026-05-06 08:28:49 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:28:49 [http-nio-8000-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/news/count", parameters={}
+2026-05-06 08:28:49 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.NewsController#getNewsCount()
+2026-05-06 08:28:49 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:28:49 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=3, timestamp=1778027329894)]
+2026-05-06 08:28:49 [http-nio-8000-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:28:50 [http-nio-8000-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/admin/applications", parameters={}
+2026-05-06 08:28:50 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.ApplicationController#listAll(HttpServletRequest)
+2026-05-06 08:28:50 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:28:50 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[], timestamp=1778027330399)]
+2026-05-06 08:28:50 [http-nio-8000-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:28:50 [http-nio-8000-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/study/records/admin/stats?page=1&size=10", parameters={masked}
+2026-05-06 08:28:50 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StudyRecordController#getAllUserStudyStats(String, HttpServletRequest)
+2026-05-06 08:28:50 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:28:50 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{studentId=1, totalDuration=0, studyCount=0, memberName=测试党员, u (truncated)...]
+2026-05-06 08:28:50 [http-nio-8000-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:28:51 [http-nio-8000-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/study/resources", parameters={}
+2026-05-06 08:28:51 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StudyResourceController#list(String)
+2026-05-06 08:28:51 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:28:51 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[], timestamp=1778027331419)]
+2026-05-06 08:28:51 [http-nio-8000-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:28:51 [http-nio-8000-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/study/records/admin/stats?page=1&size=10", parameters={masked}
+2026-05-06 08:28:51 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StudyRecordController#getAllUserStudyStats(String, HttpServletRequest)
+2026-05-06 08:28:52 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:28:52 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{studentId=1, totalDuration=0, studyCount=0, memberName=测试党员, u (truncated)...]
+2026-05-06 08:28:52 [http-nio-8000-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:28:52 [http-nio-8000-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/admin/accounts/branches", parameters={}
+2026-05-06 08:28:52 [http-nio-8000-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/admin/accounts", parameters={}
+2026-05-06 08:28:52 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.admin.AccountController#list(HttpServletRequest, Long)
+2026-05-06 08:28:52 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.admin.AccountController#listBranches(HttpServletRequest)
+2026-05-06 08:28:52 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:28:52 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[PartyBranch(id=1, name=测试支部, leaderId=1, createdAt=2026-04-27T1 (truncated)...]
+2026-05-06 08:28:52 [http-nio-8000-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:28:52 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:28:52 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[Admin(id=2, openId=null, username=super_admin, realName=系统管理员,  (truncated)...]
+2026-05-06 08:28:52 [http-nio-8000-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:28:56 [http-nio-8000-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/overview", parameters={}
+2026-05-06 08:28:56 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#overview(HttpServletRequest)
+2026-05-06 08:28:56 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:28:56 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={pendingApplications=0, ongoingActivities=0, memberCount=2, pend (truncated)...]
+2026-05-06 08:28:56 [http-nio-8000-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:28:56 [http-nio-8000-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/branch-study-durations", parameters={}
+2026-05-06 08:28:56 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#branchStudyDurations(HttpServletRequest)
+2026-05-06 08:28:56 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:28:56 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{totalDuration=0, branchId=1, branchName=测试支部}, {totalDuration= (truncated)...]
+2026-05-06 08:28:56 [http-nio-8000-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:35:45 [http-nio-8000-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/settings/open-application", parameters={}
+2026-05-06 08:35:45 [http-nio-8000-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/admin/members", parameters={}
+2026-05-06 08:35:45 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.SettingController#getOpenApplication()
+2026-05-06 08:35:45 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.AdminMemberReviewController#list(String, String, HttpServletRequest)
+2026-05-06 08:35:45 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:35:45 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={open=false}, timestamp=1778027745835)]
+2026-05-06 08:35:45 [http-nio-8000-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:35:45 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:35:45 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{studentId=2, phone=13800138002, politicalStatus=群众, name=测试积极分 (truncated)...]
+2026-05-06 08:35:45 [http-nio-8000-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:35:46 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/tasks/page?page=1&size=10", parameters={masked}
+2026-05-06 08:35:46 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.TaskController#page(int, int)
+2026-05-06 08:35:46 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:35:46 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0, records=[]}, timestamp=1778027746904)]
+2026-05-06 08:35:46 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:35:47 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/overview", parameters={}
+2026-05-06 08:35:47 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#overview(HttpServletRequest)
+2026-05-06 08:35:47 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:35:47 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={pendingApplications=0, ongoingActivities=0, memberCount=2, pend (truncated)...]
+2026-05-06 08:35:47 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:35:47 [http-nio-8000-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/branch-study-durations", parameters={}
+2026-05-06 08:35:47 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#branchStudyDurations(HttpServletRequest)
+2026-05-06 08:35:47 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:35:47 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{totalDuration=0, branchId=1, branchName=测试支部}, {totalDuration= (truncated)...]
+2026-05-06 08:35:47 [http-nio-8000-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:37:50 [http-nio-8000-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/auth/refresh", parameters={}
+2026-05-06 08:37:50 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.AuthController#refreshToken(RefreshTokenDTO)
+2026-05-06 08:37:50 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [RefreshTokenDTO(refreshToken=eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzc3MjU3OTY2MTk5LCJ0eXBlIjoicmVmcm (truncated)...]
+2026-05-06 08:37:50 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.example.server.handler.GlobalExceptionHandler#handleRuntimeException(RuntimeException)
+2026-05-06 08:37:50 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:37:50 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=500, message=运行时异常: 刷新令牌无效或已过期, data=null, timestamp=1778027870929)]
+2026-05-06 08:37:50 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.RuntimeException: 刷新令牌无效或已过期]
+2026-05-06 08:37:50 [http-nio-8000-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:37:51 [http-nio-8000-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/tasks/user/page?page=1&size=10", parameters={masked}
+2026-05-06 08:37:51 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.TaskController#userPage(int, int)
+2026-05-06 08:37:51 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:37:51 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0, records=[]}, timestamp=1778027871007)]
+2026-05-06 08:37:51 [http-nio-8000-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:39:58 [http-nio-8000-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/tasks/user/page?page=1&size=10", parameters={masked}
+2026-05-06 08:39:58 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.TaskController#userPage(int, int)
+2026-05-06 08:39:58 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:39:58 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0, records=[]}, timestamp=1778027998631)]
+2026-05-06 08:39:58 [http-nio-8000-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:43:25 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/auth/user/login", parameters={}
+2026-05-06 08:43:25 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.AuthController#userLogin(UserLoginDTO)
+2026-05-06 08:43:25 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [UserLoginDTO(username=1, password=123456)]
+2026-05-06 08:43:25 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:43:25 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=LoginVO(accessToken=eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzc4MDI (truncated)...]
+2026-05-06 08:43:25 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:43:28 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/points/user/summary", parameters={}
+2026-05-06 08:43:28 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.PointsController#summaryUserPoints(HttpServletRequest)
+2026-05-06 08:43:28 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:43:28 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0}, timestamp=1778028208455)]
+2026-05-06 08:43:28 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:43:28 [http-nio-8000-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/points/user/summary", parameters={}
+2026-05-06 08:43:28 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.PointsController#summaryUserPoints(HttpServletRequest)
+2026-05-06 08:43:28 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:43:28 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0}, timestamp=1778028208460)]
+2026-05-06 08:43:28 [http-nio-8000-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:43:28 [http-nio-8000-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/tasks/user/page?page=1&size=10", parameters={masked}
+2026-05-06 08:43:28 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.TaskController#userPage(int, int)
+2026-05-06 08:43:28 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:43:28 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0, records=[]}, timestamp=1778028208466)]
+2026-05-06 08:43:28 [http-nio-8000-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:43:28 [http-nio-8000-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/tasks/user/page?page=1&size=10", parameters={masked}
+2026-05-06 08:43:28 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.TaskController#userPage(int, int)
+2026-05-06 08:43:28 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:43:28 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0, records=[]}, timestamp=1778028208471)]
+2026-05-06 08:43:28 [http-nio-8000-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:46:24 [http-nio-8000-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/overview", parameters={}
+2026-05-06 08:46:24 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#overview(HttpServletRequest)
+2026-05-06 08:46:24 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:46:24 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={pendingApplications=0, ongoingActivities=0, memberCount=2, pend (truncated)...]
+2026-05-06 08:46:24 [http-nio-8000-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:46:24 [http-nio-8000-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/branch-study-durations", parameters={}
+2026-05-06 08:46:24 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#branchStudyDurations(HttpServletRequest)
+2026-05-06 08:46:24 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:46:24 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{totalDuration=0, branchId=1, branchName=测试支部}, {totalDuration= (truncated)...]
+2026-05-06 08:46:24 [http-nio-8000-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:50:01 [http-nio-8000-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/points/user/summary", parameters={}
+2026-05-06 08:50:01 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.PointsController#summaryUserPoints(HttpServletRequest)
+2026-05-06 08:50:01 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:50:01 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0}, timestamp=1778028601425)]
+2026-05-06 08:50:01 [http-nio-8000-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:50:01 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/tasks/user/page?page=1&size=10", parameters={masked}
+2026-05-06 08:50:01 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.TaskController#userPage(int, int)
+2026-05-06 08:50:01 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:50:01 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0, records=[]}, timestamp=1778028601437)]
+2026-05-06 08:50:01 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:50:06 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/points/user/summary", parameters={}
+2026-05-06 08:50:06 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.PointsController#summaryUserPoints(HttpServletRequest)
+2026-05-06 08:50:06 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:50:06 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0}, timestamp=1778028606559)]
+2026-05-06 08:50:06 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:50:06 [http-nio-8000-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/points/user/summary", parameters={}
+2026-05-06 08:50:06 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.PointsController#summaryUserPoints(HttpServletRequest)
+2026-05-06 08:50:06 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:50:06 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0}, timestamp=1778028606648)]
+2026-05-06 08:50:06 [http-nio-8000-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:50:06 [http-nio-8000-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/tasks/user/page?page=1&size=10", parameters={masked}
+2026-05-06 08:50:06 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.TaskController#userPage(int, int)
+2026-05-06 08:50:06 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:50:06 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0, records=[]}, timestamp=1778028606658)]
+2026-05-06 08:50:06 [http-nio-8000-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:50:06 [http-nio-8000-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/tasks/user/page?page=1&size=10", parameters={masked}
+2026-05-06 08:50:06 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.TaskController#userPage(int, int)
+2026-05-06 08:50:06 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:50:06 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0, records=[]}, timestamp=1778028606664)]
+2026-05-06 08:50:06 [http-nio-8000-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:50:34 [http-nio-8000-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/overview", parameters={}
+2026-05-06 08:50:34 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#overview(HttpServletRequest)
+2026-05-06 08:50:34 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:50:34 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={pendingApplications=0, ongoingActivities=0, memberCount=2, pend (truncated)...]
+2026-05-06 08:50:34 [http-nio-8000-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:50:34 [http-nio-8000-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/branch-study-durations", parameters={}
+2026-05-06 08:50:34 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#branchStudyDurations(HttpServletRequest)
+2026-05-06 08:50:34 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:50:34 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{totalDuration=0, branchId=1, branchName=测试支部}, {totalDuration= (truncated)...]
+2026-05-06 08:50:34 [http-nio-8000-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:50:36 [http-nio-8000-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/admin/accounts/branches", parameters={}
+2026-05-06 08:50:36 [http-nio-8000-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/admin/accounts", parameters={}
+2026-05-06 08:50:36 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.admin.AccountController#listBranches(HttpServletRequest)
+2026-05-06 08:50:36 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.admin.AccountController#list(HttpServletRequest, Long)
+2026-05-06 08:50:36 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:50:36 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[PartyBranch(id=1, name=测试支部, leaderId=1, createdAt=2026-04-27T1 (truncated)...]
+2026-05-06 08:50:36 [http-nio-8000-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:50:36 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:50:36 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[Admin(id=2, openId=null, username=super_admin, realName=系统管理员,  (truncated)...]
+2026-05-06 08:50:36 [http-nio-8000-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:50:37 [http-nio-8000-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/admin/members", parameters={}
+2026-05-06 08:50:37 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/settings/open-application", parameters={}
+2026-05-06 08:50:37 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.AdminMemberReviewController#list(String, String, HttpServletRequest)
+2026-05-06 08:50:37 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.SettingController#getOpenApplication()
+2026-05-06 08:50:37 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:50:37 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={open=false}, timestamp=1778028637785)]
+2026-05-06 08:50:37 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:50:37 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:50:37 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{studentId=2, phone=13800138002, politicalStatus=群众, name=测试积极分 (truncated)...]
+2026-05-06 08:50:37 [http-nio-8000-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:50:38 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/tasks/page?page=1&size=10", parameters={masked}
+2026-05-06 08:50:38 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.TaskController#page(int, int)
+2026-05-06 08:50:38 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:50:38 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0, records=[]}, timestamp=1778028638214)]
+2026-05-06 08:50:38 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:50:38 [http-nio-8000-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/announcements?page=1&size=10", parameters={masked}
+2026-05-06 08:50:38 [http-nio-8000-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/announcements/branches", parameters={}
+2026-05-06 08:50:38 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.AnnouncementController#getBranches()
+2026-05-06 08:50:38 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.AnnouncementController#getAllAnnouncements(String)
+2026-05-06 08:50:38 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:50:38 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[PartyBranch(id=1, name=测试支部, leaderId=1, createdAt=2026-04-27T1 (truncated)...]
+2026-05-06 08:50:38 [http-nio-8000-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:50:38 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:50:38 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[], timestamp=1778028638650)]
+2026-05-06 08:50:38 [http-nio-8000-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:50:39 [http-nio-8000-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/admin/applications", parameters={}
+2026-05-06 08:50:39 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.ApplicationController#listAll(HttpServletRequest)
+2026-05-06 08:50:39 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:50:39 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[], timestamp=1778028639273)]
+2026-05-06 08:50:39 [http-nio-8000-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:50:39 [http-nio-8000-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/study/resources", parameters={}
+2026-05-06 08:50:39 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StudyResourceController#list(String)
+2026-05-06 08:50:39 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:50:39 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[], timestamp=1778028639660)]
+2026-05-06 08:50:39 [http-nio-8000-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:50:40 [http-nio-8000-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/study/records/admin/stats?page=1&size=10", parameters={masked}
+2026-05-06 08:50:40 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StudyRecordController#getAllUserStudyStats(String, HttpServletRequest)
+2026-05-06 08:50:40 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:50:40 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{studentId=1, totalDuration=0, studyCount=0, memberName=测试党员, u (truncated)...]
+2026-05-06 08:50:40 [http-nio-8000-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:50:40 [http-nio-8000-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/admin/accounts", parameters={}
+2026-05-06 08:50:40 [http-nio-8000-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/admin/accounts/branches", parameters={}
+2026-05-06 08:50:40 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.admin.AccountController#list(HttpServletRequest, Long)
+2026-05-06 08:50:40 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.admin.AccountController#listBranches(HttpServletRequest)
+2026-05-06 08:50:40 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:50:40 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[PartyBranch(id=1, name=测试支部, leaderId=1, createdAt=2026-04-27T1 (truncated)...]
+2026-05-06 08:50:40 [http-nio-8000-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:50:40 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:50:40 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[Admin(id=2, openId=null, username=super_admin, realName=系统管理员,  (truncated)...]
+2026-05-06 08:50:40 [http-nio-8000-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:50:41 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/overview", parameters={}
+2026-05-06 08:50:41 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#overview(HttpServletRequest)
+2026-05-06 08:50:41 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:50:41 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={pendingApplications=0, ongoingActivities=0, memberCount=2, pend (truncated)...]
+2026-05-06 08:50:41 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:50:41 [http-nio-8000-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/branch-study-durations", parameters={}
+2026-05-06 08:50:41 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#branchStudyDurations(HttpServletRequest)
+2026-05-06 08:50:41 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:50:41 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{totalDuration=0, branchId=1, branchName=测试支部}, {totalDuration= (truncated)...]
+2026-05-06 08:50:41 [http-nio-8000-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:56:25 [http-nio-8000-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/overview", parameters={}
+2026-05-06 08:56:25 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#overview(HttpServletRequest)
+2026-05-06 08:56:25 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:56:25 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={pendingApplications=0, ongoingActivities=0, memberCount=2, pend (truncated)...]
+2026-05-06 08:56:25 [http-nio-8000-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:56:25 [http-nio-8000-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/branch-study-durations", parameters={}
+2026-05-06 08:56:25 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#branchStudyDurations(HttpServletRequest)
+2026-05-06 08:56:25 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:56:25 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{totalDuration=0, branchId=1, branchName=测试支部}, {totalDuration= (truncated)...]
+2026-05-06 08:56:25 [http-nio-8000-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:56:29 [http-nio-8000-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/overview", parameters={}
+2026-05-06 08:56:29 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#overview(HttpServletRequest)
+2026-05-06 08:56:29 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:56:29 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={pendingApplications=0, ongoingActivities=0, memberCount=2, pend (truncated)...]
+2026-05-06 08:56:29 [http-nio-8000-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:56:29 [http-nio-8000-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/branch-study-durations", parameters={}
+2026-05-06 08:56:29 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#branchStudyDurations(HttpServletRequest)
+2026-05-06 08:56:29 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 08:56:29 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{totalDuration=0, branchId=1, branchName=测试支部}, {totalDuration= (truncated)...]
+2026-05-06 08:56:29 [http-nio-8000-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 08:57:27 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-05-06 08:57:27 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-06 08:57:27 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-05-06 08:57:27 [SpringApplicationShutdownHook] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2026-05-06 08:57:27 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2026-05-06 08:57:27 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-05-06 08:57:27 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2026-05-06 08:57:27 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-05-06 08:57:27 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-05-06 08:57:30 [main] INFO  com.example.server.ServerApplication - Starting ServerApplication using Java 17.0.12 with PID 65724 (D:\小备份\小备份\smart_party_building\后端代码\server\target\classes started by huixiangyu in D:\小备份\小备份\smart_party_building\后端代码)
+2026-05-06 08:57:30 [main] DEBUG com.example.server.ServerApplication - Running with Spring Boot v3.5.4, Spring v6.2.9
+2026-05-06 08:57:30 [main] INFO  com.example.server.ServerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-06 08:57:31 [main] DEBUG o.m.s.boot.autoconfigure.MybatisAutoConfiguration - Searching for mappers annotated with @Mapper
+2026-05-06 08:57:31 [main] DEBUG o.m.s.boot.autoconfigure.MybatisAutoConfiguration - Using auto-configuration base package 'com.example.server'
+2026-05-06 08:57:31 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-05-06 08:57:31 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-05-06 08:57:31 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\AdminMapper.class]
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\AnnouncementMapper.class]
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\ApplicationProcessMapper.class]
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\MemberMapper.class]
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\MemberUpdateRequestMapper.class]
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PartyApplicationMapper.class]
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PartyBranchMapper.class]
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PointsMapper.class]
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PositiveMemberApplicationMapper.class]
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PrepareMemberApplicationMapper.class]
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\StatsMapper.class]
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\StudyRecordMapper.class]
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\StudyResourceMapper.class]
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\SystemSettingMapper.class]
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\TaskAssignmentMapper.class]
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\TaskEvaluationMapper.class]
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\TaskMapper.class]
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\VideoWatchProgressMapper.class]
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'adminMapper' and 'com.example.server.mapper.AdminMapper' mapperInterface
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'announcementMapper' and 'com.example.server.mapper.AnnouncementMapper' mapperInterface
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'applicationProcessMapper' and 'com.example.server.mapper.ApplicationProcessMapper' mapperInterface
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'memberMapper' and 'com.example.server.mapper.MemberMapper' mapperInterface
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'memberUpdateRequestMapper' and 'com.example.server.mapper.MemberUpdateRequestMapper' mapperInterface
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'partyApplicationMapper' and 'com.example.server.mapper.PartyApplicationMapper' mapperInterface
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'partyBranchMapper' and 'com.example.server.mapper.PartyBranchMapper' mapperInterface
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'pointsMapper' and 'com.example.server.mapper.PointsMapper' mapperInterface
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'positiveMemberApplicationMapper' and 'com.example.server.mapper.PositiveMemberApplicationMapper' mapperInterface
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'prepareMemberApplicationMapper' and 'com.example.server.mapper.PrepareMemberApplicationMapper' mapperInterface
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'statsMapper' and 'com.example.server.mapper.StatsMapper' mapperInterface
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'studyRecordMapper' and 'com.example.server.mapper.StudyRecordMapper' mapperInterface
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'studyResourceMapper' and 'com.example.server.mapper.StudyResourceMapper' mapperInterface
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'systemSettingMapper' and 'com.example.server.mapper.SystemSettingMapper' mapperInterface
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'taskAssignmentMapper' and 'com.example.server.mapper.TaskAssignmentMapper' mapperInterface
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'taskEvaluationMapper' and 'com.example.server.mapper.TaskEvaluationMapper' mapperInterface
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'taskMapper' and 'com.example.server.mapper.TaskMapper' mapperInterface
+2026-05-06 08:57:31 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'videoWatchProgressMapper' and 'com.example.server.mapper.VideoWatchProgressMapper' mapperInterface
+2026-05-06 08:57:31 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8000 (http)
+2026-05-06 08:57:31 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-06 08:57:31 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-05-06 08:57:31 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-06 08:57:31 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1145 ms
+2026-05-06 08:57:31 [main] DEBUG org.springframework.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2026-05-06 08:57:31 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-05-06 08:57:32 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-05-06 08:57:32 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\AdminMapper.xml]'
+2026-05-06 08:57:32 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\AnnouncementMapper.xml]'
+2026-05-06 08:57:32 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\ApplicationProcessMapper.xml]'
+2026-05-06 08:57:32 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\MemberMapper.xml]'
+2026-05-06 08:57:32 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\MemberUpdateRequestMapper.xml]'
+2026-05-06 08:57:32 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PartyApplicationMapper.xml]'
+2026-05-06 08:57:32 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PartyBranchMapper.xml]'
+2026-05-06 08:57:32 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PointsMapper.xml]'
+2026-05-06 08:57:32 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PositiveMemberApplicationMapper.xml]'
+2026-05-06 08:57:32 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PrepareMemberApplicationMapper.xml]'
+2026-05-06 08:57:32 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\StatsMapper.xml]'
+2026-05-06 08:57:32 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\StudyRecordMapper.xml]'
+2026-05-06 08:57:32 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\StudyResourceMapper.xml]'
+2026-05-06 08:57:32 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\SystemSettingMapper.xml]'
+2026-05-06 08:57:32 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\TaskAssignmentMapper.xml]'
+2026-05-06 08:57:32 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\TaskEvaluationMapper.xml]'
+2026-05-06 08:57:32 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\TaskMapper.xml]'
+2026-05-06 08:57:32 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\VideoWatchProgressMapper.xml]'
+2026-05-06 08:57:32 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 92 mappings in 'requestMappingHandlerMapping'
+2026-05-06 08:57:33 [main] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2026-05-06 08:57:33 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-06 08:57:33 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-06 08:57:33 [main] DEBUG o.m.s.boot.autoconfigure.MybatisAutoConfiguration - Not found configuration for registering mapper bean using @MapperScan, MapperFactoryBean and MapperScannerConfigurer.
+2026-05-06 08:57:33 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2026-05-06 08:57:33 [main] INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-05-06 08:57:33 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.0 created.
+2026-05-06 08:57:33 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2026-05-06 08:57:33 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-05-06 08:57:33 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-05-06 08:57:33 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.5.0
+2026-05-06 08:57:33 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@5b2ade46
+2026-05-06 08:57:33 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8000 (http) with context path '/'
+2026-05-06 08:57:33 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2026-05-06 08:57:33 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-05-06 08:57:33 [main] INFO  com.example.server.ServerApplication - Started ServerApplication in 3.377 seconds (process running for 3.911)
+2026-05-06 08:58:14 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-05-06 08:58:14 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-06 08:58:14 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-05-06 08:58:14 [SpringApplicationShutdownHook] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2026-05-06 08:58:14 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2026-05-06 08:58:14 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-05-06 08:58:14 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2026-05-06 08:58:14 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-05-06 08:58:14 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-05-06 08:58:17 [main] INFO  com.example.server.ServerApplication - Starting ServerApplication using Java 17.0.12 with PID 86576 (D:\小备份\小备份\smart_party_building\后端代码\server\target\classes started by huixiangyu in D:\小备份\小备份\smart_party_building\后端代码)
+2026-05-06 08:58:17 [main] DEBUG com.example.server.ServerApplication - Running with Spring Boot v3.5.4, Spring v6.2.9
+2026-05-06 08:58:17 [main] INFO  com.example.server.ServerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-06 08:58:17 [main] DEBUG o.m.s.boot.autoconfigure.MybatisAutoConfiguration - Searching for mappers annotated with @Mapper
+2026-05-06 08:58:17 [main] DEBUG o.m.s.boot.autoconfigure.MybatisAutoConfiguration - Using auto-configuration base package 'com.example.server'
+2026-05-06 08:58:18 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-05-06 08:58:18 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-05-06 08:58:18 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\AdminMapper.class]
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\AnnouncementMapper.class]
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\ApplicationProcessMapper.class]
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\MemberMapper.class]
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\MemberUpdateRequestMapper.class]
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PartyApplicationMapper.class]
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PartyBranchMapper.class]
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PointsMapper.class]
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PositiveMemberApplicationMapper.class]
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PrepareMemberApplicationMapper.class]
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\StatsMapper.class]
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\StudyRecordMapper.class]
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\StudyResourceMapper.class]
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\SystemSettingMapper.class]
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\TaskAssignmentMapper.class]
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\TaskEvaluationMapper.class]
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\TaskMapper.class]
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\VideoWatchProgressMapper.class]
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'adminMapper' and 'com.example.server.mapper.AdminMapper' mapperInterface
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'announcementMapper' and 'com.example.server.mapper.AnnouncementMapper' mapperInterface
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'applicationProcessMapper' and 'com.example.server.mapper.ApplicationProcessMapper' mapperInterface
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'memberMapper' and 'com.example.server.mapper.MemberMapper' mapperInterface
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'memberUpdateRequestMapper' and 'com.example.server.mapper.MemberUpdateRequestMapper' mapperInterface
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'partyApplicationMapper' and 'com.example.server.mapper.PartyApplicationMapper' mapperInterface
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'partyBranchMapper' and 'com.example.server.mapper.PartyBranchMapper' mapperInterface
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'pointsMapper' and 'com.example.server.mapper.PointsMapper' mapperInterface
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'positiveMemberApplicationMapper' and 'com.example.server.mapper.PositiveMemberApplicationMapper' mapperInterface
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'prepareMemberApplicationMapper' and 'com.example.server.mapper.PrepareMemberApplicationMapper' mapperInterface
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'statsMapper' and 'com.example.server.mapper.StatsMapper' mapperInterface
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'studyRecordMapper' and 'com.example.server.mapper.StudyRecordMapper' mapperInterface
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'studyResourceMapper' and 'com.example.server.mapper.StudyResourceMapper' mapperInterface
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'systemSettingMapper' and 'com.example.server.mapper.SystemSettingMapper' mapperInterface
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'taskAssignmentMapper' and 'com.example.server.mapper.TaskAssignmentMapper' mapperInterface
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'taskEvaluationMapper' and 'com.example.server.mapper.TaskEvaluationMapper' mapperInterface
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'taskMapper' and 'com.example.server.mapper.TaskMapper' mapperInterface
+2026-05-06 08:58:18 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'videoWatchProgressMapper' and 'com.example.server.mapper.VideoWatchProgressMapper' mapperInterface
+2026-05-06 08:58:18 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8000 (http)
+2026-05-06 08:58:18 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-06 08:58:18 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-05-06 08:58:18 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-06 08:58:18 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1070 ms
+2026-05-06 08:58:18 [main] DEBUG org.springframework.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2026-05-06 08:58:18 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-05-06 08:58:18 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-05-06 08:58:19 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\AdminMapper.xml]'
+2026-05-06 08:58:19 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\AnnouncementMapper.xml]'
+2026-05-06 08:58:19 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\ApplicationProcessMapper.xml]'
+2026-05-06 08:58:19 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\MemberMapper.xml]'
+2026-05-06 08:58:19 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\MemberUpdateRequestMapper.xml]'
+2026-05-06 08:58:19 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PartyApplicationMapper.xml]'
+2026-05-06 08:58:19 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PartyBranchMapper.xml]'
+2026-05-06 08:58:19 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PointsMapper.xml]'
+2026-05-06 08:58:19 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PositiveMemberApplicationMapper.xml]'
+2026-05-06 08:58:19 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PrepareMemberApplicationMapper.xml]'
+2026-05-06 08:58:19 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\StatsMapper.xml]'
+2026-05-06 08:58:19 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\StudyRecordMapper.xml]'
+2026-05-06 08:58:19 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\StudyResourceMapper.xml]'
+2026-05-06 08:58:19 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\SystemSettingMapper.xml]'
+2026-05-06 08:58:19 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\TaskAssignmentMapper.xml]'
+2026-05-06 08:58:19 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\TaskEvaluationMapper.xml]'
+2026-05-06 08:58:19 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\TaskMapper.xml]'
+2026-05-06 08:58:19 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\VideoWatchProgressMapper.xml]'
+2026-05-06 08:58:19 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 92 mappings in 'requestMappingHandlerMapping'
+2026-05-06 08:58:19 [main] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2026-05-06 08:58:19 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-06 08:58:19 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-06 08:58:19 [main] DEBUG o.m.s.boot.autoconfigure.MybatisAutoConfiguration - Not found configuration for registering mapper bean using @MapperScan, MapperFactoryBean and MapperScannerConfigurer.
+2026-05-06 08:58:19 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2026-05-06 08:58:19 [main] INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-05-06 08:58:19 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.0 created.
+2026-05-06 08:58:19 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2026-05-06 08:58:19 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-05-06 08:58:19 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-05-06 08:58:19 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.5.0
+2026-05-06 08:58:19 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@3fd21272
+2026-05-06 08:58:20 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8000 (http) with context path '/'
+2026-05-06 08:58:20 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2026-05-06 08:58:20 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-05-06 08:58:20 [main] INFO  com.example.server.ServerApplication - Started ServerApplication in 2.986 seconds (process running for 3.405)
+2026-05-06 08:58:59 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-05-06 08:58:59 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-06 08:58:59 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-05-06 08:58:59 [SpringApplicationShutdownHook] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2026-05-06 08:58:59 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2026-05-06 08:58:59 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-05-06 08:58:59 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2026-05-06 08:58:59 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-05-06 08:58:59 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-05-06 08:59:22 [main] INFO  com.example.server.ServerApplication - Starting ServerApplication using Java 17.0.12 with PID 88432 (D:\小备份\小备份\smart_party_building\后端代码\server\target\classes started by huixiangyu in D:\小备份\小备份\smart_party_building\后端代码)
+2026-05-06 08:59:22 [main] DEBUG com.example.server.ServerApplication - Running with Spring Boot v3.5.4, Spring v6.2.9
+2026-05-06 08:59:22 [main] INFO  com.example.server.ServerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-06 08:59:22 [main] DEBUG o.m.s.boot.autoconfigure.MybatisAutoConfiguration - Searching for mappers annotated with @Mapper
+2026-05-06 08:59:22 [main] DEBUG o.m.s.boot.autoconfigure.MybatisAutoConfiguration - Using auto-configuration base package 'com.example.server'
+2026-05-06 08:59:22 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-05-06 08:59:22 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-05-06 08:59:22 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\AdminMapper.class]
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\AnnouncementMapper.class]
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\ApplicationProcessMapper.class]
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\MemberMapper.class]
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\MemberUpdateRequestMapper.class]
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PartyApplicationMapper.class]
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PartyBranchMapper.class]
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PointsMapper.class]
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PositiveMemberApplicationMapper.class]
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PrepareMemberApplicationMapper.class]
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\StatsMapper.class]
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\StudyRecordMapper.class]
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\StudyResourceMapper.class]
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\SystemSettingMapper.class]
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\TaskAssignmentMapper.class]
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\TaskEvaluationMapper.class]
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\TaskMapper.class]
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\VideoWatchProgressMapper.class]
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'adminMapper' and 'com.example.server.mapper.AdminMapper' mapperInterface
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'announcementMapper' and 'com.example.server.mapper.AnnouncementMapper' mapperInterface
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'applicationProcessMapper' and 'com.example.server.mapper.ApplicationProcessMapper' mapperInterface
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'memberMapper' and 'com.example.server.mapper.MemberMapper' mapperInterface
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'memberUpdateRequestMapper' and 'com.example.server.mapper.MemberUpdateRequestMapper' mapperInterface
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'partyApplicationMapper' and 'com.example.server.mapper.PartyApplicationMapper' mapperInterface
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'partyBranchMapper' and 'com.example.server.mapper.PartyBranchMapper' mapperInterface
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'pointsMapper' and 'com.example.server.mapper.PointsMapper' mapperInterface
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'positiveMemberApplicationMapper' and 'com.example.server.mapper.PositiveMemberApplicationMapper' mapperInterface
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'prepareMemberApplicationMapper' and 'com.example.server.mapper.PrepareMemberApplicationMapper' mapperInterface
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'statsMapper' and 'com.example.server.mapper.StatsMapper' mapperInterface
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'studyRecordMapper' and 'com.example.server.mapper.StudyRecordMapper' mapperInterface
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'studyResourceMapper' and 'com.example.server.mapper.StudyResourceMapper' mapperInterface
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'systemSettingMapper' and 'com.example.server.mapper.SystemSettingMapper' mapperInterface
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'taskAssignmentMapper' and 'com.example.server.mapper.TaskAssignmentMapper' mapperInterface
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'taskEvaluationMapper' and 'com.example.server.mapper.TaskEvaluationMapper' mapperInterface
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'taskMapper' and 'com.example.server.mapper.TaskMapper' mapperInterface
+2026-05-06 08:59:22 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'videoWatchProgressMapper' and 'com.example.server.mapper.VideoWatchProgressMapper' mapperInterface
+2026-05-06 08:59:23 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8000 (http)
+2026-05-06 08:59:23 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-06 08:59:23 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-05-06 08:59:23 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-06 08:59:23 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 990 ms
+2026-05-06 08:59:23 [main] DEBUG org.springframework.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2026-05-06 08:59:23 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-05-06 08:59:23 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-05-06 08:59:23 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\AdminMapper.xml]'
+2026-05-06 08:59:23 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\AnnouncementMapper.xml]'
+2026-05-06 08:59:23 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\ApplicationProcessMapper.xml]'
+2026-05-06 08:59:23 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\MemberMapper.xml]'
+2026-05-06 08:59:23 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\MemberUpdateRequestMapper.xml]'
+2026-05-06 08:59:23 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PartyApplicationMapper.xml]'
+2026-05-06 08:59:23 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PartyBranchMapper.xml]'
+2026-05-06 08:59:23 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PointsMapper.xml]'
+2026-05-06 08:59:23 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PositiveMemberApplicationMapper.xml]'
+2026-05-06 08:59:23 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PrepareMemberApplicationMapper.xml]'
+2026-05-06 08:59:23 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\StatsMapper.xml]'
+2026-05-06 08:59:23 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\StudyRecordMapper.xml]'
+2026-05-06 08:59:23 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\StudyResourceMapper.xml]'
+2026-05-06 08:59:23 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\SystemSettingMapper.xml]'
+2026-05-06 08:59:23 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\TaskAssignmentMapper.xml]'
+2026-05-06 08:59:23 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\TaskEvaluationMapper.xml]'
+2026-05-06 08:59:23 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\TaskMapper.xml]'
+2026-05-06 08:59:23 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\VideoWatchProgressMapper.xml]'
+2026-05-06 08:59:23 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 92 mappings in 'requestMappingHandlerMapping'
+2026-05-06 08:59:24 [main] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2026-05-06 08:59:24 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-06 08:59:24 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-06 08:59:24 [main] DEBUG o.m.s.boot.autoconfigure.MybatisAutoConfiguration - Not found configuration for registering mapper bean using @MapperScan, MapperFactoryBean and MapperScannerConfigurer.
+2026-05-06 08:59:24 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2026-05-06 08:59:24 [main] INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-05-06 08:59:24 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.0 created.
+2026-05-06 08:59:24 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2026-05-06 08:59:24 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-05-06 08:59:24 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-05-06 08:59:24 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.5.0
+2026-05-06 08:59:24 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@1f6ba47b
+2026-05-06 08:59:24 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8000 (http) with context path '/'
+2026-05-06 08:59:24 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2026-05-06 08:59:24 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-05-06 08:59:24 [main] INFO  com.example.server.ServerApplication - Started ServerApplication in 2.938 seconds (process running for 3.345)
+2026-05-06 09:01:24 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-05-06 09:01:24 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-06 09:01:24 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-05-06 09:01:24 [SpringApplicationShutdownHook] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2026-05-06 09:01:24 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2026-05-06 09:01:24 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-05-06 09:01:24 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2026-05-06 09:01:24 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-05-06 09:01:24 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-05-06 09:01:29 [main] INFO  com.example.server.ServerApplication - Starting ServerApplication using Java 17.0.12 with PID 85364 (D:\小备份\小备份\smart_party_building\后端代码\server\target\classes started by huixiangyu in D:\小备份\小备份\smart_party_building\后端代码)
+2026-05-06 09:01:29 [main] DEBUG com.example.server.ServerApplication - Running with Spring Boot v3.5.4, Spring v6.2.9
+2026-05-06 09:01:29 [main] INFO  com.example.server.ServerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-06 09:01:30 [main] DEBUG o.m.s.boot.autoconfigure.MybatisAutoConfiguration - Searching for mappers annotated with @Mapper
+2026-05-06 09:01:30 [main] DEBUG o.m.s.boot.autoconfigure.MybatisAutoConfiguration - Using auto-configuration base package 'com.example.server'
+2026-05-06 09:01:30 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-05-06 09:01:30 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-05-06 09:01:30 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\AdminMapper.class]
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\AnnouncementMapper.class]
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\ApplicationProcessMapper.class]
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\MemberMapper.class]
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\MemberUpdateRequestMapper.class]
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PartyApplicationMapper.class]
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PartyBranchMapper.class]
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PointsMapper.class]
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PositiveMemberApplicationMapper.class]
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PrepareMemberApplicationMapper.class]
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\StatsMapper.class]
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\StudyRecordMapper.class]
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\StudyResourceMapper.class]
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\SystemSettingMapper.class]
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\TaskAssignmentMapper.class]
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\TaskEvaluationMapper.class]
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\TaskMapper.class]
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\VideoWatchProgressMapper.class]
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'adminMapper' and 'com.example.server.mapper.AdminMapper' mapperInterface
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'announcementMapper' and 'com.example.server.mapper.AnnouncementMapper' mapperInterface
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'applicationProcessMapper' and 'com.example.server.mapper.ApplicationProcessMapper' mapperInterface
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'memberMapper' and 'com.example.server.mapper.MemberMapper' mapperInterface
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'memberUpdateRequestMapper' and 'com.example.server.mapper.MemberUpdateRequestMapper' mapperInterface
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'partyApplicationMapper' and 'com.example.server.mapper.PartyApplicationMapper' mapperInterface
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'partyBranchMapper' and 'com.example.server.mapper.PartyBranchMapper' mapperInterface
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'pointsMapper' and 'com.example.server.mapper.PointsMapper' mapperInterface
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'positiveMemberApplicationMapper' and 'com.example.server.mapper.PositiveMemberApplicationMapper' mapperInterface
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'prepareMemberApplicationMapper' and 'com.example.server.mapper.PrepareMemberApplicationMapper' mapperInterface
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'statsMapper' and 'com.example.server.mapper.StatsMapper' mapperInterface
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'studyRecordMapper' and 'com.example.server.mapper.StudyRecordMapper' mapperInterface
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'studyResourceMapper' and 'com.example.server.mapper.StudyResourceMapper' mapperInterface
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'systemSettingMapper' and 'com.example.server.mapper.SystemSettingMapper' mapperInterface
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'taskAssignmentMapper' and 'com.example.server.mapper.TaskAssignmentMapper' mapperInterface
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'taskEvaluationMapper' and 'com.example.server.mapper.TaskEvaluationMapper' mapperInterface
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'taskMapper' and 'com.example.server.mapper.TaskMapper' mapperInterface
+2026-05-06 09:01:30 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'videoWatchProgressMapper' and 'com.example.server.mapper.VideoWatchProgressMapper' mapperInterface
+2026-05-06 09:01:30 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8000 (http)
+2026-05-06 09:01:30 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-06 09:01:30 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-05-06 09:01:30 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-06 09:01:30 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 940 ms
+2026-05-06 09:01:30 [main] DEBUG org.springframework.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2026-05-06 09:01:30 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-05-06 09:01:31 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-05-06 09:01:31 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\AdminMapper.xml]'
+2026-05-06 09:01:31 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\AnnouncementMapper.xml]'
+2026-05-06 09:01:31 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\ApplicationProcessMapper.xml]'
+2026-05-06 09:01:31 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\MemberMapper.xml]'
+2026-05-06 09:01:31 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\MemberUpdateRequestMapper.xml]'
+2026-05-06 09:01:31 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PartyApplicationMapper.xml]'
+2026-05-06 09:01:31 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PartyBranchMapper.xml]'
+2026-05-06 09:01:31 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PointsMapper.xml]'
+2026-05-06 09:01:31 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PositiveMemberApplicationMapper.xml]'
+2026-05-06 09:01:31 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PrepareMemberApplicationMapper.xml]'
+2026-05-06 09:01:31 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\StatsMapper.xml]'
+2026-05-06 09:01:31 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\StudyRecordMapper.xml]'
+2026-05-06 09:01:31 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\StudyResourceMapper.xml]'
+2026-05-06 09:01:31 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\SystemSettingMapper.xml]'
+2026-05-06 09:01:31 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\TaskAssignmentMapper.xml]'
+2026-05-06 09:01:31 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\TaskEvaluationMapper.xml]'
+2026-05-06 09:01:31 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\TaskMapper.xml]'
+2026-05-06 09:01:31 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\VideoWatchProgressMapper.xml]'
+2026-05-06 09:01:31 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 92 mappings in 'requestMappingHandlerMapping'
+2026-05-06 09:01:31 [main] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2026-05-06 09:01:31 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-06 09:01:31 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-06 09:01:31 [main] DEBUG o.m.s.boot.autoconfigure.MybatisAutoConfiguration - Not found configuration for registering mapper bean using @MapperScan, MapperFactoryBean and MapperScannerConfigurer.
+2026-05-06 09:01:32 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2026-05-06 09:01:32 [main] INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-05-06 09:01:32 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.0 created.
+2026-05-06 09:01:32 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2026-05-06 09:01:32 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-05-06 09:01:32 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-05-06 09:01:32 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.5.0
+2026-05-06 09:01:32 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@4154ecd3
+2026-05-06 09:01:32 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8000 (http) with context path '/'
+2026-05-06 09:01:32 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2026-05-06 09:01:32 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-05-06 09:01:32 [main] INFO  com.example.server.ServerApplication - Started ServerApplication in 2.823 seconds (process running for 3.23)
+2026-05-06 09:05:09 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-05-06 09:05:09 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-06 09:05:09 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-05-06 09:05:09 [SpringApplicationShutdownHook] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2026-05-06 09:05:09 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2026-05-06 09:05:09 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-05-06 09:05:09 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2026-05-06 09:05:09 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-05-06 09:05:09 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-05-06 09:07:03 [main] INFO  com.example.server.ServerApplication - Starting ServerApplication using Java 17.0.12 with PID 87616 (D:\小备份\小备份\smart_party_building\后端代码\server\target\classes started by huixiangyu in D:\小备份\小备份\smart_party_building\后端代码)
+2026-05-06 09:07:03 [main] DEBUG com.example.server.ServerApplication - Running with Spring Boot v3.5.4, Spring v6.2.9
+2026-05-06 09:07:03 [main] INFO  com.example.server.ServerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-06 09:07:04 [main] DEBUG o.m.s.boot.autoconfigure.MybatisAutoConfiguration - Searching for mappers annotated with @Mapper
+2026-05-06 09:07:04 [main] DEBUG o.m.s.boot.autoconfigure.MybatisAutoConfiguration - Using auto-configuration base package 'com.example.server'
+2026-05-06 09:07:04 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-05-06 09:07:04 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-05-06 09:07:04 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\AdminMapper.class]
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\AnnouncementMapper.class]
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\ApplicationProcessMapper.class]
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\MemberMapper.class]
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\MemberUpdateRequestMapper.class]
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PartyApplicationMapper.class]
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PartyBranchMapper.class]
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PointsMapper.class]
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PositiveMemberApplicationMapper.class]
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\PrepareMemberApplicationMapper.class]
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\StatsMapper.class]
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\StudyRecordMapper.class]
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\StudyResourceMapper.class]
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\SystemSettingMapper.class]
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\TaskAssignmentMapper.class]
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\TaskEvaluationMapper.class]
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\TaskMapper.class]
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\com\example\server\mapper\VideoWatchProgressMapper.class]
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'adminMapper' and 'com.example.server.mapper.AdminMapper' mapperInterface
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'announcementMapper' and 'com.example.server.mapper.AnnouncementMapper' mapperInterface
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'applicationProcessMapper' and 'com.example.server.mapper.ApplicationProcessMapper' mapperInterface
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'memberMapper' and 'com.example.server.mapper.MemberMapper' mapperInterface
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'memberUpdateRequestMapper' and 'com.example.server.mapper.MemberUpdateRequestMapper' mapperInterface
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'partyApplicationMapper' and 'com.example.server.mapper.PartyApplicationMapper' mapperInterface
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'partyBranchMapper' and 'com.example.server.mapper.PartyBranchMapper' mapperInterface
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'pointsMapper' and 'com.example.server.mapper.PointsMapper' mapperInterface
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'positiveMemberApplicationMapper' and 'com.example.server.mapper.PositiveMemberApplicationMapper' mapperInterface
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'prepareMemberApplicationMapper' and 'com.example.server.mapper.PrepareMemberApplicationMapper' mapperInterface
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'statsMapper' and 'com.example.server.mapper.StatsMapper' mapperInterface
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'studyRecordMapper' and 'com.example.server.mapper.StudyRecordMapper' mapperInterface
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'studyResourceMapper' and 'com.example.server.mapper.StudyResourceMapper' mapperInterface
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'systemSettingMapper' and 'com.example.server.mapper.SystemSettingMapper' mapperInterface
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'taskAssignmentMapper' and 'com.example.server.mapper.TaskAssignmentMapper' mapperInterface
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'taskEvaluationMapper' and 'com.example.server.mapper.TaskEvaluationMapper' mapperInterface
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'taskMapper' and 'com.example.server.mapper.TaskMapper' mapperInterface
+2026-05-06 09:07:04 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'videoWatchProgressMapper' and 'com.example.server.mapper.VideoWatchProgressMapper' mapperInterface
+2026-05-06 09:07:05 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8000 (http)
+2026-05-06 09:07:05 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-06 09:07:05 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-05-06 09:07:05 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-06 09:07:05 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1117 ms
+2026-05-06 09:07:05 [main] DEBUG org.springframework.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2026-05-06 09:07:05 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-05-06 09:07:05 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-05-06 09:07:05 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\AdminMapper.xml]'
+2026-05-06 09:07:05 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\AnnouncementMapper.xml]'
+2026-05-06 09:07:05 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\ApplicationProcessMapper.xml]'
+2026-05-06 09:07:05 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\MemberMapper.xml]'
+2026-05-06 09:07:05 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\MemberUpdateRequestMapper.xml]'
+2026-05-06 09:07:05 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PartyApplicationMapper.xml]'
+2026-05-06 09:07:05 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PartyBranchMapper.xml]'
+2026-05-06 09:07:05 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PointsMapper.xml]'
+2026-05-06 09:07:05 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PositiveMemberApplicationMapper.xml]'
+2026-05-06 09:07:05 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\PrepareMemberApplicationMapper.xml]'
+2026-05-06 09:07:05 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\StatsMapper.xml]'
+2026-05-06 09:07:05 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\StudyRecordMapper.xml]'
+2026-05-06 09:07:05 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\StudyResourceMapper.xml]'
+2026-05-06 09:07:05 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\SystemSettingMapper.xml]'
+2026-05-06 09:07:05 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\TaskAssignmentMapper.xml]'
+2026-05-06 09:07:05 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\TaskEvaluationMapper.xml]'
+2026-05-06 09:07:05 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\TaskMapper.xml]'
+2026-05-06 09:07:05 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\小备份\小备份\smart_party_building\后端代码\server\target\classes\mapper\VideoWatchProgressMapper.xml]'
+2026-05-06 09:07:05 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 92 mappings in 'requestMappingHandlerMapping'
+2026-05-06 09:07:06 [main] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2026-05-06 09:07:06 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-05-06 09:07:06 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-05-06 09:07:06 [main] DEBUG o.m.s.boot.autoconfigure.MybatisAutoConfiguration - Not found configuration for registering mapper bean using @MapperScan, MapperFactoryBean and MapperScannerConfigurer.
+2026-05-06 09:07:06 [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2026-05-06 09:07:06 [main] INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-05-06 09:07:06 [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.0 created.
+2026-05-06 09:07:06 [main] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2026-05-06 09:07:06 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-05-06 09:07:06 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-05-06 09:07:06 [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.5.0
+2026-05-06 09:07:06 [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@15d2ea6b
+2026-05-06 09:07:06 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8000 (http) with context path '/'
+2026-05-06 09:07:06 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2026-05-06 09:07:06 [main] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-05-06 09:07:06 [main] INFO  com.example.server.ServerApplication - Started ServerApplication in 3.132 seconds (process running for 8.877)
+2026-05-06 09:08:36 [http-nio-8000-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-06 09:08:36 [http-nio-8000-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-05-06 09:08:36 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2026-05-06 09:08:36 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2026-05-06 09:08:36 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2026-05-06 09:08:36 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@646493e3
+2026-05-06 09:08:36 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@5e0c7deb
+2026-05-06 09:08:36 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-05-06 09:08:36 [http-nio-8000-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2026-05-06 09:08:36 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/overview", parameters={}
+2026-05-06 09:08:36 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#overview(HttpServletRequest)
+2026-05-06 09:08:37 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:08:37 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={pendingApplications=0, ongoingActivities=0, memberCount=2, pend (truncated)...]
+2026-05-06 09:08:37 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:08:37 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/branch-study-durations", parameters={}
+2026-05-06 09:08:37 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#branchStudyDurations(HttpServletRequest)
+2026-05-06 09:08:37 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:08:37 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{totalDuration=0, branchId=1, branchName=测试支部}, {totalDuration= (truncated)...]
+2026-05-06 09:08:37 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK

@@ -1,0 +1,38 @@
+# 开发环境配置
+spring:
+  profiles:
+    active: dev
+  
+  # 数据源配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/smart_party_building?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: yu5201314
+  
+  # Redis配置
+  redis:
+    host: localhost
+    port: 6379
+    password: 
+    database: 1
+  
+  # 日志配置
+  logging:
+    level:
+      com.example: debug
+      org.springframework.web: debug
+      org.mybatis: debug
+
+# 微信小程序配置（开发环境）
+wechat:
+  miniapp:
+    appid: dev_appid_here
+    secret: dev_secret_here
+
+# 阿里云OSS配置（开发环境）
+aliyun:
+  oss:
+    endpoint: dev_endpoint_here
+    access-key-id: dev_access_key_id_here
+    access-key-secret: dev_access_key_secret_here
+    bucket-name: dev_bucket_name_here

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.server.mapper.SystemSettingMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.pojo.entity.SystemSetting">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="setting_key" property="settingKey" jdbcType="VARCHAR"/>
+        <result column="setting_value" property="settingValue" jdbcType="VARCHAR"/>
+        <result column="created_at" property="createdAt" jdbcType="TIMESTAMP"/>
+        <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <select id="selectByKey" parameterType="string" resultMap="BaseResultMap">
+        SELECT id, setting_key, setting_value, created_at, updated_at
+        FROM system_settings
+        WHERE setting_key = #{settingKey}
+        LIMIT 1
+    </select>
+
+    <insert id="upsert" parameterType="com.example.pojo.entity.SystemSetting">
+        INSERT INTO system_settings (setting_key, setting_value, created_at, updated_at)
+        VALUES (#{settingKey}, #{settingValue}, NOW(), NOW())
+        ON DUPLICATE KEY UPDATE
+            setting_value = VALUES(setting_value),
+            updated_at = NOW()
+    </insert>
+
+</mapper>
+

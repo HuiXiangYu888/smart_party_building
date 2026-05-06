@@ -1,0 +1,126 @@
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.container.data-v-0f2662e9 {
+  padding: 20rpx;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+.page-title.data-v-0f2662e9 {
+  font-size: 36rpx;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30rpx;
+  color: #333;
+}
+.total-stats.data-v-0f2662e9 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 8rpx 20rpx rgba(102, 126, 234, 0.3);
+}
+.stats-item.data-v-0f2662e9 {
+  text-align: center;
+}
+.stats-label.data-v-0f2662e9 {
+  display: block;
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 10rpx;
+}
+.stats-value.data-v-0f2662e9 {
+  display: block;
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #fff;
+}
+.points-list.data-v-0f2662e9 {
+  background: #fff;
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+}
+.list-header.data-v-0f2662e9 {
+  display: flex;
+  background: #f8f9fa;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.header-item.data-v-0f2662e9 {
+  flex: 1;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #666;
+  text-align: center;
+}
+.list-body.data-v-0f2662e9 {
+  min-height: 200rpx;
+}
+.points-item.data-v-0f2662e9 {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 20rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.points-item.data-v-0f2662e9:last-child {
+  border-bottom: none;
+}
+.source.data-v-0f2662e9 {
+  flex: 2;
+  font-size: 28rpx;
+  color: #333;
+  margin-right: 20rpx;
+}
+.points.data-v-0f2662e9 {
+  flex: 1;
+  font-size: 28rpx;
+  font-weight: bold;
+  text-align: center;
+}
+.points.positive.data-v-0f2662e9 {
+  color: #52c41a;
+}
+.points.negative.data-v-0f2662e9 {
+  color: #ff4d4f;
+}
+.time.data-v-0f2662e9 {
+  flex: 1.5;
+  font-size: 24rpx;
+  color: #999;
+  text-align: right;
+}
+.empty-state.data-v-0f2662e9 {
+  text-align: center;
+  padding: 60rpx 20rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+.loading.data-v-0f2662e9 {
+  text-align: center;
+  padding: 40rpx;
+  color: #666;
+  font-size: 28rpx;
+}

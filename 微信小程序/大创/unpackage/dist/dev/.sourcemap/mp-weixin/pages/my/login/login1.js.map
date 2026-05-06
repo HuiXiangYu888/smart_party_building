@@ -1,0 +1,1 @@
+{"version":3,"file":"login1.js","sources":["../../../HBuilderX.4.75.2025071105/HBuilderX/plugins/uniapp-cli-vite/uniPage:/cGFnZXMvbXkvbG9naW4vbG9naW4xLnZ1ZQ"],"sourcesContent":["import MiniProgramPage from 'E:/smart_party_building/微信小程序/大创/pages/my/login/login1.vue'\nwx.createPage(MiniProgramPage)"],"names":[],"mappings":";;;;;;;AACA,GAAG,WAAW,eAAe;"}

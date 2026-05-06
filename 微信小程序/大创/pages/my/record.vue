@@ -1,0 +1,223 @@
+<template>
+	<view class="container">
+		<view class="page-title">学习记录</view>
+		
+		<!-- 总学习时长统计 -->
+		<view class="total-stats">
+			<view class="stats-item">
+				<text class="stats-label">总学习时长</text>
+				<text class="stats-value">{{ formatDuration(totalDuration) }}</text>
+			</view>
+		</view>
+		
+		<view class="head">
+			<view>视频标题</view>
+			<view>开始时间</view>
+			<view>学习时长</view>
+		</view>
+		<view class="body">
+			<view class="record-item" v-for="(item, index) in records" :key="index">
+				<view class="title">{{ (item.title || item.videoTitle || '') || '未知视频' }}</view>
+				<view class="time">{{ formatTime(item.startedAt) }}</view>
+				<view class="duration">{{ formatDuration(item.duration) }}</view>
+			</view>
+			
+			<!-- 空状态提示 -->
+			<view class="empty-state" v-if="records.length === 0">
+				<text>暂无学习记录</text>
+			</view>
+		</view>
+		
+		<!-- 加载状态 -->
+		<view class="loading" v-if="loading">
+			<text>加载中...</text>
+		</view>
+	</view>
+</template>
+	
+<script setup>
+	import { ref, onMounted } from 'vue'
+	import { onShow } from '@dcloudio/uni-app'
+	import { requestWithAuth } from '@/utils/auth.js'
+
+	const records = ref([])
+	const totalDuration = ref(0)
+	const loading = ref(false)
+
+	// 加载学习记录
+	const loadStudyRecords = async () => {
+		loading.value = true
+		try {
+			const res = await requestWithAuth({ url: '/study/records/user', method: 'GET' })
+			if (res.statusCode === 200 && res.data?.code === 200) {
+				records.value = res.data.data || []
+			} else if (res.statusCode === 401 || res.data?.code === 401) {
+				uni.showToast({ title: '请先登录', icon: 'none' })
+				setTimeout(() => uni.navigateTo({ url: '/pages/my/login/login' }), 600)
+			}
+		} catch (e) {
+			uni.showToast({ title: e?.message || '网络错误', icon: 'none' })
+		} finally {
+			loading.value = false
+		}
+	}
+
+	// 加载总学习时长
+	const loadTotalDuration = async () => {
+		try {
+			const res = await requestWithAuth({ url: '/study/records/user/total-duration', method: 'GET' })
+			if (res.statusCode === 200 && res.data?.code === 200) {
+				totalDuration.value = res.data.data || 0
+			}
+		} catch (e) {
+			console.error('加载总学习时长失败:', e)
+		}
+	}
+
+	// 格式化时间
+	const formatTime = (timeStr) => {
+		if (!timeStr) return ''
+		try {
+			const date = new Date(timeStr)
+			return date.toLocaleString('zh-CN', {
+				year: 'numeric',
+				month: '2-digit',
+				day: '2-digit',
+				hour: '2-digit',
+				minute: '2-digit'
+			})
+		} catch {
+			return timeStr
+		}
+	}
+
+	// 格式化时长
+	const formatDuration = (minutes) => {
+		if (!minutes || minutes === 0) return '0分钟'
+		const hours = Math.floor(minutes / 60)
+		const mins = minutes % 60
+		if (hours > 0) {
+			return `${hours}小时${mins}分钟`
+		}
+		return `${mins}分钟`
+	}
+
+	onMounted(() => {
+		loadStudyRecords()
+		loadTotalDuration()
+	})
+
+	onShow(() => {
+		loadStudyRecords()
+		loadTotalDuration()
+	})
+</script>
+
+<style lang="scss" scoped>
+	.container {
+		width: 100%;
+		min-height: 100vh;
+		background-color: #f5f7fa;
+		padding: 20rpx;
+		box-sizing: border-box;
+	}
+	
+	.page-title {
+		font-size: 36rpx;
+		font-weight: bold;
+		color: #333;
+		margin: 30rpx 0;
+		text-align: center;
+	}
+	
+	.total-stats {
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		border-radius: 16rpx;
+		padding: 30rpx;
+		margin-bottom: 30rpx;
+		box-shadow: 0 8rpx 20rpx rgba(102, 126, 234, 0.3);
+		
+		.stats-item {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			
+			.stats-label {
+				font-size: 28rpx;
+				color: #fff;
+				opacity: 0.9;
+			}
+			
+			.stats-value {
+				font-size: 36rpx;
+				font-weight: bold;
+				color: #fff;
+			}
+		}
+	}
+	
+	.head {
+		display: flex;
+		justify-content: space-between;
+		background-color: #e8f4fd;
+		padding: 24rpx 30rpx;
+		border-radius: 12rpx;
+		margin-bottom: 10rpx;
+		box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+		
+		view {
+			flex: 1;
+			text-align: center;
+			font-size: 28rpx;
+			font-weight: 600;
+			color: #2c6ecb;
+		}
+	}
+	
+	.body {
+		width: 100%;
+	}
+	
+	.record-item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: #fff;
+		padding: 28rpx 30rpx;
+		border-radius: 12rpx;
+		margin-bottom: 15rpx;
+		box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.03);
+		transition: all 0.2s ease;
+		
+		&:hover {
+			transform: translateY(-2rpx);
+			box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.08);
+		}
+		
+		view {
+			flex: 1;
+			text-align: center;
+			font-size: 26rpx;
+			color: #333;
+		}
+		
+		.duration {
+			color: #e63946;
+			font-weight: 500;
+		}
+	}
+	
+	.empty-state {
+		text-align: center;
+		padding: 100rpx 0;
+		color: #999;
+		font-size: 28rpx;
+	}
+	
+	.loading {
+		text-align: center;
+		padding: 40rpx 0;
+		color: #666;
+		font-size: 26rpx;
+	}
+</style>

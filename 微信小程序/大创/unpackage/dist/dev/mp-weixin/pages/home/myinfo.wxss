@@ -1,0 +1,26 @@
+
+.container.data-v-f2e33e64 {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.header.data-v-f2e33e64 {
+  text-align: center;
+  font-weight: bold;
+}
+.member-item.data-v-f2e33e64 {
+  margin-bottom: 30rpx;
+}
+.member-item .label.data-v-f2e33e64 {
+  margin-bottom: 20rpx;
+}
+.member-item .info-value.data-v-f2e33e64,
+.member-item .input-edit.data-v-f2e33e64 {
+  background-color: #eee;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-left: 20rpx;
+}

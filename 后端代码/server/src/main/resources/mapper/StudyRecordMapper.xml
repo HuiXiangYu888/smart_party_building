@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.server.mapper.StudyRecordMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.pojo.entity.StudyRecord">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="user_id" property="userId" jdbcType="BIGINT"/>
+        <result column="resource_id" property="resourceId" jdbcType="BIGINT"/>
+        <result column="duration" property="duration" jdbcType="INTEGER"/>
+        <result column="started_at" property="startedAt" jdbcType="TIMESTAMP"/>
+        <result column="ended_at" property="endedAt" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Columns">id,user_id,resource_id,duration,started_at,ended_at</sql>
+
+    <insert id="insert" parameterType="com.example.pojo.entity.StudyRecord" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO study_records(user_id,resource_id,duration,started_at,ended_at)
+        VALUES(#{userId},#{resourceId},#{duration},#{startedAt},#{endedAt})
+    </insert>
+
+    <!-- 带视频标题的学习记录查询（唯一定义） -->
+    <select id="selectByUserIdWithTitle" parameterType="long" resultType="map">
+        SELECT 
+            sr.id,
+            sr.user_id      AS userId,
+            sr.resource_id  AS resourceId,
+            sr.duration,
+            sr.started_at   AS startedAt,
+            sr.ended_at     AS endedAt,
+            COALESCE(r.title, '未知视频') AS title
+        FROM study_records sr
+        LEFT JOIN study_resources r ON r.id = sr.resource_id
+        WHERE sr.user_id = #{userId}
+        ORDER BY sr.started_at DESC
+    </select>
+
+    <select id="selectByUserIdAndResourceId" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Columns"/>
+        FROM study_records 
+        WHERE user_id = #{userId} AND resource_id = #{resourceId}
+        ORDER BY started_at DESC
+    </select>
+
+    <select id="selectTotalDurationByUserId" parameterType="long" resultType="int">
+        SELECT COALESCE(SUM(duration), 0)
+        FROM study_records 
+        WHERE user_id = #{userId}
+    </select>
+
+    <select id="selectAllUserStudyStats" resultType="map">
+        SELECT 
+            m.id as userId,
+            m.username as memberName,
+            m.student_id as studentId,
+            COALESCE(SUM(sr.duration), 0) as totalDuration,
+            COUNT(sr.id) as studyCount
+        FROM members m
+        LEFT JOIN study_records sr ON m.id = sr.user_id
+        GROUP BY m.id, m.username, m.student_id
+        ORDER BY totalDuration DESC
+    </select>
+
+    <select id="selectUserStudyStatsByKeyword" resultType="map">
+        SELECT 
+            m.id as userId,
+            m.username as memberName,
+            m.student_id as studentId,
+            COALESCE(SUM(sr.duration), 0) as totalDuration,
+            COUNT(sr.id) as studyCount
+        FROM members m
+        LEFT JOIN study_records sr ON m.id = sr.user_id
+        WHERE m.username LIKE CONCAT('%', #{keyword}, '%') 
+           OR m.student_id LIKE CONCAT('%', #{keyword}, '%')
+        GROUP BY m.id, m.username, m.student_id
+        ORDER BY totalDuration DESC
+    </select>
+
+    <delete id="deleteByUserId" parameterType="long">
+        DELETE FROM study_records WHERE user_id = #{userId}
+    </delete>
+
+    <delete id="deleteAll">
+        DELETE FROM study_records
+    </delete>
+
+</mapper>

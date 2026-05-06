@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  # MySQL数据库
+  mysql:
+    image: mysql:8.0
+    container_name: smart_party_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: smart_party_building
+      MYSQL_USER: smart_party
+      MYSQL_PASSWORD: smart_party_2024
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    command: --default-authentication-plugin=mysql_native_password
+    networks:
+      - smart_party_network
+
+  # Redis缓存
+  redis:
+    image: redis:7-alpine
+    container_name: smart_party_redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - smart_party_network
+
+  # 智慧党建系统后端
+  smart_party_backend:
+    build: .
+    container_name: smart_party_backend
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/smart_party_building?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8
+      SPRING_DATASOURCE_USERNAME: smart_party
+      SPRING_DATASOURCE_PASSWORD: smart_party_2024
+      SPRING_REDIS_HOST: redis
+      SPRING_REDIS_PORT: 6379
+    depends_on:
+      - mysql
+      - redis
+    networks:
+      - smart_party_network
+
+volumes:
+  mysql_data:
+  redis_data:
+
+networks:
+  smart_party_network:
+    driver: bridge

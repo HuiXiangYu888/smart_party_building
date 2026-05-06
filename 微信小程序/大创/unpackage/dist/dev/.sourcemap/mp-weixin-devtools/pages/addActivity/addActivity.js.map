@@ -1,0 +1,1 @@
+{"version":3,"names":["wx","createPage","MiniProgramPage"],"sources":["cGFnZXMvYWRkQWN0aXZpdHkvYWRkQWN0aXZpdHkudnVl"],"sourcesContent":["import MiniProgramPage from 'E:/大创/pages/addActivity/addActivity.vue'\nwx.createPage(MiniProgramPage)"],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AACAA,EAAA,CAAGC,UAAA,CAAWC,eAAe","ignoreList":[]}

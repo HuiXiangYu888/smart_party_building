@@ -1,0 +1,26 @@
+"use strict";
+const _imports_0$3 = "/static/home/添加党员.png";
+const _imports_1$1 = "/static/home/个人信息.png";
+const _imports_2$1 = "/static/home/入党.png";
+const _imports_3 = "/static/home/添加活动.png";
+const _imports_4 = "/static/home/活动草稿.png";
+const _imports_5 = "/static/home/党员信息.png";
+const _imports_6 = "/static/home/党员学习.png";
+const _imports_0$2 = "/static/my/danghui.png";
+const _imports_1 = "/static/my/我的活动.png";
+const _imports_2 = "/static/my/学习记录.png";
+const _imports_0$1 = "/static/party/入党申请.png";
+const _imports_0 = "/static/my/头像.png";
+exports._imports_0 = _imports_0$3;
+exports._imports_0$1 = _imports_0$2;
+exports._imports_0$2 = _imports_0$1;
+exports._imports_0$3 = _imports_0;
+exports._imports_1 = _imports_1$1;
+exports._imports_1$1 = _imports_1;
+exports._imports_2 = _imports_2$1;
+exports._imports_2$1 = _imports_2;
+exports._imports_3 = _imports_3;
+exports._imports_4 = _imports_4;
+exports._imports_5 = _imports_5;
+exports._imports_6 = _imports_6;
+//# sourceMappingURL=../../.sourcemap/mp-weixin/common/assets.js.map

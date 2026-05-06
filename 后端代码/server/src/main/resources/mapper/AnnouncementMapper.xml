@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.server.mapper.AnnouncementMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.pojo.entity.Announcement">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="content" property="content" jdbcType="LONGVARCHAR"/>
+        <result column="branch_id" property="branchId" jdbcType="BIGINT"/>
+        <result column="created_by" property="createdBy" jdbcType="BIGINT"/>
+        <result column="created_at" property="createdAt" jdbcType="TIMESTAMP"/>
+        <result column="branch_name" property="branchName" jdbcType="VARCHAR"/>
+        <result column="created_by_name" property="createdByName" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Columns">id,title,content,branch_id,created_by,created_at</sql>
+
+    <insert id="insert" parameterType="com.example.pojo.entity.Announcement" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO announcements(title,content,branch_id,created_by)
+        VALUES(#{title},#{content},#{branchId},#{createdBy})
+    </insert>
+
+    <select id="selectById" parameterType="long" resultMap="BaseResultMap">
+        SELECT 
+            a.id,
+            a.title,
+            a.content,
+            a.branch_id,
+            a.created_by,
+            a.created_at,
+            pb.name as branch_name,
+            ad.username as created_by_name
+        FROM announcements a
+        LEFT JOIN party_branches pb ON a.branch_id = pb.id
+        LEFT JOIN admins ad ON a.created_by = ad.id
+        WHERE a.id = #{id}
+    </select>
+
+    <select id="selectAllWithDetails" resultMap="BaseResultMap">
+        SELECT 
+            a.id,
+            a.title,
+            a.content,
+            a.branch_id,
+            a.created_by,
+            a.created_at,
+            pb.name as branch_name,
+            ad.username as created_by_name
+        FROM announcements a
+        LEFT JOIN party_branches pb ON a.branch_id = pb.id
+        LEFT JOIN admins ad ON a.created_by = ad.id
+        ORDER BY a.created_at DESC
+    </select>
+
+    <select id="selectByBranchId" parameterType="long" resultMap="BaseResultMap">
+        SELECT 
+            a.id,
+            a.title,
+            a.content,
+            a.branch_id,
+            a.created_by,
+            a.created_at,
+            pb.name as branch_name,
+            ad.username as created_by_name
+        FROM announcements a
+        LEFT JOIN party_branches pb ON a.branch_id = pb.id
+        LEFT JOIN admins ad ON a.created_by = ad.id
+        WHERE a.branch_id = #{branchId}
+        ORDER BY a.created_at DESC
+    </select>
+
+    <select id="selectWithPagination" resultMap="BaseResultMap">
+        SELECT 
+            a.id,
+            a.title,
+            a.content,
+            a.branch_id,
+            a.created_by,
+            a.created_at,
+            pb.name as branch_name,
+            ad.username as created_by_name
+        FROM announcements a
+        LEFT JOIN party_branches pb ON a.branch_id = pb.id
+        LEFT JOIN admins ad ON a.created_by = ad.id
+        ORDER BY a.created_at DESC
+        LIMIT #{offset}, #{limit}
+    </select>
+
+    <select id="selectCount" resultType="int">
+        SELECT COUNT(*) FROM announcements
+    </select>
+
+    <update id="update" parameterType="com.example.pojo.entity.Announcement">
+        UPDATE announcements 
+        SET title = #{title},
+            content = #{content},
+            branch_id = #{branchId}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="long">
+        DELETE FROM announcements WHERE id = #{id}
+    </delete>
+
+    <select id="selectByKeyword" parameterType="string" resultMap="BaseResultMap">
+        SELECT 
+            a.id,
+            a.title,
+            a.content,
+            a.branch_id,
+            a.created_by,
+            a.created_at,
+            pb.name as branch_name,
+            ad.username as created_by_name
+        FROM announcements a
+        LEFT JOIN party_branches pb ON a.branch_id = pb.id
+        LEFT JOIN admins ad ON a.created_by = ad.id
+        WHERE a.title LIKE CONCAT('%', #{keyword}, '%') 
+           OR a.content LIKE CONCAT('%', #{keyword}, '%')
+        ORDER BY a.created_at DESC
+    </select>
+
+</mapper>

@@ -1,0 +1,27 @@
+
+.container.data-v-d140bf87 { padding: 16px;
+}
+.header.data-v-d140bf87 { font-size: 22px; font-weight: 800; text-align: center; margin: 12px 0 16px;
+}
+.rank-list.data-v-d140bf87 { background: #fff; border-radius: 8rpx; overflow: hidden;
+}
+.rank-item.data-v-d140bf87 { display: flex; align-items: center; padding: 12px 10px; border-bottom: 1px solid #f0f0f0;
+}
+.rank-item.data-v-d140bf87:last-child { border-bottom: none;
+}
+.idx.data-v-d140bf87 { width: 40rpx; color: #999;
+}
+.name.data-v-d140bf87 { flex: 1; margin-left: 12rpx; color: #333;
+}
+.branch.data-v-d140bf87 { flex: 1; color: #666;
+}
+.points.data-v-d140bf87 { width: 120rpx; text-align: right; color: #c92127;
+}
+
+/* 前三名荣誉边框 */
+.rank-item.first.data-v-d140bf87 { border-left: 8rpx solid #FFD700; background: #fffdf0;
+}
+.rank-item.second.data-v-d140bf87 { border-left: 8rpx solid #C0C0C0; background: #fcfcff;
+}
+.rank-item.third.data-v-d140bf87 { border-left: 8rpx solid #CD7F32; background: #fffaf6;
+}
