@@ -16,21 +16,6 @@ export function toAbsoluteUrl(url) {
   return base + path
 }
 
-export function getNewsPage({ keyword = '', page = 1, size = 10, branchId } = {}) {
-  return request({
-    url: `${BASE_URL}/news/user`,
-    method: 'GET',
-    data: { keyword, page, size, branchId }
-  })
-}
-
-export function getNewsDetail(id) {
-  return request({
-    url: `${BASE_URL}/news/${id}`,
-    method: 'GET'
-  })
-}
-
 /**
  * 用户相关API
  */

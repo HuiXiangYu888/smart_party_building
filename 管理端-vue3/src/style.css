@@ -1,158 +1,214 @@
-/* 全局样式 */
-:root {
-  --primary-color: #409eff;
-  --success-color: #67c23a;
-  --warning-color: #e6a23c;
-  --danger-color: #f56c6c;
-  --info-color: #909399;
-  --text-color: #303133;
-  --text-color-regular: #606266;
-  --text-color-secondary: #909399;
-  --border-color: #dcdfe6;
-  --border-color-light: #e4e7ed;
-  --background-color: #f5f7fa;
-}
+/* ============================================
+   Tailwind CSS Layers
+   ============================================ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* 布局样式 */
-.admin-layout {
-  height: 100vh;
-  display: flex;
-}
+/* ============================================
+   Design Tokens (CSS Variables)
+   Light / Dark mode via .dark class
+   ============================================ */
+@layer base {
+  :root {
+    /* Primary (Indigo) */
+    --color-primary: #4f46e5;
+    --color-primary-hover: #4338ca;
+    --color-primary-light: #eef2ff;
 
-.admin-sidebar {
-  width: 200px;
-  background-color: #304156;
-  color: white;
-  overflow-y: auto;
-}
+    /* Semantic */
+    --color-success: #16a34a;
+    --color-warning: #d97706;
+    --color-danger: #dc2626;
+    --color-info: #6b7280;
 
-.admin-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
+    /* Surfaces */
+    --color-bg-page: #f8fafc;
+    --color-bg-card: #ffffff;
+    --color-bg-sidebar: #0f172a;
+    --color-bg-sidebar-hover: #1e293b;
 
-.admin-header {
-  height: 60px;
-  background-color: white;
-  border-bottom: 1px solid var(--border-color-light);
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-  box-shadow: 0 1px 4px rgba(0,21,41,.08);
-}
+    /* Text */
+    --color-text-primary: #0f172a;
+    --color-text-secondary: #64748b;
+    --color-text-muted: #94a3b8;
 
-.admin-content {
-  flex: 1;
-  padding: 20px;
-  overflow-y: auto;
-  background-color: var(--background-color);
-}
+    /* Borders */
+    --color-border: #e2e8f0;
+    --color-border-light: #f1f5f9;
 
-/* 卡片样式 */
-.admin-card {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-/* 表格样式 */
-.admin-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.admin-table th,
-.admin-table td {
-  padding: 12px 8px;
-  text-align: left;
-  border-bottom: 1px solid var(--border-color-light);
-}
-
-.admin-table th {
-  background-color: #fafafa;
-  font-weight: 500;
-  color: var(--text-color);
-}
-
-/* 按钮样式 */
-.admin-btn {
-  padding: 8px 16px;
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-  transition: all 0.3s;
-}
-
-.admin-btn-primary {
-  background-color: var(--primary-color);
-  color: white;
-}
-
-.admin-btn-primary:hover {
-  background-color: #66b1ff;
-}
-
-.admin-btn-success {
-  background-color: var(--success-color);
-  color: white;
-}
-
-.admin-btn-warning {
-  background-color: var(--warning-color);
-  color: white;
-}
-
-.admin-btn-danger {
-  background-color: var(--danger-color);
-  color: white;
-}
-
-/* 表单样式 */
-.admin-form {
-  max-width: 600px;
-}
-
-.admin-form-item {
-  margin-bottom: 20px;
-}
-
-.admin-form-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 500;
-  color: var(--text-color);
-}
-
-.admin-form-input {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  font-size: 14px;
-  transition: border-color 0.3s;
-}
-
-.admin-form-input:focus {
-  outline: none;
-  border-color: var(--primary-color);
-}
-
-/* 响应式设计 */
-@media (max-width: 768px) {
-  .admin-sidebar {
-    width: 100%;
-    height: auto;
+    /* Shadows */
+    --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-card-hover: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   }
-  
-  .admin-layout {
-    flex-direction: column;
+
+  .dark {
+    --color-primary: #818cf8;
+    --color-primary-hover: #6366f1;
+    --color-primary-light: #1e1b4e;
+
+    --color-success: #22c55e;
+    --color-warning: #f59e0b;
+    --color-danger: #ef4444;
+    --color-info: #9ca3af;
+
+    --color-bg-page: #020617;
+    --color-bg-card: #0f172a;
+    --color-bg-sidebar: #020617;
+    --color-bg-sidebar-hover: #0f172a;
+
+    --color-text-primary: #f8fafc;
+    --color-text-secondary: #94a3b8;
+    --color-text-muted: #64748b;
+
+    --color-border: #334155;
+    --color-border-light: #1e293b;
+
+    --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+    --shadow-card-hover: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
   }
-  
-  .admin-content {
-    padding: 10px;
+}
+
+/* ============================================
+   Global Resets & Typography
+   ============================================ */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background-color: var(--color-bg-page);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s, color 0.3s;
+  }
+}
+
+/* ============================================
+   Element Plus Theme Overrides
+   Sync Element Plus with our design tokens
+   ============================================ */
+@layer components {
+  /* Override Element Plus CSS variables */
+  :root {
+    --el-color-primary: var(--color-primary);
+    --el-color-primary-light-3: #a5b4fc;
+    --el-color-primary-light-5: #c7d2fe;
+    --el-color-primary-light-7: #e0e7ff;
+    --el-color-primary-light-9: #eef2ff;
+    --el-color-primary-dark-2: var(--color-primary-hover);
+    --el-color-success: var(--color-success);
+    --el-color-warning: var(--color-warning);
+    --el-color-danger: var(--color-danger);
+    --el-color-info: var(--color-info);
+    --el-bg-color: var(--color-bg-card);
+    --el-bg-color-page: var(--color-bg-page);
+    --el-text-color-primary: var(--color-text-primary);
+    --el-text-color-regular: var(--color-text-secondary);
+    --el-border-color: var(--color-border);
+    --el-border-color-light: var(--color-border-light);
+  }
+
+  .dark {
+    --el-color-primary-light-3: #6366f1;
+    --el-color-primary-light-5: #4f46e5;
+    --el-color-primary-light-7: #3730a3;
+    --el-color-primary-light-9: #1e1b4e;
+    --el-fill-color-blank: var(--color-bg-card);
+    --el-fill-color-light: #1e293b;
+    --el-mask-color: rgba(0, 0, 0, 0.7);
+  }
+
+  /* Dark mode: El-Card */
+  .dark .el-card {
+    --el-card-bg-color: var(--color-bg-card);
+    border-color: var(--color-border);
+  }
+
+  /* Dark mode: El-Dialog */
+  .dark .el-dialog {
+    --el-dialog-bg-color: #1e293b;
+    --el-dialog-title-font-size: 18px;
+  }
+
+  /* Dark mode: El-Table */
+  .dark .el-table {
+    --el-table-bg-color: var(--color-bg-card);
+    --el-table-tr-bg-color: var(--color-bg-card);
+    --el-table-header-bg-color: #1e293b;
+    --el-table-row-hover-bg-color: #1e293b;
+    --el-table-border-color: var(--color-border);
+    --el-table-text-color: var(--color-text-primary);
+    --el-table-header-text-color: var(--color-text-secondary);
+  }
+
+  /* Dark mode: El-Input */
+  .dark .el-input__wrapper {
+    background-color: #1e293b;
+    box-shadow: 0 0 0 1px var(--color-border) inset;
+  }
+
+  /* Dark mode: El-Menu */
+  .dark .el-menu {
+    border-right: none;
+  }
+
+  /* Dark mode: El-Pagination */
+  .dark .el-pagination {
+    --el-pagination-bg-color: transparent;
+    --el-pagination-text-color: var(--color-text-secondary);
+    --el-pagination-button-bg-color: var(--color-bg-card);
+  }
+}
+
+/* ============================================
+   Utility Components
+   ============================================ */
+@layer components {
+  /* Standard page card with consistent shadow */
+  .page-card {
+    @apply bg-[var(--color-bg-card)] rounded-lg border border-[var(--color-border)] transition-shadow duration-200;
+    box-shadow: var(--shadow-card);
+  }
+
+  .page-card:hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  /* Search bar layout */
+  .search-toolbar {
+    @apply flex flex-wrap items-center gap-3 p-4;
+  }
+
+  /* Pagination container */
+  .pagination-bar {
+    @apply flex justify-center py-4;
+  }
+
+  /* Section title */
+  .section-title {
+    @apply text-lg font-semibold text-[var(--color-text-primary)] mb-4;
+  }
+
+  /* Stat card gradient backgrounds */
+  .stat-gradient-indigo {
+    @apply bg-gradient-to-br from-indigo-500 to-indigo-700;
+  }
+
+  .stat-gradient-emerald {
+    @apply bg-gradient-to-br from-emerald-500 to-emerald-700;
+  }
+
+  .stat-gradient-amber {
+    @apply bg-gradient-to-br from-amber-500 to-amber-700;
+  }
+
+  .stat-gradient-sky {
+    @apply bg-gradient-to-br from-sky-500 to-sky-700;
   }
 }

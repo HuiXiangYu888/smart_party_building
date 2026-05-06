@@ -1,32 +1,39 @@
 <template>
-  <div id="app">
+  <div id="app" :class="{ dark: isDark }">
     <router-view />
   </div>
 </template>
 
 <script setup>
-// 根组件逻辑
+import { ref, onMounted, provide } from 'vue'
+
+// Dark mode state
+const isDark = ref(false)
+
+const toggleDark = () => {
+  isDark.value = !isDark.value
+  localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
+}
+
+onMounted(() => {
+  const saved = localStorage.getItem('theme')
+  if (saved === 'dark') {
+    isDark.value = true
+  } else if (!saved) {
+    // Auto detect system preference
+    isDark.value = window.matchMedia('(prefers-color-scheme: dark)').matches
+  }
+})
+
+// Provide dark mode to child components
+provide('isDark', isDark)
+provide('toggleDark', toggleDark)
 </script>
 
 <style>
 #app {
-  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   height: 100vh;
   margin: 0;
   padding: 0;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #f5f5f5;
 }
 </style>

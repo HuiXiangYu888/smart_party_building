@@ -3,35 +3,40 @@ import { ref, computed } from 'vue'
 import { ElMessage } from 'element-plus'
 
 export const useAuthStore = defineStore('auth', () => {
-  // 状态
+  // State
   const token = ref(localStorage.getItem('token') || '')
   const userInfo = ref(JSON.parse(localStorage.getItem('userInfo') || '{}'))
 
-  // 计算属性
+  // Computed
   const isLoggedIn = computed(() => {
     return !!token.value && !!userInfo.value.id
   })
 
-  // 方法
+  const isSystemAdmin = computed(() => {
+    return userInfo.value?.userType === 'SYSTEM_ADMIN'
+  })
+
+  const isBranchAdmin = computed(() => {
+    return userInfo.value?.userType === 'BRANCH_ADMIN'
+  })
+
+  const displayName = computed(() => {
+    return userInfo.value?.realName || userInfo.value?.username || '-'
+  })
+
+  // Actions
   const login = (newToken, newUserInfo) => {
     token.value = newToken
     userInfo.value = newUserInfo
-    
-    // 保存到localStorage
     localStorage.setItem('token', newToken)
     localStorage.setItem('userInfo', JSON.stringify(newUserInfo))
-    
-    console.log('登录成功，用户信息：', newUserInfo)
   }
 
   const logout = () => {
     token.value = ''
     userInfo.value = {}
-    
-    // 清除localStorage
     localStorage.removeItem('token')
     localStorage.removeItem('userInfo')
-    
     ElMessage.success('已退出登录')
   }
 
@@ -44,6 +49,9 @@ export const useAuthStore = defineStore('auth', () => {
     token,
     userInfo,
     isLoggedIn,
+    isSystemAdmin,
+    isBranchAdmin,
+    displayName,
     login,
     logout,
     updateUserInfo

@@ -1,22 +1,25 @@
 <template>
-  <div class="login-container">
-    <div class="login-box">
-      <!-- 装饰性顶部条 -->
-      <div class="top-accent"></div>
-      
-      <div class="login-header">
-        <div class="logo-wrapper">
-          <el-icon :size="40" color="#409EFF"><Flag /></el-icon>
+  <div class="min-h-screen flex items-center justify-center bg-[var(--color-bg-page)] p-5 transition-colors duration-300"
+       style="background-image: radial-gradient(var(--color-border) 1px, transparent 0); background-size: 30px 30px;">
+    <div class="w-full max-w-md page-card overflow-hidden">
+      <!-- Top accent bar -->
+      <div class="h-1 bg-gradient-to-r from-indigo-500 to-violet-500"></div>
+
+      <!-- Header -->
+      <div class="text-center pt-10 pb-5 px-10">
+        <div class="mb-4">
+          <el-icon :size="40" color="var(--color-primary)"><Flag /></el-icon>
         </div>
-        <h2>智慧党建管理端</h2>
-        <p>系统资源受限，请使用授权账户登录</p>
+        <h2 class="text-2xl font-semibold text-[var(--color-text-primary)] mb-2 tracking-wide">智慧党建管理端</h2>
+        <p class="text-sm text-[var(--color-text-muted)]">系统资源受限，请使用授权账户登录</p>
       </div>
-      
+
+      <!-- Form -->
       <el-form
         ref="loginFormRef"
         :model="loginForm"
         :rules="loginRules"
-        class="login-form"
+        class="px-10"
         label-position="top"
         @submit.prevent="handleLogin"
       >
@@ -28,7 +31,7 @@
             size="large"
           />
         </el-form-item>
-        
+
         <el-form-item prop="password" label="密码">
           <el-input
             v-model="loginForm.password"
@@ -40,17 +43,17 @@
             @keyup.enter="handleLogin"
           />
         </el-form-item>
-        
-        <div class="form-options">
-          <el-checkbox label="记住账号" size="small" />
-          <el-link type="info" :underline="false" style="font-size: 12px">遇到问题？</el-link>
+
+        <div class="flex justify-between items-center mb-5">
+          <el-checkbox v-model="rememberMe" label="记住账号" size="small" />
+          <el-link type="info" :underline="false" class="!text-xs">遇到问题？</el-link>
         </div>
-        
+
         <el-form-item>
           <el-button
             type="primary"
             size="large"
-            class="login-button"
+            class="w-full !h-11 !text-base !font-semibold !rounded-lg"
             :loading="loading"
             @click="handleLogin"
           >
@@ -58,18 +61,18 @@
           </el-button>
         </el-form-item>
       </el-form>
-      
-      <div class="login-footer">
-        <p>Copyright © 2024 智慧党建技术支持团队</p>
-        <p>建议使用 Chrome 或 Edge 浏览器以获得最佳体验</p>
+
+      <!-- Footer -->
+      <div class="text-center py-5 px-10 border-t border-[var(--color-border-light)] mt-2">
+        <p class="text-xs text-[var(--color-text-muted)]">Copyright © 2024 智慧党建技术支持团队</p>
+        <p class="text-xs text-[var(--color-text-muted)] mt-1">建议使用 Chrome 或 Edge 浏览器</p>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
-import { Flag, User, Lock } from '@element-plus/icons-vue'
+import { ref, reactive, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
 import { ElMessage } from 'element-plus'
@@ -78,19 +81,15 @@ import { login } from '@/api/auth'
 const router = useRouter()
 const authStore = useAuthStore()
 
-// 表单引用
 const loginFormRef = ref()
-
-// 加载状态
 const loading = ref(false)
+const rememberMe = ref(false)
 
-// 登录表单数据
 const loginForm = reactive({
   username: '',
   password: ''
 })
 
-// 表单验证规则
 const loginRules = {
   username: [
     { required: true, message: '请输入用户名', trigger: 'blur' },
@@ -102,32 +101,41 @@ const loginRules = {
   ]
 }
 
-// 处理登录
+// Restore remembered username
+onMounted(() => {
+  const saved = localStorage.getItem('rememberedUsername')
+  if (saved) {
+    loginForm.username = saved
+    rememberMe.value = true
+  }
+})
+
 const handleLogin = async () => {
   try {
-    // 表单验证
     await loginFormRef.value.validate()
-    
-    // 统一使用真实API（避免开发环境模拟导致假登录）
     loading.value = true
+
     const response = await login({ username: loginForm.username, password: loginForm.password })
-    // 后端返回 Result<LoginVO>，结构：{ code, data: { accessToken, refreshToken, userId, username, userType, expiresIn } }
     const loginVO = response.data || {}
     const token = loginVO.accessToken
     const userInfo = {
       id: loginVO.userId,
       username: loginVO.username,
       userType: loginVO.userType,
-      // realName 可选，后端暂无则使用 username
       realName: loginVO.realName || loginVO.username
     }
+
+    // Remember username
+    if (rememberMe.value) {
+      localStorage.setItem('rememberedUsername', loginForm.username)
+    } else {
+      localStorage.removeItem('rememberedUsername')
+    }
+
     authStore.login(token, userInfo)
     ElMessage.success('登录成功！')
     await router.push('/dashboard')
-    
   } catch (error) {
-    console.error('登录失败:', error)
-    
     if (error.response?.data?.message) {
       ElMessage.error(error.response.data.message)
     } else if (error.message) {
@@ -142,112 +150,9 @@ const handleLogin = async () => {
 </script>
 
 <style scoped>
-.login-container {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* 使用 Element Plus 风格的浅灰背景，并加入极淡的底纹感 */
-  background-color: #f0f2f5;
-  background-image: radial-gradient(#d9d9d9 1px, transparent 0);
-  background-size: 30px 30px;
-  padding: 20px;
-}
-
-.login-box {
-  width: 100%;
-  max-width: 420px;
-  background: #ffffff;
-  border-radius: 4px; /* 减小圆角，显得更严谨 */
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-  padding: 0; /* 内部 padding 由子元素控制 */
-  overflow: hidden;
-  position: relative;
-}
-
-.top-accent {
-  height: 4px;
-  background-color: #409EFF; /* 清新的天蓝色 */
-}
-
-.login-header {
-  text-align: center;
-  padding: 40px 40px 20px;
-}
-
-.logo-wrapper {
-  margin-bottom: 16px;
-}
-
-.login-header h2 {
-  color: #262626; /* 深灰，非纯黑 */
-  font-size: 24px;
-  font-weight: 600;
-  margin: 0 0 12px;
-  letter-spacing: 1px;
-}
-
-.login-header p {
-  color: #8c8c8c;
-  font-size: 14px;
-  margin: 0;
-}
-
-.login-form {
-  padding: 0 40px;
-}
-
-/* 覆盖 Element Plus 的 label 样式使其更紧凑 */
 :deep(.el-form-item__label) {
   font-weight: 500;
-  color: #595959;
+  color: var(--color-text-secondary);
   margin-bottom: 4px !important;
-}
-
-.form-options {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.login-button {
-  width: 100%;
-  height: 45px;
-  font-size: 16px;
-  font-weight: 600;
-  background-color: #409EFF; /* 使用 Element Plus 主色蓝 */
-  border-color: #409EFF;
-  transition: all 0.3s;
-}
-
-.login-button:hover {
-  background-color: #337ecc;
-  border-color: #337ecc;
-  box-shadow: 0 4px 10px rgba(64, 158, 255, 0.2);
-}
-
-.login-footer {
-  text-align: center;
-  padding: 20px 40px 30px;
-  border-top: 1px solid #f0f0f0;
-  margin-top: 10px;
-}
-
-.login-footer p {
-  color: #bfbfbf;
-  font-size: 12px;
-  margin: 4px 0;
-}
-
-/* 响应式设计 */
-@media (max-width: 480px) {
-  .login-box {
-    box-shadow: none;
-    background: transparent;
-  }
-  .login-header, .login-form, .login-footer {
-    padding: 20px;
-  }
 }
 </style>

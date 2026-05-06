@@ -1,87 +1,103 @@
 <template>
-  <div class="layout-container">
-    <!-- 侧边栏 -->
-    <div class="sidebar" :class="{ collapsed: isCollapsed }">
-      <div class="sidebar-header">
-        <h3 v-if="!isCollapsed">智慧党建管理端</h3>
-        <h3 v-else>党建</h3>
+  <div class="flex h-screen bg-[var(--color-bg-page)] transition-colors duration-300">
+    <!-- Sidebar -->
+    <aside
+      class="flex flex-col transition-all duration-300 bg-[var(--color-bg-sidebar)]"
+      :class="isCollapsed ? 'w-16' : 'w-60'"
+    >
+      <!-- Logo -->
+      <div class="flex items-center justify-center h-14 bg-slate-950/40 text-white text-base font-semibold shrink-0 overflow-hidden">
+        <span v-if="!isCollapsed">智慧党建管理端</span>
+        <span v-else>党建</span>
       </div>
-      
+
+      <!-- Menu -->
       <el-menu
         :default-active="activeMenu"
-        class="sidebar-menu"
+        class="!border-none flex-1 overflow-y-auto"
         :collapse="isCollapsed"
-        background-color="#304156"
-        text-color="#bfcbd9"
-        active-text-color="#409EFF"
+        background-color="transparent"
+        text-color="#94a3b8"
+        active-text-color="#818cf8"
         router
       >
         <el-menu-item index="/dashboard">
           <el-icon><DataBoard /></el-icon>
           <span>党建数据</span>
         </el-menu-item>
-        
+
         <el-menu-item index="/members">
           <el-icon><User /></el-icon>
           <span>成员管理</span>
         </el-menu-item>
-        
+
         <el-menu-item index="/tasks">
           <el-icon><List /></el-icon>
           <span>任务管理</span>
         </el-menu-item>
-        
+
         <el-menu-item index="/announcements">
           <el-icon><Bell /></el-icon>
           <span>公告管理</span>
         </el-menu-item>
-        
+
         <el-menu-item index="/applications">
           <el-icon><Document /></el-icon>
           <span>申请审核</span>
         </el-menu-item>
-        
+
         <el-menu-item index="/resources">
           <el-icon><Files /></el-icon>
           <span>学习资源管理</span>
         </el-menu-item>
-        
+
         <el-menu-item index="/progress">
           <el-icon><TrendCharts /></el-icon>
           <span>学习情况管理</span>
         </el-menu-item>
-        
-        <!-- 只有超级管理员才能看到账号管理 -->
-        <el-menu-item v-if="isSystemAdmin" index="/account">
+
+        <el-menu-item v-if="authStore.isSystemAdmin" index="/account">
           <el-icon><Setting /></el-icon>
           <span>账号管理</span>
         </el-menu-item>
       </el-menu>
-    </div>
-    
-    <!-- 主内容区 -->
-    <div class="main-content">
-      <!-- 顶部导航 -->
-      <div class="top-nav">
-        <div class="nav-left">
-          <el-button
-            type="text"
+    </aside>
+
+    <!-- Main -->
+    <div class="flex-1 flex flex-col overflow-hidden">
+      <!-- Top Nav -->
+      <header class="h-14 bg-[var(--color-bg-card)] border-b border-[var(--color-border)] flex items-center justify-between px-5 shrink-0 transition-colors duration-300">
+        <div class="flex items-center gap-4">
+          <button
             @click="toggleSidebar"
-            class="collapse-btn"
+            class="text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors p-1 rounded"
           >
-            <el-icon><Fold v-if="!isCollapsed" /><Expand v-else /></el-icon>
-          </el-button>
-          <span class="page-title">{{ currentPageTitle }}</span>
+            <el-icon :size="20"><Fold v-if="!isCollapsed" /><Expand v-else /></el-icon>
+          </button>
+          <span class="text-lg font-semibold text-[var(--color-text-primary)]">{{ currentPageTitle }}</span>
         </div>
-        
-        <div class="nav-right">
+
+        <div class="flex items-center gap-3">
+          <!-- Dark Mode Toggle -->
+          <button
+            @click="toggleDark"
+            class="w-9 h-9 flex items-center justify-center rounded-lg text-[var(--color-text-secondary)] hover:bg-[var(--color-border-light)] hover:text-[var(--color-text-primary)] transition-all duration-200"
+            :title="isDark ? '切换浅色模式' : '切换深色模式'"
+          >
+            <el-icon :size="18">
+              <Sunny v-if="isDark" />
+              <Moon v-else />
+            </el-icon>
+          </button>
+
+          <!-- User Dropdown -->
           <el-dropdown @command="handleCommand">
-            <div class="user-info">
-              <el-avatar :size="32" :src="userInfo.avatar">
-                {{ userInfo.realName?.charAt(0) || 'A' }}
+            <div class="flex items-center gap-2 cursor-pointer px-3 py-2 rounded-lg hover:bg-[var(--color-border-light)] transition-colors">
+              <el-avatar :size="28">
+                {{ authStore.displayName.charAt(0) }}
               </el-avatar>
-              <span class="username">{{ userInfo.realName || userInfo.username }}</span>
-              <el-icon><ArrowDown /></el-icon>
+              <span class="text-sm text-[var(--color-text-secondary)]">{{ authStore.displayName }}</span>
+              <el-icon class="text-[var(--color-text-muted)]"><ArrowDown /></el-icon>
             </div>
             <template #dropdown>
               <el-dropdown-menu>
@@ -91,18 +107,18 @@
             </template>
           </el-dropdown>
         </div>
-      </div>
-      
-      <!-- 内容区域 -->
-      <div class="content">
+      </header>
+
+      <!-- Content -->
+      <main class="flex-1 p-5 overflow-y-auto bg-[var(--color-bg-page)] transition-colors duration-300">
         <router-view />
-      </div>
+      </main>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, inject } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
 import { ElMessageBox } from 'element-plus'
@@ -111,45 +127,23 @@ const route = useRoute()
 const router = useRouter()
 const authStore = useAuthStore()
 
-// 侧边栏折叠状态
+// Dark mode from App.vue
+const isDark = inject('isDark')
+const toggleDark = inject('toggleDark')
+
+// Sidebar
 const isCollapsed = ref(false)
-
-// 当前激活的菜单项
 const activeMenu = computed(() => route.path)
+const currentPageTitle = computed(() => route.meta?.title || '智慧党建管理端')
 
-// 当前页面标题
-const currentPageTitle = computed(() => {
-  return route.meta?.title || '智慧党建管理端'
-})
-
-// 用户信息
-const userInfo = computed(() => authStore.userInfo)
-
-// 检查是否为超级管理员
-const isSystemAdmin = computed(() => {
-  return userInfo.value?.userType === 'SYSTEM_ADMIN'
-})
-
-// 检查是否为支部管理员
-const isBranchAdmin = computed(() => {
-  return userInfo.value?.userType === 'BRANCH_ADMIN'
-})
-
-// 切换侧边栏
 const toggleSidebar = () => {
   isCollapsed.value = !isCollapsed.value
 }
 
-// 处理下拉菜单命令
+// User dropdown
 const handleCommand = async (command) => {
   if (command === 'profile') {
-    // 支部管理员跳转到个人资料，超级管理员跳转到账号管理
-    if (isSystemAdmin.value) {
-      router.push('/account')
-    } else {
-      // 可以添加个人资料页面，暂时跳转到账号管理
-      router.push('/account')
-    }
+    router.push('/account')
   } else if (command === 'logout') {
     try {
       await ElMessageBox.confirm('确定要退出登录吗？', '提示', {
@@ -157,128 +151,33 @@ const handleCommand = async (command) => {
         cancelButtonText: '取消',
         type: 'warning'
       })
-      
       authStore.logout()
       router.push('/login')
     } catch {
-      // 用户取消
+      // User cancelled
     }
   }
 }
 </script>
 
 <style scoped>
-.layout-container {
-  display: flex;
-  height: 100vh;
+/* Sidebar menu item hover */
+:deep(.el-menu-item) {
+  margin: 2px 8px;
+  border-radius: 8px;
+  transition: all 0.2s;
 }
 
-.sidebar {
-  width: 240px;
-  background-color: #304156;
-  transition: width 0.3s;
-  overflow: hidden;
+:deep(.el-menu-item:hover) {
+  background-color: var(--color-bg-sidebar-hover) !important;
 }
 
-.sidebar.collapsed {
+:deep(.el-menu-item.is-active) {
+  background-color: rgba(99, 102, 241, 0.15) !important;
+}
+
+/* Collapsed menu */
+:deep(.el-menu--collapse) {
   width: 64px;
-}
-
-.sidebar-header {
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #2b3a4b;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.sidebar-menu {
-  border: none;
-  height: calc(100vh - 60px);
-}
-
-.main-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.top-nav {
-  height: 60px;
-  background: white;
-  border-bottom: 1px solid #e4e7ed;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-}
-
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.collapse-btn {
-  font-size: 18px;
-  color: #606266;
-}
-
-.page-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #303133;
-}
-
-.nav-right {
-  display: flex;
-  align-items: center;
-}
-
-.user-info {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: background-color 0.3s;
-}
-
-.user-info:hover {
-  background-color: #f5f7fa;
-}
-
-.username {
-  font-size: 14px;
-  color: #606266;
-}
-
-.content {
-  flex: 1;
-  padding: 20px;
-  background-color: #f5f5f5;
-  overflow-y: auto;
-}
-
-/* 响应式设计 */
-@media (max-width: 768px) {
-  .sidebar {
-    position: fixed;
-    z-index: 1000;
-    transform: translateX(-100%);
-  }
-  
-  .sidebar.collapsed {
-    transform: translateX(0);
-  }
-  
-  .main-content {
-    margin-left: 0;
-  }
 }
 </style>

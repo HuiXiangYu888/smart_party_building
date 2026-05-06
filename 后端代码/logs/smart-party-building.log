@@ -949,3 +949,224 @@
 2026-05-06 09:08:37 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
 2026-05-06 09:08:37 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{totalDuration=0, branchId=1, branchName=测试支部}, {totalDuration= (truncated)...]
 2026-05-06 09:08:37 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:09:37 [http-nio-8000-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/tasks/user/page?page=1&size=50", parameters={masked}
+2026-05-06 09:09:37 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.TaskController#userPage(int, int)
+2026-05-06 09:09:37 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:09:37 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0, records=[]}, timestamp=1778029777555)]
+2026-05-06 09:09:37 [http-nio-8000-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:09:37 [http-nio-8000-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/tasks/user/page?page=1&size=50", parameters={masked}
+2026-05-06 09:09:37 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.TaskController#userPage(int, int)
+2026-05-06 09:09:37 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:09:37 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0, records=[]}, timestamp=1778029777563)]
+2026-05-06 09:09:37 [http-nio-8000-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:09:37 [http-nio-8000-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/tasks/user/my", parameters={}
+2026-05-06 09:09:37 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.TaskController#myTasks(HttpServletRequest)
+2026-05-06 09:09:37 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:09:37 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[], timestamp=1778029777575)]
+2026-05-06 09:09:37 [http-nio-8000-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:09:37 [http-nio-8000-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/tasks/user/my", parameters={}
+2026-05-06 09:09:37 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.TaskController#myTasks(HttpServletRequest)
+2026-05-06 09:09:37 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:09:37 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[], timestamp=1778029777583)]
+2026-05-06 09:09:37 [http-nio-8000-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:09:39 [http-nio-8000-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/points/user/summary", parameters={}
+2026-05-06 09:09:39 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.PointsController#summaryUserPoints(HttpServletRequest)
+2026-05-06 09:09:39 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:09:39 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0}, timestamp=1778029779769)]
+2026-05-06 09:09:39 [http-nio-8000-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:09:39 [http-nio-8000-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/points/user/summary", parameters={}
+2026-05-06 09:09:39 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.PointsController#summaryUserPoints(HttpServletRequest)
+2026-05-06 09:09:39 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:09:39 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0}, timestamp=1778029779785)]
+2026-05-06 09:09:39 [http-nio-8000-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:09:39 [http-nio-8000-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/tasks/user/page?page=1&size=10", parameters={masked}
+2026-05-06 09:09:39 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.TaskController#userPage(int, int)
+2026-05-06 09:09:39 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:09:39 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0, records=[]}, timestamp=1778029779799)]
+2026-05-06 09:09:39 [http-nio-8000-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:09:39 [http-nio-8000-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/tasks/user/page?page=1&size=10", parameters={masked}
+2026-05-06 09:09:39 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.TaskController#userPage(int, int)
+2026-05-06 09:09:39 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:09:39 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0, records=[]}, timestamp=1778029779813)]
+2026-05-06 09:09:39 [http-nio-8000-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:09:44 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/auth/logout", parameters={}
+2026-05-06 09:09:44 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.AuthController#logout(HttpServletRequest)
+2026-05-06 09:09:44 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:09:44 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=登出成功, data=null, timestamp=1778029784902)]
+2026-05-06 09:09:44 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:09:51 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/auth/user/login", parameters={}
+2026-05-06 09:09:51 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.AuthController#userLogin(UserLoginDTO)
+2026-05-06 09:09:51 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [UserLoginDTO(username=1, password=123456)]
+2026-05-06 09:09:51 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:09:51 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=LoginVO(accessToken=eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzc4MDI (truncated)...]
+2026-05-06 09:09:51 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:09:53 [http-nio-8000-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/points/user/summary", parameters={}
+2026-05-06 09:09:53 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.PointsController#summaryUserPoints(HttpServletRequest)
+2026-05-06 09:09:53 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:09:53 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0}, timestamp=1778029793748)]
+2026-05-06 09:09:53 [http-nio-8000-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:09:53 [http-nio-8000-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/tasks/user/page?page=1&size=10", parameters={masked}
+2026-05-06 09:09:53 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.TaskController#userPage(int, int)
+2026-05-06 09:09:53 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:09:53 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0, records=[]}, timestamp=1778029793760)]
+2026-05-06 09:09:53 [http-nio-8000-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:09:53 [http-nio-8000-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/points/user/summary", parameters={}
+2026-05-06 09:09:53 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.PointsController#summaryUserPoints(HttpServletRequest)
+2026-05-06 09:09:53 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:09:53 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0}, timestamp=1778029793770)]
+2026-05-06 09:09:53 [http-nio-8000-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:09:53 [http-nio-8000-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/tasks/user/page?page=1&size=10", parameters={masked}
+2026-05-06 09:09:53 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.TaskController#userPage(int, int)
+2026-05-06 09:09:53 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:09:53 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0, records=[]}, timestamp=1778029793782)]
+2026-05-06 09:09:53 [http-nio-8000-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:10:25 [http-nio-8000-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/branches", parameters={}
+2026-05-06 09:10:25 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.BranchController#getAllBranches()
+2026-05-06 09:10:25 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:10:25 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[PartyBranch(id=1, name=测试支部, leaderId=1, createdAt=2026-05-06T0 (truncated)...]
+2026-05-06 09:10:25 [http-nio-8000-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:10:25 [http-nio-8000-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/settings/open-application", parameters={}
+2026-05-06 09:10:25 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.SettingController#getOpenApplication()
+2026-05-06 09:10:25 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:10:25 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={open=false}, timestamp=1778029825588)]
+2026-05-06 09:10:25 [http-nio-8000-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:10:25 [http-nio-8000-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/members/profile", parameters={}
+2026-05-06 09:10:25 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.MemberController#getProfile(HttpServletRequest)
+2026-05-06 09:10:25 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:10:25 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={studentId=1, branchId=1, politicalStatus=共青团员, mobile=138001380 (truncated)...]
+2026-05-06 09:10:25 [http-nio-8000-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:10:28 [http-nio-8000-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/points/user/summary", parameters={}
+2026-05-06 09:10:28 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.PointsController#summaryUserPoints(HttpServletRequest)
+2026-05-06 09:10:28 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:10:28 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0}, timestamp=1778029828912)]
+2026-05-06 09:10:28 [http-nio-8000-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:10:28 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/tasks/user/page?page=1&size=10", parameters={masked}
+2026-05-06 09:10:28 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.TaskController#userPage(int, int)
+2026-05-06 09:10:28 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:10:28 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0, records=[]}, timestamp=1778029828924)]
+2026-05-06 09:10:28 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:12:54 [http-nio-8000-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/settings/open-application", parameters={}
+2026-05-06 09:12:54 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/admin/members", parameters={}
+2026-05-06 09:12:54 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.SettingController#getOpenApplication()
+2026-05-06 09:12:54 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.AdminMemberReviewController#list(String, String, HttpServletRequest)
+2026-05-06 09:12:54 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:12:54 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={open=false}, timestamp=1778029974150)]
+2026-05-06 09:12:54 [http-nio-8000-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:12:54 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:12:54 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{studentId=2, phone=13800138002, politicalStatus=群众, name=测试积极分 (truncated)...]
+2026-05-06 09:12:54 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:12:54 [http-nio-8000-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/tasks/page?page=1&size=10", parameters={masked}
+2026-05-06 09:12:54 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.TaskController#page(int, int)
+2026-05-06 09:12:54 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:12:54 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0, records=[]}, timestamp=1778029974725)]
+2026-05-06 09:12:54 [http-nio-8000-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:12:55 [http-nio-8000-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/announcements?page=1&size=10", parameters={masked}
+2026-05-06 09:12:55 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.AnnouncementController#getAllAnnouncements(String)
+2026-05-06 09:12:55 [http-nio-8000-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/announcements/branches", parameters={}
+2026-05-06 09:12:55 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.AnnouncementController#getBranches()
+2026-05-06 09:12:55 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:12:55 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[PartyBranch(id=1, name=测试支部, leaderId=1, createdAt=2026-05-06T0 (truncated)...]
+2026-05-06 09:12:55 [http-nio-8000-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:12:55 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:12:55 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[], timestamp=1778029975223)]
+2026-05-06 09:12:55 [http-nio-8000-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:12:55 [http-nio-8000-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/admin/applications", parameters={}
+2026-05-06 09:12:55 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.ApplicationController#listAll(HttpServletRequest)
+2026-05-06 09:12:55 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:12:55 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[], timestamp=1778029975741)]
+2026-05-06 09:12:55 [http-nio-8000-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:12:56 [http-nio-8000-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/study/resources", parameters={}
+2026-05-06 09:12:56 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StudyResourceController#list(String)
+2026-05-06 09:12:56 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:12:56 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[], timestamp=1778029976348)]
+2026-05-06 09:12:56 [http-nio-8000-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:12:58 [http-nio-8000-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/study/records/admin/stats?page=1&size=10", parameters={masked}
+2026-05-06 09:12:58 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StudyRecordController#getAllUserStudyStats(String, HttpServletRequest)
+2026-05-06 09:12:58 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:12:58 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{studentId=1, totalDuration=0, studyCount=0, memberName=测试党员, u (truncated)...]
+2026-05-06 09:12:58 [http-nio-8000-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:12:58 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/admin/accounts/branches", parameters={}
+2026-05-06 09:12:58 [http-nio-8000-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/admin/accounts", parameters={}
+2026-05-06 09:12:58 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.admin.AccountController#listBranches(HttpServletRequest)
+2026-05-06 09:12:58 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.admin.AccountController#list(HttpServletRequest, Long)
+2026-05-06 09:12:58 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:12:58 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[PartyBranch(id=1, name=测试支部, leaderId=1, createdAt=2026-05-06T0 (truncated)...]
+2026-05-06 09:12:58 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:12:58 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:12:58 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[Admin(id=2, openId=null, username=super_admin, realName=系统管理员,  (truncated)...]
+2026-05-06 09:12:58 [http-nio-8000-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:12:59 [http-nio-8000-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/overview", parameters={}
+2026-05-06 09:12:59 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#overview(HttpServletRequest)
+2026-05-06 09:12:59 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:12:59 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={pendingApplications=0, ongoingActivities=0, memberCount=2, pend (truncated)...]
+2026-05-06 09:12:59 [http-nio-8000-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:12:59 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/branch-study-durations", parameters={}
+2026-05-06 09:12:59 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#branchStudyDurations(HttpServletRequest)
+2026-05-06 09:12:59 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:12:59 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{totalDuration=0, branchId=1, branchName=测试支部}, {totalDuration= (truncated)...]
+2026-05-06 09:12:59 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:13:03 [http-nio-8000-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/admin/members", parameters={}
+2026-05-06 09:13:03 [http-nio-8000-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/settings/open-application", parameters={}
+2026-05-06 09:13:03 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.AdminMemberReviewController#list(String, String, HttpServletRequest)
+2026-05-06 09:13:03 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.SettingController#getOpenApplication()
+2026-05-06 09:13:03 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:13:03 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={open=false}, timestamp=1778029983813)]
+2026-05-06 09:13:03 [http-nio-8000-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:13:03 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:13:03 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{studentId=2, phone=13800138002, politicalStatus=群众, name=测试积极分 (truncated)...]
+2026-05-06 09:13:03 [http-nio-8000-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:13:05 [http-nio-8000-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - PUT "/settings/open-application?open=true", parameters={masked}
+2026-05-06 09:13:05 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.SettingController#setOpenApplication(boolean)
+2026-05-06 09:13:05 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:13:05 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=ok, data=null, timestamp=1778029985481)]
+2026-05-06 09:13:05 [http-nio-8000-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:13:06 [http-nio-8000-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - PUT "/settings/open-application?open=false", parameters={masked}
+2026-05-06 09:13:06 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.SettingController#setOpenApplication(boolean)
+2026-05-06 09:13:06 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:13:06 [http-nio-8000-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=ok, data=null, timestamp=1778029986238)]
+2026-05-06 09:13:06 [http-nio-8000-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:13:08 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/tasks/page?page=1&size=10", parameters={masked}
+2026-05-06 09:13:08 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.TaskController#page(int, int)
+2026-05-06 09:13:08 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:13:08 [http-nio-8000-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={total=0, records=[]}, timestamp=1778029988527)]
+2026-05-06 09:13:08 [http-nio-8000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:13:11 [http-nio-8000-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/announcements?page=1&size=10", parameters={masked}
+2026-05-06 09:13:11 [http-nio-8000-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/announcements/branches", parameters={}
+2026-05-06 09:13:11 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.AnnouncementController#getBranches()
+2026-05-06 09:13:11 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.AnnouncementController#getAllAnnouncements(String)
+2026-05-06 09:13:11 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:13:11 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:13:11 [http-nio-8000-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[], timestamp=1778029991480)]
+2026-05-06 09:13:11 [http-nio-8000-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[PartyBranch(id=1, name=测试支部, leaderId=1, createdAt=2026-05-06T0 (truncated)...]
+2026-05-06 09:13:11 [http-nio-8000-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:13:11 [http-nio-8000-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:13:12 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/overview", parameters={}
+2026-05-06 09:13:12 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#overview(HttpServletRequest)
+2026-05-06 09:13:12 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:13:12 [http-nio-8000-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={pendingApplications=0, ongoingActivities=0, memberCount=2, pend (truncated)...]
+2026-05-06 09:13:12 [http-nio-8000-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:13:12 [http-nio-8000-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/branch-study-durations", parameters={}
+2026-05-06 09:13:12 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#branchStudyDurations(HttpServletRequest)
+2026-05-06 09:13:12 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:13:12 [http-nio-8000-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{totalDuration=0, branchId=1, branchName=测试支部}, {totalDuration= (truncated)...]
+2026-05-06 09:13:12 [http-nio-8000-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:13:14 [http-nio-8000-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/admin/accounts/branches", parameters={}
+2026-05-06 09:13:14 [http-nio-8000-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/admin/accounts", parameters={}
+2026-05-06 09:13:14 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.admin.AccountController#list(HttpServletRequest, Long)
+2026-05-06 09:13:14 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.admin.AccountController#listBranches(HttpServletRequest)
+2026-05-06 09:13:14 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:13:14 [http-nio-8000-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[PartyBranch(id=1, name=测试支部, leaderId=1, createdAt=2026-05-06T0 (truncated)...]
+2026-05-06 09:13:14 [http-nio-8000-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:13:14 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:13:14 [http-nio-8000-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[Admin(id=2, openId=null, username=super_admin, realName=系统管理员,  (truncated)...]
+2026-05-06 09:13:14 [http-nio-8000-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:13:16 [http-nio-8000-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/overview", parameters={}
+2026-05-06 09:13:16 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#overview(HttpServletRequest)
+2026-05-06 09:13:16 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:13:16 [http-nio-8000-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data={pendingApplications=0, ongoingActivities=0, memberCount=2, pend (truncated)...]
+2026-05-06 09:13:16 [http-nio-8000-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2026-05-06 09:13:16 [http-nio-8000-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/stats/branch-study-durations", parameters={}
+2026-05-06 09:13:16 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.example.server.controller.StatsController#branchStudyDurations(HttpServletRequest)
+2026-05-06 09:13:16 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/yaml]
+2026-05-06 09:13:16 [http-nio-8000-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [Result(code=200, message=操作成功, data=[{totalDuration=0, branchId=1, branchName=测试支部}, {totalDuration= (truncated)...]
+2026-05-06 09:13:16 [http-nio-8000-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
