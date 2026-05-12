@@ -13,6 +13,7 @@ if (!Math) {
   "./pages/home/draft.js";
   "./pages/home/party/partyApplication.js";
   "./pages/home/party/history.js";
+  "./pages/home/party/historyDetail.js";
   "./pages/my/myActivity.js";
   "./pages/home/party.js";
   "./pages/home/memStudy.js";

@@ -1,25 +1,67 @@
 
-.container.data-v-5d1739a2 { padding: 20rpx;
+.container.data-v-5d1739a2 { padding: 20rpx; background: #f5f5f5; min-height: 100vh;
 }
 .empty.data-v-5d1739a2 { text-align: center; color: #888; padding: 40rpx 0;
 }
-.item.data-v-5d1739a2 { display:flex; align-items:center; justify-content: space-between; background:#fff; padding: 20rpx; border-radius: 12rpx; box-shadow: 0 2rpx 10rpx rgba(0,0,0,.05); margin-bottom: 16rpx;
+.item.data-v-5d1739a2 {
+	background: #fff;
+	padding: 24rpx 28rpx;
+	border-radius: 16rpx;
+	box-shadow: 0 2rpx 12rpx rgba(0,0,0,.05);
+	margin-bottom: 20rpx;
 }
-.left.data-v-5d1739a2 { display:flex; flex-direction:column; gap:6rpx;
+.item-top.data-v-5d1739a2 {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 12rpx;
 }
-.name.data-v-5d1739a2 { color:#333; font-weight:600;
+.left.data-v-5d1739a2 { display: flex; flex-direction: column; gap: 4rpx;
 }
-.sid.data-v-5d1739a2 { color:#666; font-size: 24rpx;
+.name.data-v-5d1739a2 { color: #333; font-weight: 600; font-size: 30rpx;
 }
-.mid.data-v-5d1739a2 { display:flex; flex-direction:column; gap:6rpx; align-items:flex-end;
+.sid.data-v-5d1739a2 { color: #888; font-size: 24rpx;
 }
-.submit.data-v-5d1739a2 { color:#999; font-size: 24rpx;
+.item-mid.data-v-5d1739a2 {
+	margin-bottom: 10rpx;
 }
-.type.data-v-5d1739a2 { color:#333; font-weight:600;
+.type.data-v-5d1739a2 { color: #e74c3c; font-weight: 600; font-size: 28rpx;
 }
-.time.data-v-5d1739a2 { color:#666; font-size: 24rpx;
+.item-bottom.data-v-5d1739a2 {
+	display: flex;
+	gap: 24rpx;
+	margin-bottom: 10rpx;
 }
-.status.data-v-5d1739a2 { padding: 6rpx 12rpx; border-radius: 999rpx; font-size: 24rpx;
+.time-text.data-v-5d1739a2 { color: #999; font-size: 24rpx;
+}
+.item-preview.data-v-5d1739a2 {
+	background: #fafafa;
+	border-radius: 8rpx;
+	padding: 16rpx 20rpx;
+	margin-bottom: 12rpx;
+}
+.preview-text.data-v-5d1739a2 {
+	color: #666;
+	font-size: 26rpx;
+	line-height: 1.6;
+}
+.item-footer.data-v-5d1739a2 {
+	display: flex;
+	justify-content: flex-end;
+	padding-top: 10rpx;
+	border-top: 1rpx solid #f5f5f5;
+}
+.view-detail.data-v-5d1739a2 {
+	color: #1677ff;
+	font-size: 26rpx;
+	font-weight: 500;
+}
+.status.data-v-5d1739a2 {
+	padding: 6rpx 16rpx;
+	border-radius: 999rpx;
+	font-size: 24rpx;
+	font-weight: 600;
+	flex-shrink: 0;
 }
 .success.data-v-5d1739a2 { background: #e6fffb; color: #08979c;
 }

@@ -68,6 +68,13 @@
 			}
 		},
 		{
+			"path" : "pages/home/party/historyDetail",
+			"style" : 
+			{
+				"navigationBarTitleText" : "申请详情"
+			}
+		},
+		{
 			"path" : "pages/my/myActivity",
 			"style" : 
 			{
@@ -121,14 +128,14 @@
 			"path" : "pages/home/articles/article3",
 			"style" : 
 			{
-				"navigationBarTitleText" : "为民办事"
+				"navigationBarTitleText" : "视频学习"
 			}
 		},
 		{
 			"path" : "pages/home/articles/article4",
 			"style" : 
 			{
-				"navigationBarTitleText" : "重要论述"
+				"navigationBarTitleText" : "文章详情"
 			}
 		},
 		{

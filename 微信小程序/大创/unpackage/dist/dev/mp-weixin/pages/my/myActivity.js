@@ -9,7 +9,7 @@ const _sfc_main = {
       if (!str)
         return "";
       try {
-        return new Date(str).toLocaleString("zh-CN");
+        return new Date(str).toLocaleString("zh-CN", { year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" });
       } catch {
         return str;
       }
@@ -22,6 +22,15 @@ const _sfc_main = {
       if (s === "ENDED")
         return "已完结";
       return s || "";
+    };
+    const getStatusClass = (s) => {
+      if (s === "PUBLISHING")
+        return "status-active";
+      if (s === "PENDING_END")
+        return "status-warning";
+      if (s === "ENDED")
+        return "status-ended";
+      return "status-default";
     };
     const loadMyTasks = async () => {
       var _a;
@@ -37,7 +46,7 @@ const _sfc_main = {
           assignmentStatus: it.assignment_status || it.assignmentStatus
         }));
       } catch (e) {
-        common_vendor.index.__f__("error", "at pages/my/myActivity.vue:51", "获取活动记录失败", e);
+        common_vendor.index.__f__("error", "at pages/my/myActivity.vue:67", "获取活动记录失败", e);
       }
     };
     common_vendor.onMounted(loadMyTasks);
@@ -49,10 +58,11 @@ const _sfc_main = {
         b: common_vendor.f(list.value, (item, index, i0) => {
           return {
             a: common_vendor.t(item.title),
-            b: common_vendor.t(item.points),
-            c: common_vendor.t(formatDate(item.dueDate)),
-            d: common_vendor.t(translateStatus(item.status)),
-            e: item.id || index
+            b: common_vendor.t(translateStatus(item.status)),
+            c: common_vendor.n(getStatusClass(item.status)),
+            d: common_vendor.t(item.points),
+            e: common_vendor.t(formatDate(item.dueDate)),
+            f: item.id || index
           };
         })
       });

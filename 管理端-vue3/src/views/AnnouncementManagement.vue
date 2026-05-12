@@ -23,13 +23,15 @@
 
     <!-- Table -->
     <div class="page-card">
-      <el-table :data="announcementList" v-loading="loading" stripe class="w-full">
+      <el-table :data="announcementList" v-loading="loading" stripe class="w-full" @sort-change="handleSortChange">
         <el-table-column prop="id" label="ID" width="80" />
         <el-table-column prop="title" label="标题" min-width="200" show-overflow-tooltip />
-        <el-table-column prop="branchName" label="所属支部" width="150" />
         <el-table-column prop="createdByName" label="发布人" width="120" />
-        <el-table-column prop="createdAt" label="发布时间" width="180">
+        <el-table-column prop="createdAt" label="发布时间" width="180" sortable="custom">
           <template #default="{ row }">{{ formatTime(row.createdAt) }}</template>
+        </el-table-column>
+        <el-table-column prop="updatedAt" label="最后修改时间" width="180" sortable="custom">
+          <template #default="{ row }">{{ row.updatedAt ? formatTime(row.updatedAt) : '-' }}</template>
         </el-table-column>
         <el-table-column label="操作" width="200" fixed="right">
           <template #default="{ row }">
@@ -59,13 +61,25 @@
         <el-form-item label="标题" prop="title">
           <el-input v-model="form.title" placeholder="请输入公告标题" />
         </el-form-item>
-        <el-form-item label="所属支部" prop="branchId">
-          <el-select v-model="form.branchId" placeholder="请选择所属支部" class="w-full">
-            <el-option v-for="branch in branchList" :key="branch.id" :label="branch.name" :value="branch.id" />
-          </el-select>
-        </el-form-item>
         <el-form-item label="内容" prop="content">
-          <el-input v-model="form.content" type="textarea" :rows="8" placeholder="请输入公告内容" />
+          <div class="w-full">
+            <div class="mb-2">
+              <el-upload
+                action="#"
+                :auto-upload="false"
+                :show-file-list="false"
+                :on-change="handleImageUpload"
+                accept="image/*"
+                class="inline-block"
+              >
+                <el-button size="small" type="success" :loading="imageUploading">
+                  <el-icon class="mr-1"><Picture /></el-icon> 插入图片
+                </el-button>
+              </el-upload>
+              <span class="text-xs text-gray-400 ml-2">图片将插入到编辑器当前光标位置</span>
+            </div>
+            <div ref="editorRef" style="height: 300px;"></div>
+          </div>
         </el-form-item>
       </el-form>
       <template #footer>
@@ -81,37 +95,42 @@
         <div class="flex flex-wrap gap-4 text-sm text-[var(--color-text-secondary)]">
           <span>发布人：{{ currentAnnouncement.createdByName }}</span>
           <span>发布时间：{{ formatTime(currentAnnouncement.createdAt) }}</span>
-          <span>所属支部：{{ currentAnnouncement.branchName }}</span>
+          <span v-if="currentAnnouncement.lastModifiedByName">最后修改人：{{ currentAnnouncement.lastModifiedByName }}</span>
+          <span v-if="currentAnnouncement.updatedAt">最后修改时间：{{ formatTime(currentAnnouncement.updatedAt) }}</span>
         </div>
-        <div class="leading-relaxed text-[var(--color-text-secondary)] whitespace-pre-wrap">{{ currentAnnouncement.content }}</div>
+        <div class="leading-relaxed text-[var(--color-text-secondary)] announcement-preview-content" v-html="currentAnnouncement.content"></div>
       </div>
     </el-dialog>
   </div>
 </template>
 
 <script setup>
-import { ref, reactive, onMounted } from 'vue'
+import { ref, reactive, onMounted, nextTick, shallowRef } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
-import request from '@/utils/request'
+import request, { uploadService } from '@/utils/request'
+import Quill from 'quill'
+import 'quill/dist/quill.snow.css'
 
 const loading = ref(false)
 const dialogVisible = ref(false)
 const viewDialogVisible = ref(false)
 const submitLoading = ref(false)
+const imageUploading = ref(false)
 const formRef = ref()
+const editorRef = ref(null)
+const quillInstance = shallowRef(null)
 const currentAnnouncement = ref(null)
 
 const searchForm = reactive({ keyword: '' })
-const form = reactive({ id: null, title: '', branchId: null, content: '' })
+const form = reactive({ id: null, title: '', content: '' })
 const rules = {
   title: [{ required: true, message: '请输入公告标题', trigger: 'blur' }],
-  branchId: [{ required: true, message: '请选择所属支部', trigger: 'change' }],
   content: [{ required: true, message: '请输入公告内容', trigger: 'blur' }]
 }
 
 const announcementList = ref([])
-const branchList = ref([])
-const pagination = reactive({ current: 1, size: 10, total: 0 })
+
+const pagination = reactive({ current: 1, size: 10, total: 0, sortField: 'created_at', sortOrder: 'DESC' })
 const dialogTitle = ref('发布公告')
 
 const formatTime = (timeStr) => {
@@ -122,16 +141,56 @@ const formatTime = (timeStr) => {
 const handleSearch = () => { pagination.current = 1; loadData() }
 const handleReset = () => { searchForm.keyword = ''; handleSearch() }
 
+const handleSortChange = ({ prop, order }) => {
+  if (!order) {
+    pagination.sortField = 'created_at'
+    pagination.sortOrder = 'DESC'
+  } else {
+    pagination.sortField = prop === 'updatedAt' ? 'updated_at' : 'created_at'
+    pagination.sortOrder = order === 'ascending' ? 'ASC' : 'DESC'
+  }
+  loadData()
+}
+
+const initQuill = () => {
+  if (quillInstance.value) return
+  quillInstance.value = new Quill(editorRef.value, {
+    theme: 'snow',
+    placeholder: '请输入公告内容...',
+    modules: {
+      toolbar: [
+        ['bold', 'italic', 'underline', 'strike'],
+        ['blockquote'],
+        [{ 'header': 1 }, { 'header': 2 }],
+        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+        [{ 'color': [] }, { 'background': [] }],
+        ['clean']
+      ]
+    }
+  })
+  quillInstance.value.on('text-change', () => {
+    form.content = quillInstance.value.root.innerHTML
+  })
+}
+
 const handleAdd = () => {
   dialogTitle.value = '发布公告'
   resetForm()
   dialogVisible.value = true
+  nextTick(() => {
+    initQuill()
+    quillInstance.value.root.innerHTML = ''
+  })
 }
 
 const handleEdit = (row) => {
   dialogTitle.value = '编辑公告'
-  Object.assign(form, { id: row.id, title: row.title, branchId: row.branchId, content: row.content })
+  Object.assign(form, { id: row.id, title: row.title, content: row.content })
   dialogVisible.value = true
+  nextTick(() => {
+    initQuill()
+    quillInstance.value.root.innerHTML = row.content || ''
+  })
 }
 
 const handleView = (row) => {
@@ -173,29 +232,56 @@ const handleSubmit = async () => {
 
 const handleDialogClose = () => resetForm()
 const resetForm = () => {
-  Object.assign(form, { id: null, title: '', branchId: null, content: '' })
+  Object.assign(form, { id: null, title: '', content: '' })
   formRef.value?.clearValidate()
 }
 
 const handleSizeChange = (size) => { pagination.size = size; loadData() }
 const handleCurrentChange = (current) => { pagination.current = current; loadData() }
 
-const loadBranches = async () => {
+const handleImageUpload = async (file) => {
   try {
-    const res = await request({ url: '/announcements/branches', method: 'GET' })
-    if (res.code === 200) branchList.value = res.data || []
-  } catch {}
+    imageUploading.value = true
+    const fd = new FormData()
+    fd.append('file', file.raw)
+    const res = await uploadService({ url: '/upload/image', method: 'POST', data: fd })
+    if (res.code === 200 && res.data) {
+      if (quillInstance.value) {
+        const range = quillInstance.value.getSelection(true)
+        // insert simple image html so we can set max-width
+        const imgHtml = `<img src="${res.data}" style="max-width:100%; border-radius:8px; margin: 10px 0; display: block;" />`
+        quillInstance.value.clipboard.dangerouslyPasteHTML(range.index, imgHtml)
+        form.content = quillInstance.value.root.innerHTML
+      }
+      ElMessage.success('图片插入成功')
+    } else {
+      ElMessage.error(res.message || '图片上传失败')
+    }
+  } catch (e) {
+    ElMessage.error('图片上传失败')
+  } finally {
+    imageUploading.value = false
+  }
 }
 
 const loadData = async () => {
   loading.value = true
   try {
-    const params = { page: pagination.current, size: pagination.size }
-    if (searchForm.keyword) params.keyword = searchForm.keyword
-    const res = await request({ url: '/announcements', method: 'GET', params })
+    const res = await request({ 
+      url: '/announcements', 
+      method: 'GET',
+      params: {
+        page: pagination.current,
+        size: pagination.size,
+        keyword: searchForm.keyword,
+        sortField: pagination.sortField,
+        sortOrder: pagination.sortOrder
+      }
+    })
     if (res.code === 200) {
-      announcementList.value = res.data || []
-      pagination.total = announcementList.value.length
+      const pageData = res.data || {}
+      announcementList.value = pageData.records || []
+      pagination.total = pageData.total || 0
     }
   } catch (e) {
     ElMessage.error('加载数据失败')
@@ -205,7 +291,16 @@ const loadData = async () => {
 }
 
 onMounted(() => {
-  loadBranches()
   loadData()
 })
 </script>
+
+<style lang="scss" scoped>
+.announcement-preview-content {
+  :deep(img) {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 10px 0;
+  }
+}
+</style>

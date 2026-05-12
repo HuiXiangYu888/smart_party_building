@@ -23,27 +23,52 @@ public class AnnouncementController {
     private PartyBranchMapper partyBranchMapper;
 
     /**
-     * 获取所有公告（管理端）
+     * 获取公告列表（管理端 - 真分页）
      */
     @GetMapping
-    public Result<List<Announcement>> getAllAnnouncements(@RequestParam(value = "keyword", required = false) String keyword) {
-        List<Announcement> announcements;
-        if (keyword != null && !keyword.trim().isEmpty()) {
-            announcements = announcementMapper.selectByKeyword(keyword.trim());
-        } else {
-            announcements = announcementMapper.selectAllWithDetails();
+    public Result<java.util.Map<String, Object>> getAllAnnouncements(
+            @RequestParam(value = "keyword", required = false) String keyword,
+            @RequestParam(value = "page", defaultValue = "1") int page,
+            @RequestParam(value = "size", defaultValue = "10") int size,
+            @RequestParam(value = "sortField", defaultValue = "created_at") String sortField,
+            @RequestParam(value = "sortOrder", defaultValue = "DESC") String sortOrder) {
+        
+        // 防注入，验证 sortField 和 sortOrder
+        if (!"created_at".equals(sortField) && !"updated_at".equals(sortField)) {
+            sortField = "created_at";
         }
-        return Result.success(announcements);
+        if (!"ASC".equalsIgnoreCase(sortOrder) && !"DESC".equalsIgnoreCase(sortOrder)) {
+            sortOrder = "DESC";
+        }
+
+        int offset = (page - 1) * size;
+        List<Announcement> records;
+        int total;
+        if (keyword != null && !keyword.trim().isEmpty()) {
+            List<Announcement> all = announcementMapper.selectByKeyword(keyword.trim(), sortField, sortOrder);
+            total = all.size();
+            records = all.subList(Math.min(offset, total), Math.min(offset + size, total));
+        } else {
+            records = announcementMapper.selectWithPagination(offset, size, sortField, sortOrder);
+            total = announcementMapper.selectCount();
+        }
+        java.util.Map<String, Object> data = new java.util.HashMap<>();
+        data.put("records", records);
+        data.put("total", total);
+        return Result.success(data);
     }
+
 
     /**
      * 分页获取公告
      */
     @GetMapping("/page")
     public Result<List<Announcement>> getAnnouncementsByPage(@RequestParam(defaultValue = "1") int page,
-                                                             @RequestParam(defaultValue = "10") int size) {
+                                                             @RequestParam(defaultValue = "10") int size,
+                                                             @RequestParam(value = "sortField", defaultValue = "created_at") String sortField,
+                                                             @RequestParam(value = "sortOrder", defaultValue = "DESC") String sortOrder) {
         int offset = (page - 1) * size;
-        List<Announcement> announcements = announcementMapper.selectWithPagination(offset, size);
+        List<Announcement> announcements = announcementMapper.selectWithPagination(offset, size, sortField, sortOrder);
         int total = announcementMapper.selectCount();
         
         // 这里可以返回分页信息，简化处理直接返回数据
@@ -100,6 +125,7 @@ public class AnnouncementController {
         }
         
         announcement.setId(id);
+        announcement.setLastModifiedBy((Long) userIdAttr); // 记录修改人
         int result = announcementMapper.update(announcement);
         if (result > 0) {
             return Result.success("公告更新成功");
@@ -132,16 +158,11 @@ public class AnnouncementController {
     }
 
     /**
-     * 获取用户端公告列表（按支部筛选）
+     * 获取用户端公告列表（全部）
      */
     @GetMapping("/user")
-    public Result<List<Announcement>> getUserAnnouncements(@RequestParam(value = "branchId", required = false) Long branchId) {
-        List<Announcement> announcements;
-        if (branchId != null) {
-            announcements = announcementMapper.selectByBranchId(branchId);
-        } else {
-            announcements = announcementMapper.selectAllWithDetails();
-        }
+    public Result<List<Announcement>> getUserAnnouncements() {
+        List<Announcement> announcements = announcementMapper.selectAllWithDetails();
         return Result.success(announcements);
     }
 
@@ -150,16 +171,7 @@ public class AnnouncementController {
      */
     @GetMapping("/latest")
     public Result<List<Announcement>> getLatestAnnouncements(@RequestParam(defaultValue = "5") int limit) {
-        List<Announcement> announcements = announcementMapper.selectWithPagination(0, limit);
+        List<Announcement> announcements = announcementMapper.selectWithPagination(0, limit, "created_at", "DESC");
         return Result.success(announcements);
-    }
-
-    /**
-     * 获取支部列表（用于公告管理）
-     */
-    @GetMapping("/branches")
-    public Result<List<PartyBranch>> getBranches() {
-        List<PartyBranch> branches = partyBranchMapper.selectAll();
-        return Result.success(branches);
     }
 }

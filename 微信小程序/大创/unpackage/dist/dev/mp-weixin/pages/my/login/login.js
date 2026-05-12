@@ -40,7 +40,7 @@ const _sfc_main = {
           throw new Error(response.data.message || "登录失败");
         }
       } catch (error) {
-        common_vendor.index.__f__("error", "at pages/my/login/login.vue:115", "登录错误:", error);
+        common_vendor.index.__f__("error", "at pages/my/login/login.vue:117", "登录错误:", error);
         common_vendor.index.showToast({
           title: error.message || "登录失败，请重试",
           icon: "none"
@@ -60,11 +60,11 @@ const _sfc_main = {
       return {
         a: common_assets._imports_0$3,
         b: loginForm.value.username,
-        c: common_vendor.o(($event) => loginForm.value.username = $event.detail.value, "a6"),
+        c: common_vendor.o(($event) => loginForm.value.username = $event.detail.value, "e4"),
         d: loginForm.value.password,
-        e: common_vendor.o(($event) => loginForm.value.password = $event.detail.value, "0c"),
+        e: common_vendor.o(($event) => loginForm.value.password = $event.detail.value, "f2"),
         f: common_vendor.t(isLoading.value ? "登录中..." : "立即登录"),
-        g: common_vendor.o(handleLogin, "b8"),
+        g: common_vendor.o(handleLogin, "ef"),
         h: isLoading.value || !isFormValid.value
       };
     };

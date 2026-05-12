@@ -74,7 +74,16 @@
           </div>
         </el-form-item>
         <el-form-item label="封面图" prop="cover">
-          <el-upload action="#" :auto-upload="false" :on-change="handleCoverChange" :file-list="coverList" list-type="picture-card">
+          <el-upload 
+            action="#" 
+            :auto-upload="false" 
+            :on-change="handleCoverChange" 
+            :on-remove="handleCoverRemove"
+            :file-list="coverList" 
+            list-type="picture-card"
+            :limit="1"
+            :class="{ 'hide-upload': coverList.length >= 1 }"
+          >
             <el-icon><Plus /></el-icon>
           </el-upload>
         </el-form-item>
@@ -133,7 +142,14 @@ const beforeUpload = (file) => {
   return true
 }
 
-const handleCoverChange = (file) => { form.cover = file.raw }
+const handleCoverChange = (file, list) => { 
+  form.cover = file.raw
+  coverList.value = list
+}
+const handleCoverRemove = (file, list) => { 
+  form.cover = null
+  coverList.value = list
+}
 
 const handleSubmit = async () => {
   if (!formRef.value) return
@@ -186,3 +202,9 @@ const loadData = async () => {
 
 onMounted(loadData)
 </script>
+
+<style scoped>
+:deep(.hide-upload .el-upload--picture-card) {
+  display: none !important;
+}
+</style>

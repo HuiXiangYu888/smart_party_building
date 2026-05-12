@@ -15,6 +15,23 @@ const _sfc_main = {
         return "danger";
       return "info";
     };
+    const formatTime = (t) => {
+      if (!t)
+        return "-";
+      return String(t).replace("T", " ").substring(0, 19);
+    };
+    const truncate = (str, len) => {
+      if (!str)
+        return "";
+      return str.length > len ? str.substring(0, len) + "..." : str;
+    };
+    const goDetail = (item) => {
+      getApp().globalData = getApp().globalData || {};
+      getApp().globalData.__historyDetail = item;
+      common_vendor.index.navigateTo({
+        url: "/pages/home/party/historyDetail"
+      });
+    };
     common_vendor.onMounted(async () => {
       var _a;
       try {
@@ -23,10 +40,10 @@ const _sfc_main = {
         if (res.statusCode === 200 && ((_a = res.data) == null ? void 0 : _a.code) === 200) {
           list.value = res.data.data || [];
         } else {
-          common_vendor.index.__f__("error", "at pages/home/party/history.vue:44", "获取申请记录失败:", res);
+          common_vendor.index.__f__("error", "at pages/home/party/history.vue:74", "获取申请记录失败:", res);
         }
       } catch (e) {
-        common_vendor.index.__f__("error", "at pages/home/party/history.vue:47", "获取申请记录异常:", e);
+        common_vendor.index.__f__("error", "at pages/home/party/history.vue:77", "获取申请记录异常:", e);
       }
       loading.value = false;
     });
@@ -37,15 +54,24 @@ const _sfc_main = {
         b: list.value.length === 0
       }, list.value.length === 0 ? {} : {
         c: common_vendor.f(list.value, (it, i, i0) => {
-          return {
+          return common_vendor.e({
             a: common_vendor.t(it.name || "-"),
             b: common_vendor.t(it.studentId || "-"),
-            c: common_vendor.t(it.type),
-            d: common_vendor.t(it.submittedAt || "-"),
-            e: common_vendor.t(it.status),
-            f: common_vendor.n(tagClass(it.status)),
-            g: i
-          };
+            c: common_vendor.t(it.status),
+            d: common_vendor.n(tagClass(it.status)),
+            e: common_vendor.t(it.type),
+            f: common_vendor.t(formatTime(it.submittedAt)),
+            g: it.reviewedAt
+          }, it.reviewedAt ? {
+            h: common_vendor.t(formatTime(it.reviewedAt))
+          } : {}, {
+            i: it.details
+          }, it.details ? {
+            j: common_vendor.t(truncate(it.details, 60))
+          } : {}, {
+            k: i,
+            l: common_vendor.o(($event) => goDetail(it), i)
+          });
         })
       }));
     };

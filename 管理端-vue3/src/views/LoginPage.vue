@@ -3,7 +3,7 @@
        style="background-image: radial-gradient(var(--color-border) 1px, transparent 0); background-size: 30px 30px;">
     <div class="w-full max-w-md page-card overflow-hidden">
       <!-- Top accent bar -->
-      <div class="h-1 bg-gradient-to-r from-indigo-500 to-violet-500"></div>
+      <div class="h-1 bg-gradient-to-r from-blue-500 to-sky-400"></div>
 
       <!-- Header -->
       <div class="text-center pt-10 pb-5 px-10">

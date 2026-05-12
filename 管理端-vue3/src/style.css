@@ -11,10 +11,10 @@
    ============================================ */
 @layer base {
   :root {
-    /* Primary (Indigo) */
-    --color-primary: #4f46e5;
-    --color-primary-hover: #4338ca;
-    --color-primary-light: #eef2ff;
+    /* Primary (Soft Blue) */
+    --color-primary: #3b82f6;
+    --color-primary-hover: #2563eb;
+    --color-primary-light: #eff6ff;
 
     /* Semantic */
     --color-success: #16a34a;
@@ -43,9 +43,9 @@
   }
 
   .dark {
-    --color-primary: #818cf8;
-    --color-primary-hover: #6366f1;
-    --color-primary-light: #1e1b4e;
+    --color-primary: #60a5fa;
+    --color-primary-hover: #3b82f6;
+    --color-primary-light: #172554;
 
     --color-success: #22c55e;
     --color-warning: #f59e0b;
@@ -97,10 +97,10 @@
   /* Override Element Plus CSS variables */
   :root {
     --el-color-primary: var(--color-primary);
-    --el-color-primary-light-3: #a5b4fc;
-    --el-color-primary-light-5: #c7d2fe;
-    --el-color-primary-light-7: #e0e7ff;
-    --el-color-primary-light-9: #eef2ff;
+    --el-color-primary-light-3: #93c5fd;
+    --el-color-primary-light-5: #bfdbfe;
+    --el-color-primary-light-7: #dbeafe;
+    --el-color-primary-light-9: #eff6ff;
     --el-color-primary-dark-2: var(--color-primary-hover);
     --el-color-success: var(--color-success);
     --el-color-warning: var(--color-warning);
@@ -115,10 +115,10 @@
   }
 
   .dark {
-    --el-color-primary-light-3: #6366f1;
-    --el-color-primary-light-5: #4f46e5;
-    --el-color-primary-light-7: #3730a3;
-    --el-color-primary-light-9: #1e1b4e;
+    --el-color-primary-light-3: #3b82f6;
+    --el-color-primary-light-5: #2563eb;
+    --el-color-primary-light-7: #1d4ed8;
+    --el-color-primary-light-9: #172554;
     --el-fill-color-blank: var(--color-bg-card);
     --el-fill-color-light: #1e293b;
     --el-mask-color: rgba(0, 0, 0, 0.7);
@@ -196,8 +196,8 @@
   }
 
   /* Stat card gradient backgrounds */
-  .stat-gradient-indigo {
-    @apply bg-gradient-to-br from-indigo-500 to-indigo-700;
+  .stat-gradient-blue {
+    @apply bg-gradient-to-br from-blue-500 to-blue-700;
   }
 
   .stat-gradient-emerald {

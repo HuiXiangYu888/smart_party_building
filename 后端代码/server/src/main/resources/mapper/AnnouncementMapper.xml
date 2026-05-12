@@ -11,13 +11,16 @@
         <result column="created_at" property="createdAt" jdbcType="TIMESTAMP"/>
         <result column="branch_name" property="branchName" jdbcType="VARCHAR"/>
         <result column="created_by_name" property="createdByName" jdbcType="VARCHAR"/>
+        <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP"/>
+        <result column="last_modified_by" property="lastModifiedBy" jdbcType="BIGINT"/>
+        <result column="last_modified_by_name" property="lastModifiedByName" jdbcType="VARCHAR"/>
     </resultMap>
 
-    <sql id="Base_Columns">id,title,content,branch_id,created_by,created_at</sql>
+    <sql id="Base_Columns">id,title,content,branch_id,created_by,created_at,updated_at,last_modified_by</sql>
 
     <insert id="insert" parameterType="com.example.pojo.entity.Announcement" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO announcements(title,content,branch_id,created_by)
-        VALUES(#{title},#{content},#{branchId},#{createdBy})
+        INSERT INTO announcements(title,content,created_by)
+        VALUES(#{title},#{content},#{createdBy})
     </insert>
 
     <select id="selectById" parameterType="long" resultMap="BaseResultMap">
@@ -29,10 +32,14 @@
             a.created_by,
             a.created_at,
             pb.name as branch_name,
-            ad.username as created_by_name
+            ad.username as created_by_name,
+            a.updated_at,
+            a.last_modified_by,
+            mad.username as last_modified_by_name
         FROM announcements a
         LEFT JOIN party_branches pb ON a.branch_id = pb.id
         LEFT JOIN admins ad ON a.created_by = ad.id
+        LEFT JOIN admins mad ON a.last_modified_by = mad.id
         WHERE a.id = #{id}
     </select>
 
@@ -45,10 +52,14 @@
             a.created_by,
             a.created_at,
             pb.name as branch_name,
-            ad.username as created_by_name
+            ad.username as created_by_name,
+            a.updated_at,
+            a.last_modified_by,
+            mad.username as last_modified_by_name
         FROM announcements a
         LEFT JOIN party_branches pb ON a.branch_id = pb.id
         LEFT JOIN admins ad ON a.created_by = ad.id
+        LEFT JOIN admins mad ON a.last_modified_by = mad.id
         ORDER BY a.created_at DESC
     </select>
 
@@ -61,10 +72,14 @@
             a.created_by,
             a.created_at,
             pb.name as branch_name,
-            ad.username as created_by_name
+            ad.username as created_by_name,
+            a.updated_at,
+            a.last_modified_by,
+            mad.username as last_modified_by_name
         FROM announcements a
         LEFT JOIN party_branches pb ON a.branch_id = pb.id
         LEFT JOIN admins ad ON a.created_by = ad.id
+        LEFT JOIN admins mad ON a.last_modified_by = mad.id
         WHERE a.branch_id = #{branchId}
         ORDER BY a.created_at DESC
     </select>
@@ -78,11 +93,22 @@
             a.created_by,
             a.created_at,
             pb.name as branch_name,
-            ad.username as created_by_name
+            ad.username as created_by_name,
+            a.updated_at,
+            a.last_modified_by,
+            mad.username as last_modified_by_name
         FROM announcements a
         LEFT JOIN party_branches pb ON a.branch_id = pb.id
         LEFT JOIN admins ad ON a.created_by = ad.id
-        ORDER BY a.created_at DESC
+        LEFT JOIN admins mad ON a.last_modified_by = mad.id
+        <choose>
+            <when test="sortField != null and sortField != '' and sortOrder != null and sortOrder != ''">
+                ORDER BY a.${sortField} ${sortOrder}
+            </when>
+            <otherwise>
+                ORDER BY a.created_at DESC
+            </otherwise>
+        </choose>
         LIMIT #{offset}, #{limit}
     </select>
 
@@ -94,7 +120,7 @@
         UPDATE announcements 
         SET title = #{title},
             content = #{content},
-            branch_id = #{branchId}
+            last_modified_by = #{lastModifiedBy}
         WHERE id = #{id}
     </update>
 
@@ -111,13 +137,24 @@
             a.created_by,
             a.created_at,
             pb.name as branch_name,
-            ad.username as created_by_name
+            ad.username as created_by_name,
+            a.updated_at,
+            a.last_modified_by,
+            mad.username as last_modified_by_name
         FROM announcements a
         LEFT JOIN party_branches pb ON a.branch_id = pb.id
         LEFT JOIN admins ad ON a.created_by = ad.id
+        LEFT JOIN admins mad ON a.last_modified_by = mad.id
         WHERE a.title LIKE CONCAT('%', #{keyword}, '%') 
            OR a.content LIKE CONCAT('%', #{keyword}, '%')
-        ORDER BY a.created_at DESC
+        <choose>
+            <when test="sortField != null and sortField != '' and sortOrder != null and sortOrder != ''">
+                ORDER BY a.${sortField} ${sortOrder}
+            </when>
+            <otherwise>
+                ORDER BY a.created_at DESC
+            </otherwise>
+        </choose>
     </select>
 
 </mapper>

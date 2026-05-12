@@ -67,21 +67,21 @@ public class OssService {
                 || s.contains("access-key-id_here") || s.contains("access-key-secret_here");
     }
 
+    private com.aliyun.oss.common.auth.CredentialsProvider getCredentialsProvider() {
+        if (accessKeyId != null && !accessKeyId.trim().isEmpty() && accessKeySecret != null && !accessKeySecret.trim().isEmpty() && !isPlaceholder(accessKeyId)) {
+            return new DefaultCredentialProvider(accessKeyId.trim(), accessKeySecret.trim());
+        }
+        try {
+            return CredentialsProviderFactory.newEnvironmentVariableCredentialsProvider();
+        } catch (Exception e) {
+            throw new RuntimeException("未找到OSS凭证，请配置 application.yml 中的 access-key-id/access-key-secret", e);
+        }
+    }
+
     public String upload(String objectKey, InputStream inputStream) {
         ClientBuilderConfiguration cfg = new ClientBuilderConfiguration();
         cfg.setSignatureVersion(SignVersion.V4);
-        com.aliyun.oss.common.auth.CredentialsProvider cp;
-        try {
-            // 优先环境变量
-            cp = CredentialsProviderFactory.newEnvironmentVariableCredentialsProvider();
-        } catch (com.aliyuncs.exceptions.ClientException e) {
-            // 退化为配置中的 AK/SK
-            if (accessKeyId != null && !accessKeyId.isEmpty() && accessKeySecret != null && !accessKeySecret.isEmpty()) {
-                cp = new DefaultCredentialProvider(accessKeyId, accessKeySecret);
-            } else {
-                throw new RuntimeException("未找到OSS凭证，请配置环境变量 OSS_ACCESS_KEY_ID/OSS_ACCESS_KEY_SECRET 或在 application.yml 中配置 aliyun.oss.access-key-id/access-key-secret", e);
-            }
-        }
+        com.aliyun.oss.common.auth.CredentialsProvider cp = getCredentialsProvider();
         // endpoint 兜底：优先应用配置，其次环境变量 OSS_ENDPOINT
         String ep = endpoint;
         if (isPlaceholder(ep)) ep = null;
@@ -148,16 +148,7 @@ public class OssService {
     public void delete(String objectKey) {
         ClientBuilderConfiguration cfg = new ClientBuilderConfiguration();
         cfg.setSignatureVersion(SignVersion.V4);
-        com.aliyun.oss.common.auth.CredentialsProvider cp;
-        try {
-            cp = CredentialsProviderFactory.newEnvironmentVariableCredentialsProvider();
-        } catch (com.aliyuncs.exceptions.ClientException e) {
-            if (accessKeyId != null && !accessKeyId.isEmpty() && accessKeySecret != null && !accessKeySecret.isEmpty()) {
-                cp = new DefaultCredentialProvider(accessKeyId, accessKeySecret);
-            } else {
-                throw new RuntimeException("未找到OSS凭证，请配置环境变量 OSS_ACCESS_KEY_ID/OSS_ACCESS_KEY_SECRET 或在 application.yml 中配置 aliyun.oss.access-key-id/access-key-secret", e);
-            }
-        }
+        com.aliyun.oss.common.auth.CredentialsProvider cp = getCredentialsProvider();
         String ep = endpoint;
         if (isPlaceholder(ep)) ep = null;
         if (ep == null || ep.trim().isEmpty()) {
@@ -194,16 +185,7 @@ public class OssService {
     public URL generatePresignedUrl(String objectKey, int expireSeconds) {
         ClientBuilderConfiguration cfg = new ClientBuilderConfiguration();
         cfg.setSignatureVersion(SignVersion.V4);
-        com.aliyun.oss.common.auth.CredentialsProvider cp;
-        try {
-            cp = CredentialsProviderFactory.newEnvironmentVariableCredentialsProvider();
-        } catch (com.aliyuncs.exceptions.ClientException e) {
-            if (accessKeyId != null && !accessKeyId.isEmpty() && accessKeySecret != null && !accessKeySecret.isEmpty()) {
-                cp = new DefaultCredentialProvider(accessKeyId, accessKeySecret);
-            } else {
-                throw new RuntimeException("未找到OSS凭证，请配置环境变量或application.yml", e);
-            }
-        }
+        com.aliyun.oss.common.auth.CredentialsProvider cp = getCredentialsProvider();
         String ep = endpoint;
         if (isPlaceholder(ep)) ep = null;
         if (ep == null || ep.trim().isEmpty()) {
@@ -236,16 +218,7 @@ public class OssService {
     public OSS buildClient() {
         ClientBuilderConfiguration cfg = new ClientBuilderConfiguration();
         cfg.setSignatureVersion(SignVersion.V4);
-        com.aliyun.oss.common.auth.CredentialsProvider cp;
-        try {
-            cp = CredentialsProviderFactory.newEnvironmentVariableCredentialsProvider();
-        } catch (com.aliyuncs.exceptions.ClientException e) {
-            if (accessKeyId != null && !accessKeyId.isEmpty() && accessKeySecret != null && !accessKeySecret.isEmpty()) {
-                cp = new DefaultCredentialProvider(accessKeyId, accessKeySecret);
-            } else {
-                throw new RuntimeException("未找到OSS凭证，请配置环境变量或application.yml", e);
-            }
-        }
+        com.aliyun.oss.common.auth.CredentialsProvider cp = getCredentialsProvider();
         String ep = endpoint;
         if (isPlaceholder(ep)) ep = null;
         if (ep == null || ep.trim().isEmpty()) ep = System.getenv("OSS_ENDPOINT");

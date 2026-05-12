@@ -44,7 +44,12 @@ public class ApplicationController {
 	@PostMapping("/files/upload")
 	public Result<Map<String, String>> upload(@RequestParam("file") MultipartFile file) {
 		try {
-			String key = "applications/" + UUID.randomUUID() + "/" + Objects.requireNonNull(file.getOriginalFilename());
+            String originalFilename = file.getOriginalFilename();
+            String ext = "";
+            if (originalFilename != null && originalFilename.contains(".")) {
+                ext = originalFilename.substring(originalFilename.lastIndexOf("."));
+            }
+			String key = "applications/" + UUID.randomUUID().toString().replace("-", "") + ext;
 			String url = ossService.upload(key, file.getInputStream());
 			Map<String, String> resp = new HashMap<>();
 			resp.put("url", url);
@@ -132,9 +137,16 @@ public class ApplicationController {
         Member me = memberMapper.selectById(userId);
         for (PositiveMemberApplication a : safeList(positiveMapper.selectByUserId(userId))) {
             Map<String, Object> m = new HashMap<>();
+            m.put("id", a.getId());
+            m.put("appType", "positive");
             m.put("type", "积极分子申请");
             m.put("status", mapStatus(a.getStatus()));
             m.put("reviewedAt", a.getReviewedAt());
+            m.put("details", a.getApplicationDetails());
+            m.put("comments", a.getComments());
+            // 附件
+            List<String> att = parseStringArray(a.getSupportingDocuments());
+            m.put("attachments", att);
             // 申请人信息
             if (me != null) {
                 m.put("name", me.getUsername());
@@ -147,9 +159,16 @@ public class ApplicationController {
         }
         for (PartyApplication a : safeList(partyMapper.selectByUserId(userId))) {
             Map<String, Object> m = new HashMap<>();
+            m.put("id", a.getId());
+            m.put("appType", "party");
             m.put("type", "入党申请");
             m.put("status", mapStatus(a.getStatus()));
             m.put("reviewedAt", a.getReviewedAt());
+            m.put("details", a.getApplicationDetails());
+            m.put("comments", a.getComments());
+            // 附件（复用 trainingRecords 字段）
+            List<String> att = parseStringArray(a.getTrainingRecords());
+            m.put("attachments", att);
             if (me != null) {
                 m.put("name", me.getUsername());
                 m.put("studentId", me.getStudentId());
@@ -160,9 +179,31 @@ public class ApplicationController {
         }
         for (PrepareMemberApplication a : safeList(prepareMapper.selectByUserId(userId))) {
             Map<String, Object> m = new HashMap<>();
+            m.put("id", a.getId());
+            m.put("appType", "prepare");
             m.put("type", "预备党员申请");
             m.put("status", mapStatus(a.getStatus()));
             m.put("reviewedAt", a.getReviewedAt());
+            m.put("comments", a.getComments());
+            // evaluationReport 可能是 JSON {text, attachments}
+            String er = a.getEvaluationReport();
+            String text = er;
+            List<String> att = java.util.Collections.emptyList();
+            try {
+                if (er != null && er.trim().startsWith("{")) {
+                    JsonNode node = objectMapper.readTree(er);
+                    if (node != null) {
+                        JsonNode textNode = node.get("text");
+                        if (textNode != null && !textNode.isNull()) text = textNode.asText();
+                        JsonNode arr = node.get("attachments");
+                        if (arr != null && arr.isArray()) {
+                            att = objectMapper.convertValue(arr, new TypeReference<List<String>>(){});
+                        }
+                    }
+                }
+            } catch (Exception ignore) {}
+            m.put("details", text);
+            m.put("attachments", att);
             if (me != null) {
                 m.put("name", me.getUsername());
                 m.put("studentId", me.getStudentId());

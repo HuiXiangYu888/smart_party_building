@@ -26,42 +26,113 @@
 .container.data-v-407db708 {
   width: 100%;
   min-height: 100vh;
-  background: #000;
+  background: #f5f5f5;
   display: flex;
   flex-direction: column;
 }
 .header.data-v-407db708 {
-  color: #fff;
-  padding: 20rpx;
-  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  padding: 24rpx 30rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.title-dot.data-v-407db708 {
+  width: 8rpx;
+  height: 32rpx;
+  background-color: #e74c3c;
+  border-radius: 4rpx;
+  margin-right: 16rpx;
+}
+.title-text.data-v-407db708 {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
 }
 .player.data-v-407db708 {
   width: 100%;
   height: 420rpx;
-  background: #000;
+  background: #1a1a2e;
 }
-.progress-info.data-v-407db708 {
-  position: fixed;
-  top: 100rpx;
-  right: 20rpx;
-  background: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  padding: 10rpx 20rpx;
-  border-radius: 20rpx;
-  font-size: 24rpx;
-  z-index: 1000;
+.info-card.data-v-407db708 {
+  margin: 20rpx;
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 24rpx 30rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.04);
+}
+.info-row.data-v-407db708 {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16rpx 0;
+  border-bottom: 1rpx solid #f8f8f8;
 }
-.progress-info .progress-time.data-v-407db708 {
-  font-size: 20rpx;
-  margin-top: 5rpx;
-  opacity: 0.8;
+.info-row.data-v-407db708:last-child {
+  border-bottom: none;
 }
-.progress-info .auto-save-tip.data-v-407db708 {
-  margin-top: 5rpx;
-  font-size: 18rpx;
-  color: #28a745;
-  opacity: 0.8;
+.info-label.data-v-407db708 {
+  font-size: 28rpx;
+  color: #666;
+}
+.info-value.data-v-407db708 {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+}
+.completed.data-v-407db708 {
+  color: #08979c;
+  background: #e6fffb;
+  padding: 4rpx 16rpx;
+  border-radius: 8rpx;
+  font-size: 26rpx;
+}
+.not-completed.data-v-407db708 {
+  color: #999;
+}
+.progress-bar-wrap.data-v-407db708 {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  flex: 1;
+  margin-left: 30rpx;
+}
+.progress-bar-bg.data-v-407db708 {
+  flex: 1;
+  height: 12rpx;
+  background: #f0f0f0;
+  border-radius: 6rpx;
+  overflow: hidden;
+}
+.progress-bar-fill.data-v-407db708 {
+  height: 100%;
+  background: linear-gradient(90deg, #e74c3c, #ff6b6b);
+  border-radius: 6rpx;
+  transition: width 0.3s ease;
+}
+.progress-percent.data-v-407db708 {
+  font-size: 26rpx;
+  color: #e74c3c;
+  font-weight: 600;
+  width: 70rpx;
+  text-align: right;
+}
+.tip-card.data-v-407db708 {
+  margin: 0 20rpx 20rpx;
+  background: #fff9f0;
+  border: 1rpx solid #ffe8cc;
+  border-radius: 12rpx;
+  padding: 20rpx 24rpx;
+  display: flex;
+  align-items: flex-start;
+  gap: 12rpx;
+}
+.tip-icon.data-v-407db708 {
+  font-size: 28rpx;
+  flex-shrink: 0;
+}
+.tip-text.data-v-407db708 {
+  font-size: 24rpx;
+  color: #b37000;
+  line-height: 1.6;
 }

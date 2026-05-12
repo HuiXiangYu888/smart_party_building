@@ -49,4 +49,19 @@ public class Announcement {
      * 创建人姓名（关联查询时使用）
      */
     private String createdByName;
+    
+    /**
+     * 最后修改时间
+     */
+    private LocalDateTime updatedAt;
+    
+    /**
+     * 最后修改人ID
+     */
+    private Long lastModifiedBy;
+    
+    /**
+     * 最后修改人姓名（关联查询时使用）
+     */
+    private String lastModifiedByName;
 }

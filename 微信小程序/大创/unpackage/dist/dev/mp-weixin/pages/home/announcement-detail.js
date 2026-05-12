@@ -7,6 +7,13 @@ const _sfc_main = {
     const announcement = common_vendor.ref({});
     const loading = common_vendor.ref(false);
     const error = common_vendor.ref("");
+    const formatContent = (html) => {
+      if (!html)
+        return "";
+      return html.replace(/<img[^>]*>/gi, function(match) {
+        return match.replace(/style\s*=\s*["'][^"']*["']/gi, "").replace(/width\s*=\s*["'][^"']*["']/gi, "").replace(/height\s*=\s*["'][^"']*["']/gi, "").replace(/<img/gi, '<img style="max-width:100%; height:auto; display:block; margin:10px 0; border-radius:8px;"');
+      });
+    };
     const formatTime = (timeStr) => {
       if (!timeStr)
         return "";
@@ -45,7 +52,7 @@ const _sfc_main = {
           error.value = "加载失败";
         }
       } catch (e) {
-        common_vendor.index.__f__("error", "at pages/home/announcement-detail.vue:85", "加载公告详情失败:", e);
+        common_vendor.index.__f__("error", "at pages/home/announcement-detail.vue:97", "加载公告详情失败:", e);
         error.value = "网络错误";
       } finally {
         loading.value = false;
@@ -66,14 +73,14 @@ const _sfc_main = {
         b: announcement.value.id
       }, announcement.value.id ? {
         c: common_vendor.t(formatTime(announcement.value.createdAt)),
-        d: common_vendor.t(announcement.value.content)
+        d: formatContent(announcement.value.content)
       } : {}, {
         e: loading.value
       }, loading.value ? {} : {}, {
         f: error.value
       }, error.value ? {
         g: common_vendor.t(error.value),
-        h: common_vendor.o(loadData, "f8")
+        h: common_vendor.o(loadData, "d3")
       } : {});
     };
   }

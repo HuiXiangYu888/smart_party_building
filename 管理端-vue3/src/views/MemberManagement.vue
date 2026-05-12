@@ -138,21 +138,23 @@ const loadData = async () => {
   loading.value = true
   try {
     const statusMap = { '已通过': 'APPROVED', '待审核': 'PENDING', '不通过': 'REJECTED' }
-    const params = {}
+    const params = { page: pagination.current, size: pagination.size }
     if (searchForm.reviewStatus) params.reviewStatus = statusMap[searchForm.reviewStatus] || ''
 
     const kwRaw = (searchForm.keyword || '').trim()
     if (/^\d{4,}$/.test(kwRaw)) params.studentId = kwRaw
 
     const res = await request.get('/admin/members', { params })
-    let list = res.data || []
+    const pageData = res.data || {}
+    let list = pageData.records || pageData || []
+    pagination.total = pageData.total || list.length
 
     // Dynamic political status options
     const set = new Set(list.map(it => String(it.politicalStatus || '').trim()).filter(Boolean))
     politicalOptions.value = Array.from(set)
 
-    // Client-side keyword filter
-    if (kwRaw) {
+    // Client-side keyword filter (for name/mobile that backend doesn't filter)
+    if (kwRaw && !/^\d{4,}$/.test(kwRaw)) {
       list = list.filter(it =>
         String(it.name || '').includes(kwRaw) ||
         String(it.mobile || '').includes(kwRaw) ||
@@ -181,11 +183,11 @@ const loadData = async () => {
     })
 
     memberList.value = list
-    pagination.total = list.length
   } finally {
     loading.value = false
   }
 }
+
 
 const loadOpenApplication = async () => {
   try {

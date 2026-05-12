@@ -37,6 +37,7 @@
   border-radius: 60rpx;
   margin-right: 24rpx;
   border: 4rpx solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
 }
 .user-header .user-info.data-v-2f1ef635 {
   flex: 1;

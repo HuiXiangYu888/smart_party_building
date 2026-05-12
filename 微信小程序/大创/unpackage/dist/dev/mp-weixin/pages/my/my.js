@@ -151,16 +151,16 @@ const _sfc_main = {
         c: common_vendor.t(getUserTypeText()),
         d: isUserLoggedIn.value
       }, isUserLoggedIn.value ? {
-        e: common_vendor.o(handleLogout, "13")
+        e: common_vendor.o(handleLogout, "2b")
       } : {}, {
         f: common_vendor.o(handleUserClick, "f1"),
         g: common_assets._imports_0$1,
         h: common_assets._imports_1$1,
-        i: common_vendor.o(goMyActivity, "3a"),
+        i: common_vendor.o(goMyActivity, "e5"),
         j: common_assets._imports_2$1,
-        k: common_vendor.o(goPointsRank, "14"),
+        k: common_vendor.o(goPointsRank, "dd"),
         l: common_assets._imports_1$1,
-        m: common_vendor.o(goChangePassword, "d6")
+        m: common_vendor.o(goChangePassword, "31")
       });
     };
   }

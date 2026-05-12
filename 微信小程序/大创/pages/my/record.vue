@@ -128,30 +128,61 @@
 		color: #333;
 		margin: 30rpx 0;
 		text-align: center;
+		position: relative;
+		display: inline-block;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	
+	.page-title::after {
+		content: '';
+		position: absolute;
+		bottom: -10rpx;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 40rpx;
+		height: 6rpx;
+		background-color: #e74c3c;
+		border-radius: 4rpx;
 	}
 	
 	.total-stats {
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
 		border-radius: 16rpx;
-		padding: 30rpx;
+		padding: 40rpx 30rpx;
 		margin-bottom: 30rpx;
-		box-shadow: 0 8rpx 20rpx rgba(102, 126, 234, 0.3);
+		box-shadow: 0 8rpx 20rpx rgba(231, 76, 60, 0.3);
+		position: relative;
+		overflow: hidden;
+		
+		&::before {
+			content: '';
+			position: absolute;
+			top: -20rpx;
+			right: -20rpx;
+			width: 150rpx;
+			height: 150rpx;
+			background: rgba(255, 255, 255, 0.1);
+			border-radius: 50%;
+		}
 		
 		.stats-item {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+			position: relative;
+			z-index: 1;
 			
 			.stats-label {
-				font-size: 28rpx;
-				color: #fff;
-				opacity: 0.9;
+				font-size: 30rpx;
+				color: rgba(255, 255, 255, 0.9);
 			}
 			
 			.stats-value {
-				font-size: 36rpx;
+				font-size: 42rpx;
 				font-weight: bold;
 				color: #fff;
+				text-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);
 			}
 		}
 	}
@@ -159,23 +190,27 @@
 	.head {
 		display: flex;
 		justify-content: space-between;
-		background-color: #e8f4fd;
+		background-color: #fff5f5;
 		padding: 24rpx 30rpx;
 		border-radius: 12rpx;
 		margin-bottom: 10rpx;
-		box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+		border-bottom: 2rpx solid #ffe8e8;
 		
 		view {
 			flex: 1;
 			text-align: center;
 			font-size: 28rpx;
-			font-weight: 600;
-			color: #2c6ecb;
+			font-weight: bold;
+			color: #e74c3c;
 		}
 	}
 	
 	.body {
 		width: 100%;
+		background: #fff;
+		border-radius: 16rpx;
+		overflow: hidden;
+		box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.04);
 	}
 	
 	.record-item {
@@ -183,15 +218,12 @@
 		justify-content: space-between;
 		align-items: center;
 		background-color: #fff;
-		padding: 28rpx 30rpx;
-		border-radius: 12rpx;
-		margin-bottom: 15rpx;
-		box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.03);
-		transition: all 0.2s ease;
+		padding: 30rpx;
+		border-bottom: 1rpx solid #f0f0f0;
+		transition: background-color 0.2s ease;
 		
-		&:hover {
-			transform: translateY(-2rpx);
-			box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.08);
+		&:active {
+			background-color: #fafafa;
 		}
 		
 		view {
@@ -201,9 +233,19 @@
 			color: #333;
 		}
 		
-		.duration {
-			color: #e63946;
+		.title {
 			font-weight: 500;
+		}
+		
+		.time {
+			color: #888;
+			font-size: 24rpx;
+		}
+		
+		.duration {
+			color: #e74c3c;
+			font-weight: bold;
+			font-size: 28rpx;
 		}
 	}
 	

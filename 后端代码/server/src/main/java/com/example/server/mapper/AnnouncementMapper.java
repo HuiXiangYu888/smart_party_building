@@ -32,7 +32,7 @@ public interface AnnouncementMapper {
     /**
      * 分页查询公告
      */
-    List<Announcement> selectWithPagination(@Param("offset") int offset, @Param("limit") int limit);
+    List<Announcement> selectWithPagination(@Param("offset") int offset, @Param("limit") int limit, @Param("sortField") String sortField, @Param("sortOrder") String sortOrder);
     
     /**
      * 查询公告总数
@@ -52,5 +52,5 @@ public interface AnnouncementMapper {
     /**
      * 根据关键词搜索公告
      */
-    List<Announcement> selectByKeyword(@Param("keyword") String keyword);
+    List<Announcement> selectByKeyword(@Param("keyword") String keyword, @Param("sortField") String sortField, @Param("sortOrder") String sortOrder);
 }

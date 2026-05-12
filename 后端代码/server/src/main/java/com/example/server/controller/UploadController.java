@@ -46,9 +46,15 @@ public class UploadController {
         }
         
         try {
-            String objectKey = "news/images/" + System.currentTimeMillis() + "_" + file.getOriginalFilename();
+            String originalFilename = file.getOriginalFilename();
+            String ext = "";
+            if (originalFilename != null && originalFilename.contains(".")) {
+                ext = originalFilename.substring(originalFilename.lastIndexOf("."));
+            }
+            // 使用 UUID 生成文件名，避免中文名导致 OSS 链接无法访问，统一放到 uploads 目录下
+            String objectKey = "uploads/" + java.util.UUID.randomUUID().toString().replace("-", "") + ext;
             String url = ossService.upload(objectKey, file.getInputStream());
-            return Result.success(url);
+            return Result.success("上传成功", url);
         } catch (Exception e) {
             return Result.error(500, "上传失败: " + e.getMessage());
         }

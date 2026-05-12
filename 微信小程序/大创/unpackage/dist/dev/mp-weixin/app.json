@@ -10,6 +10,7 @@
     "pages/home/draft",
     "pages/home/party/partyApplication",
     "pages/home/party/history",
+    "pages/home/party/historyDetail",
     "pages/my/myActivity",
     "pages/home/party",
     "pages/home/memStudy",

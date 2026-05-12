@@ -95,7 +95,7 @@ public class StudyRecordController {
     }
 
     /**
-     * 保存视频观看进度
+     * 保存视频观看进度（仅保存进度，不发放积分）
      */
     @PostMapping("/video/progress")
     public Result<String> saveVideoProgress(@RequestBody VideoWatchProgress progress, HttpServletRequest request) {
@@ -106,9 +106,6 @@ public class StudyRecordController {
         progress.setUserId(userId);
         progress.setLastWatchTime(LocalDateTime.now());
         
-        System.out.println("保存视频进度 - userId: " + userId + ", resourceId: " + progress.getResourceId() + 
-                          ", currentTime: " + progress.getCurrentTime() + ", totalDuration: " + progress.getTotalDuration());
-        
         // 计算观看百分比
         if (progress.getTotalDuration() > 0) {
             BigDecimal percentage = BigDecimal.valueOf(progress.getCurrentTime())
@@ -118,32 +115,6 @@ public class StudyRecordController {
         }
         
         videoWatchProgressMapper.insertOrUpdate(progress);
-        System.out.println("视频进度保存成功");
-        
-        // 检查观看时长，每10分钟获得1积分
-        if (progress.getCurrentTime() != null && progress.getCurrentTime() > 0) {
-            int watchMinutes = progress.getCurrentTime() / 60; // 转换为分钟
-            int earnedPoints = watchMinutes / 10; // 每10分钟1积分
-            
-            if (earnedPoints > 0) {
-                System.out.println("🎬 观看时长: " + watchMinutes + "分钟，可获得积分: " + earnedPoints);
-                
-                // 检查该视频是否已经发放过积分
-                boolean alreadyAwarded = checkIfVideoPointsAlreadyAwarded(userId, progress.getResourceId());
-                if (!alreadyAwarded) {
-                    System.out.println("✅ 该视频未发放过积分，开始发放观看视频积分");
-                    // 发放积分
-                    awardVideoWatchingPoints(userId, earnedPoints);
-                } else {
-                    System.out.println("⚠️ 该视频已经发放过积分，跳过");
-                }
-            } else {
-                System.out.println("📊 观看时长: " + watchMinutes + "分钟，未达到10分钟，不发放积分");
-            }
-        } else {
-            System.out.println("📊 观看时长数据无效，不发放积分");
-        }
-        
         return Result.success("观看进度已保存");
     }
 
@@ -156,70 +127,53 @@ public class StudyRecordController {
         if (userIdAttr == null) return Result.error(401, "未登录");
         
         Long userId = (Long) userIdAttr;
-        System.out.println("获取视频进度 - userId: " + userId + ", resourceId: " + resourceId);
-        
         VideoWatchProgress progress = videoWatchProgressMapper.selectByUserIdAndResourceId(userId, resourceId);
-        System.out.println("查询到的进度数据: " + progress);
-        
         return Result.success(progress);
     }
 
     /**
-     * 检查是否已经发放过视频观看积分
+     * 视频完整观看完成：发放积分 + 记录学习次数
+     * 每个视频只能获得一次积分和一次学习次数，重复观看不增加
      */
-    private boolean checkIfVideoPointsAlreadyAwarded(Long userId, Long resourceId) {
-        // 查询积分记录，检查今天是否已经发放过观看视频积分
-        List<Points> existingPoints = pointsMapper.selectByUserId(userId);
-        LocalDateTime today = LocalDateTime.now().withHour(0).withMinute(0).withSecond(0).withNano(0);
-        
-        for (Points point : existingPoints) {
-            if (point.getDescription().contains("观看学习视频") && 
-                point.getCreatedAt().isAfter(today)) {
-                return true;
-            }
+    @PostMapping("/video/complete")
+    public Result<String> completeVideo(@RequestBody Map<String, Object> body, HttpServletRequest request) {
+        Object userIdAttr = request.getAttribute("userId");
+        if (userIdAttr == null) return Result.error(401, "未登录");
+
+        Long userId = (Long) userIdAttr;
+        Long resId = Long.valueOf(body.get("resourceId").toString());
+
+        // 1. 检查该视频是否已经完成过（通过学习记录判断）
+        List<StudyRecord> existing = studyRecordMapper.selectByUserIdAndResourceId(userId, resId);
+        if (existing != null && !existing.isEmpty()) {
+            // 已经看过这个视频了，不重复计分
+            return Result.success("该视频已完成观看，不重复计分");
         }
-        return false;
-    }
 
-    /**
-     * 发放观看视频积分
-     */
-    private void awardVideoWatchingPoints(Long userId, int points) {
-        System.out.println("🎁 开始发放观看视频积分 - 用户: " + userId + ", 积分: " + points);
-        
-        try {
-            // 获取用户信息
-            Member member = memberMapper.selectById(userId);
-            if (member == null) {
-                System.out.println("❌ 用户不存在，无法发放积分: " + userId);
-                return;
-            }
+        // 2. 插入一条学习记录（学习次数 +1）
+        StudyRecord record = new StudyRecord();
+        record.setUserId(userId);
+        record.setResourceId(resId);
+        record.setDuration(1); // 至少1分钟
+        record.setStartedAt(LocalDateTime.now());
+        record.setEndedAt(LocalDateTime.now());
+        studyRecordMapper.insert(record);
 
-            System.out.println("✅ 用户信息: " + member.getUsername() + ", 支部ID: " + member.getBranchId());
-
-            // 创建积分记录
+        // 3. 发放1积分
+        Member member = memberMapper.selectById(userId);
+        if (member != null) {
             Points pointsRecord = new Points();
             pointsRecord.setUserId(userId);
             pointsRecord.setBranchId(member.getBranchId());
-            pointsRecord.setPoints(points); // 根据观看时长计算的积分
-            pointsRecord.setDescription("观看学习视频");
+            pointsRecord.setPoints(1);
+            pointsRecord.setDescription("完整观看视频(资源#" + resId + ")");
             pointsRecord.setCreatedAt(LocalDateTime.now());
-            
-            // 插入积分记录
-            int insertResult = pointsMapper.insert(pointsRecord);
-            if (insertResult > 0) {
-                System.out.println("✅ 观看视频积分发放成功: " + insertResult + ", 积分ID: " + pointsRecord.getId());
-                
-                // 验证插入结果
-                List<Points> userPoints = pointsMapper.selectByUserId(userId);
-                System.out.println("🔍 用户积分记录数量: " + userPoints.size());
-            } else {
-                System.out.println("❌ 观看视频积分发放失败");
-            }
-        } catch (Exception e) {
-            System.out.println("❌ 发放观看视频积分失败: " + e.getMessage());
-            e.printStackTrace();
+            pointsMapper.insert(pointsRecord);
+            System.out.println("✅ 用户" + userId + "完整观看视频#" + resId + "，+1积分");
+            return Result.success("完成观看，已获得1积分");
         }
+
+        return Result.success("完成观看");
     }
 
     /**

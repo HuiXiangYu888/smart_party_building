@@ -17,9 +17,6 @@
 					<text class="item-title">{{ item.title }}</text>
 					<text class="item-time">{{ formatTime(item.createdAt) }}</text>
 				</view>
-				<view class="item-content">
-					<text class="content-text">{{ item.content.length > 100 ? item.content.substring(0, 100) + '...' : item.content }}</text>
-				</view>
 			</view>
 			
 			<!-- 空状态 -->
@@ -82,6 +79,11 @@
 		}
 	}
 
+	// 去除HTML标签
+	const stripHtmlTags = (html) => {
+		if (!html) return ''
+		return html.replace(/<[^>]+>/g, '').replace(/&nbsp;/ig, ' ')
+	}
 
 	// 查看详情
 	const handleViewDetail = (item) => {

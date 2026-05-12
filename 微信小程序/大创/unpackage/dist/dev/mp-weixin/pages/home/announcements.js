@@ -66,7 +66,7 @@ const _sfc_main = {
           setTimeout(() => common_vendor.index.navigateTo({ url: "/pages/my/login/login" }), 600);
         }
       } catch (e) {
-        common_vendor.index.__f__("error", "at pages/home/announcements.vue:126", "加载公告失败:", e);
+        common_vendor.index.__f__("error", "at pages/home/announcements.vue:128", "加载公告失败:", e);
         common_vendor.index.showToast({ title: "加载失败", icon: "none" });
       } finally {
         loading.value = false;
@@ -105,9 +105,8 @@ const _sfc_main = {
           return {
             a: common_vendor.t(item.title),
             b: common_vendor.t(formatTime(item.createdAt)),
-            c: common_vendor.t(item.content.length > 100 ? item.content.substring(0, 100) + "..." : item.content),
-            d: item.id,
-            e: common_vendor.o(($event) => handleViewDetail(item), item.id)
+            c: item.id,
+            d: common_vendor.o(($event) => handleViewDetail(item), item.id)
           };
         }),
         b: announcementList.value.length === 0 && !loading.value
@@ -116,7 +115,7 @@ const _sfc_main = {
       }, loading.value ? {} : {}, {
         d: hasMore.value && !loading.value
       }, hasMore.value && !loading.value ? {
-        e: common_vendor.o(loadMore, "19")
+        e: common_vendor.o(loadMore, "d4")
       } : {});
     };
   }

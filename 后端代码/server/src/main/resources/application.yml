@@ -3,7 +3,7 @@ server:
   tomcat:
     max-swallow-size: -1
     max-http-form-post-size: -1
-    connection-timeout: 300000  # 5分钟连接超时
+    connection-timeout: 300000 # 5分钟连接超时
     max-connections: 10000
     accept-count: 1000
     threads:
@@ -13,7 +13,7 @@ server:
 spring:
   application:
     name: smart-party-building
-  
+
   # 数据源配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -21,7 +21,7 @@ spring:
     username: root
     password: yu5201314
     type: com.alibaba.druid.pool.DruidDataSource
-    
+
     # Druid连接池配置
     druid:
       initial-size: 5
@@ -47,19 +47,17 @@ spring:
         enabled: true
         url-pattern: /*
         exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
-  
 
-  
   # 文件上传配置
   servlet:
     multipart:
-      max-file-size: 2048MB  # 增加到2GB
+      max-file-size: 2048MB # 增加到2GB
       max-request-size: 2048MB
       file-size-threshold: 2KB
       location: ${java.io.tmpdir}
       enabled: true
       resolve-lazily: false
-  
+
   # Jackson配置
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
@@ -98,8 +96,8 @@ knife4j:
 # JWT配置
 jwt:
   secret: smart-party-building-jwt-secret-key-2024
-  expiration: 7200000  # 2小时
-  refresh-expiration: 604800000  # 7天
+  expiration: 7200000 # 2小时
+  refresh-expiration: 604800000 # 7天
 
 # 微信小程序配置
 wechat:
@@ -112,10 +110,10 @@ wechat:
 # 阿里云OSS配置
 aliyun:
   oss:
-    endpoint: your_endpoint_here
-    access-key-id: your_access-key-id_here
-    access-key-secret: your_access-key-secret_here
-    bucket-name: your_bucket_name_here
+    endpoint: oss-cn-shanghai.aliyuncs.com
+    access-key-id: YOUR_ACCESS_KEY_ID
+    access-key-secret: YOUR_ACCESS_KEY_SECRET
+    bucket-name: smart-building1
 
 # 日志配置
 logging:

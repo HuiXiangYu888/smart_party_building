@@ -1,7 +1,7 @@
 <template>
 	<!-- 顶部用户信息 -->
 	<view class="user-header" @click="handleUserClick">
-		<image class="user-avatar" :src="userInfo.avatar || '/static/my/头像.png'"></image>
+		<image class="user-avatar" :src="userInfo.avatar || '/static/my/头像.png'" mode="aspectFill"></image>
 		<view class="user-info">
 			<text class="user-name">{{ userInfo.username || '点击登录' }}</text>
 			<text class="user-type">{{ getUserTypeText() }}</text>
@@ -254,6 +254,7 @@ onUnmounted(() => {
 			border-radius: 60rpx;
 			margin-right: 24rpx;
 			border: 4rpx solid rgba(255, 255, 255, 0.3);
+			box-sizing: border-box;
 		}
 		
 		.user-info {

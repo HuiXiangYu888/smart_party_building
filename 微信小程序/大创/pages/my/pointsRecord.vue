@@ -134,55 +134,90 @@
 		text-align: center;
 		margin-bottom: 30rpx;
 		color: #333;
+		position: relative;
+		display: inline-block;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	
+	.page-title::after {
+		content: '';
+		position: absolute;
+		bottom: -10rpx;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 40rpx;
+		height: 6rpx;
+		background-color: #e74c3c;
+		border-radius: 4rpx;
 	}
 
 	.total-stats {
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
 		border-radius: 16rpx;
-		padding: 30rpx;
+		padding: 40rpx 30rpx;
 		margin-bottom: 30rpx;
-		box-shadow: 0 8rpx 20rpx rgba(102, 126, 234, 0.3);
+		box-shadow: 0 8rpx 20rpx rgba(231, 76, 60, 0.3);
+		position: relative;
+		overflow: hidden;
+	}
+	
+	.total-stats::before {
+		content: '';
+		position: absolute;
+		top: -20rpx;
+		right: -20rpx;
+		width: 150rpx;
+		height: 150rpx;
+		background: rgba(255, 255, 255, 0.1);
+		border-radius: 50%;
 	}
 
 	.stats-item {
 		text-align: center;
+		position: relative;
+		z-index: 1;
 	}
 
 	.stats-label {
 		display: block;
 		font-size: 28rpx;
-		color: rgba(255, 255, 255, 0.8);
-		margin-bottom: 10rpx;
+		color: rgba(255, 255, 255, 0.9);
+		margin-bottom: 12rpx;
 	}
 
 	.stats-value {
 		display: block;
-		font-size: 48rpx;
+		font-size: 64rpx;
 		font-weight: bold;
 		color: #fff;
+		text-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);
 	}
 
 	.points-list {
 		background: #fff;
 		border-radius: 16rpx;
 		overflow: hidden;
-		box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+		box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.04);
 	}
 
 	.list-header {
 		display: flex;
-		background: #f8f9fa;
-		padding: 20rpx;
-		border-bottom: 1rpx solid #eee;
+		background: #fff5f5;
+		padding: 24rpx 20rpx;
+		border-bottom: 2rpx solid #ffe8e8;
 	}
 
 	.header-item {
 		flex: 1;
 		font-size: 28rpx;
 		font-weight: bold;
-		color: #666;
+		color: #e74c3c;
 		text-align: center;
 	}
+	
+	.header-item:first-child { text-align: left; padding-left: 10rpx; flex: 2; }
+	.header-item:last-child { text-align: right; padding-right: 10rpx; flex: 1.5; }
 
 	.list-body {
 		min-height: 200rpx;
@@ -191,8 +226,13 @@
 	.points-item {
 		display: flex;
 		align-items: center;
-		padding: 24rpx 20rpx;
+		padding: 30rpx 20rpx;
 		border-bottom: 1rpx solid #f0f0f0;
+		transition: background-color 0.2s;
+	}
+	
+	.points-item:active {
+		background-color: #fafafa;
 	}
 
 	.points-item:last-child {
@@ -204,21 +244,23 @@
 		font-size: 28rpx;
 		color: #333;
 		margin-right: 20rpx;
+		font-weight: 500;
+		padding-left: 10rpx;
 	}
 
 	.points {
 		flex: 1;
-		font-size: 28rpx;
+		font-size: 32rpx;
 		font-weight: bold;
 		text-align: center;
 	}
 
 	.points.positive {
-		color: #52c41a;
+		color: #e74c3c;
 	}
 
 	.points.negative {
-		color: #ff4d4f;
+		color: #52c41a; /* Green for spending points, or could be grey */
 	}
 
 	.time {
@@ -226,11 +268,12 @@
 		font-size: 24rpx;
 		color: #999;
 		text-align: right;
+		padding-right: 10rpx;
 	}
 
 	.empty-state {
 		text-align: center;
-		padding: 60rpx 20rpx;
+		padding: 80rpx 20rpx;
 		color: #999;
 		font-size: 28rpx;
 	}
@@ -238,7 +281,7 @@
 	.loading {
 		text-align: center;
 		padding: 40rpx;
-		color: #666;
+		color: #999;
 		font-size: 28rpx;
 	}
 </style>

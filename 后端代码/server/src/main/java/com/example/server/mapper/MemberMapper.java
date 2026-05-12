@@ -4,6 +4,7 @@ import com.example.pojo.entity.Member;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 用户Mapper接口
@@ -76,4 +77,19 @@ public interface MemberMapper {
      * 查询全部成员（管理端使用）
      */
     List<Member> selectAll();
+
+    /**
+     * 分页条件查询成员
+     */
+    List<Member> selectWithPagination(@Param("offset") int offset, @Param("limit") int limit,
+                                       @Param("branchId") Long branchId,
+                                       @Param("reviewStatus") String reviewStatus,
+                                       @Param("studentId") String studentId);
+
+    /**
+     * 条件查询总数
+     */
+    int selectCountByCondition(@Param("branchId") Long branchId,
+                                @Param("reviewStatus") String reviewStatus,
+                                @Param("studentId") String studentId);
 }

@@ -98,4 +98,40 @@
         ORDER BY id DESC
     </select>
 
+    <!-- 分页条件查询 -->
+    <select id="selectWithPagination" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM members
+        <where>
+            <if test="branchId != null">
+                AND branch_id = #{branchId}
+            </if>
+            <if test="reviewStatus != null and reviewStatus != ''">
+                AND review_status = #{reviewStatus}
+            </if>
+            <if test="studentId != null and studentId != ''">
+                AND student_id LIKE CONCAT('%', #{studentId}, '%')
+            </if>
+        </where>
+        ORDER BY id DESC
+        LIMIT #{offset}, #{limit}
+    </select>
+
+    <!-- 条件查询总数 -->
+    <select id="selectCountByCondition" resultType="int">
+        SELECT COUNT(1) FROM members
+        <where>
+            <if test="branchId != null">
+                AND branch_id = #{branchId}
+            </if>
+            <if test="reviewStatus != null and reviewStatus != ''">
+                AND review_status = #{reviewStatus}
+            </if>
+            <if test="studentId != null and studentId != ''">
+                AND student_id LIKE CONCAT('%', #{studentId}, '%')
+            </if>
+        </where>
+    </select>
+
 </mapper>

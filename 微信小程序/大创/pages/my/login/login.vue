@@ -2,7 +2,9 @@
 	<view class="container">
 		<!-- 顶部品牌区域 -->
 		<view class="brand-section">
-			<image class="logo" src="/static/my/头像.png" mode="aspectFit"></image>
+			<view class="logo-container">
+				<image class="logo" src="/static/my/党旗.png" mode="widthFix"></image>
+			</view>
 			<view class="brand-text">
 				<text class="app-title">智慧党建</text>
 				<text class="app-subtitle">Smart Party Building</text>
@@ -150,14 +152,23 @@ onMounted(() => {
 	justify-content: center;
 	padding-bottom: 20rpx;
 	
-	.logo {
-		width: 140rpx;
-		height: 140rpx;
+	.logo-container {
+		width: 180rpx;
 		background-color: #fff;
-		border-radius: 50%;
+		border-radius: 16rpx;
 		padding: 10rpx;
+		box-sizing: border-box;
 		box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.1);
 		margin-bottom: 24rpx;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.logo {
+		width: 100%;
+		height: auto;
+		display: block;
 	}
 	
 	.brand-text {

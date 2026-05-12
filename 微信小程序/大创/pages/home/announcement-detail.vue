@@ -15,7 +15,7 @@
 			
 			<!-- 公告内容 -->
 			<view class="announcement-content">
-				<text class="content-text">{{ announcement.content }}</text>
+				<rich-text class="content-text" :nodes="formatContent(announcement.content)"></rich-text>
 			</view>
 		</view>
 		
@@ -40,6 +40,18 @@
 	const announcement = ref({})
 	const loading = ref(false)
 	const error = ref('')
+
+	// 格式化富文本内容
+	const formatContent = (html) => {
+		if (!html) return ''
+		// 替换图片样式，保证自适应宽度，避免横向滚动
+		return html.replace(/<img[^>]*>/gi, function(match) {
+			return match.replace(/style\s*=\s*["'][^"']*["']/gi, '')
+				.replace(/width\s*=\s*["'][^"']*["']/gi, '')
+				.replace(/height\s*=\s*["'][^"']*["']/gi, '')
+				.replace(/<img/gi, '<img style="max-width:100%; height:auto; display:block; margin:10px 0; border-radius:8px;"');
+		})
+	}
 
 	// 格式化时间
 	const formatTime = (timeStr) => {
